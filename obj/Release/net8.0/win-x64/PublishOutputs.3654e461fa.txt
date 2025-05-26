@@ -1,0 +1,2 @@
+C:\Users\Asus\OneDrive\Desktop\Copier\publish\win-x64\Copier.pdb
+C:\Users\Asus\OneDrive\Desktop\Copier\publish\win-x64\Copier.exe

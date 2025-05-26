@@ -11,6 +11,7 @@ using System.Text.Json;
 using System.IO;
 using Avalonia.Controls.ApplicationLifetimes;
 using System.Linq;
+using System;
 
 
 namespace copier;
@@ -19,10 +20,18 @@ public partial class MainWindow : Window
 {
     private readonly List<StackPanel> allEntryPanels = new();
 
+    private readonly string AutoSavePath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "CopierApp", "autosave.json");
+
+
     public MainWindow()
     {
         InitializeComponent();
+
+        AutoLoad();
+
+        this.Closing += (_, _) => AutoSave(); // 🧠 save on exit
     }
+
 
     private void InitializeComponent()
     {
@@ -241,5 +250,37 @@ public partial class MainWindow : Window
             AddEntry(entry.Title, entry.Text);
         }
     }
+
+    private async void AutoSave()
+    {
+        var entries = allEntryPanels.Select(panel =>
+        {
+            var title = (panel.Children[0] as TextBlock)?.Text ?? "";
+            var text = (panel.Children[1] as TextBox)?.Text ?? "";
+            return new EntryData { Title = title, Text = text };
+        }).ToList();
+
+        Directory.CreateDirectory(Path.GetDirectoryName(AutoSavePath)!);
+
+        var json = JsonSerializer.Serialize(entries, new JsonSerializerOptions { WriteIndented = true });
+        await File.WriteAllTextAsync(AutoSavePath, json);
+    }
+
+    private async void AutoLoad()
+    {
+        if (!File.Exists(AutoSavePath)) return;
+
+        var json = await File.ReadAllTextAsync(AutoSavePath);
+        var entries = JsonSerializer.Deserialize<List<EntryData>>(json);
+        if (entries == null) return;
+
+        var stack = this.FindControl<StackPanel>("ItemsPanel")!;
+        stack.Children.Clear();
+        allEntryPanels.Clear();
+
+        foreach (var entry in entries)
+            AddEntry(entry.Title, entry.Text);
+    }
+
 
 }

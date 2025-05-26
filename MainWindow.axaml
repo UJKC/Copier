@@ -23,6 +23,12 @@
             <ScrollViewer VerticalScrollBarVisibility="Auto">
                 <StackPanel x:Name="ItemsPanel" Margin="0 10 0 0" Spacing="10"/>
             </ScrollViewer>
+
+            <StackPanel Orientation="Horizontal" Margin="0 0 0 10" Spacing="10">
+                <Button Content="Export" Click="Export_Click"/>
+                <Button Content="Import" Click="Import_Click"/>
+            </StackPanel>
+
         </DockPanel>
 
 </Window>

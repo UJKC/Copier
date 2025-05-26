@@ -7,6 +7,11 @@ using Avalonia.Layout;
 using Avalonia.Markup.Xaml;
 using Avalonia.Media;
 using System.Collections.Generic;
+using System.Text.Json;
+using System.IO;
+using Avalonia.Controls.ApplicationLifetimes;
+using System.Linq;
+
 
 namespace copier;
 
@@ -55,14 +60,28 @@ public partial class MainWindow : Window
         {
             Text = text,
             AcceptsReturn = true,
+            IsReadOnly = true,
+            Focusable = false,
             Width = 400,
             Height = 60,
-            TextWrapping = TextWrapping.Wrap
+            TextWrapping = TextWrapping.Wrap,
+            Background = Brushes.LightGray,            // No hover highlight
+            Foreground = Brushes.Black,
+            BorderBrush = Brushes.Transparent,         // No border change
+            CaretBrush = Brushes.Transparent,
+            IsHitTestVisible = false                   // ✅ Prevents mouse hover events
         };
+
 
         var copyButton = new Button
         {
             Content = "Copy",
+            Width = 60
+        };
+
+        var editButton = new Button
+        {
+            Content = "Edit",
             Width = 60
         };
 
@@ -84,6 +103,7 @@ public partial class MainWindow : Window
         };
 
         buttonPanel.Children.Add(copyButton);
+        buttonPanel.Children.Add(editButton);
         buttonPanel.Children.Add(removeButton);
 
         entryPanel.Children.Add(titleText);
@@ -105,7 +125,32 @@ public partial class MainWindow : Window
             allEntryPanels.Remove(entryPanel);
             stack.Children.Remove(entryPanel);
         };
+
+        editButton.Click += (_, _) =>
+        {
+            if (editableText.IsReadOnly)
+            {
+                // Enable editing
+                editableText.IsReadOnly = false;
+                editableText.Background = new SolidColorBrush(Colors.White);
+                editableText.Foreground = new SolidColorBrush(Colors.White);
+                editableText.Focusable = true;
+                editableText.Focus(); // optionally auto-focus
+                editButton.Content = "Save";
+            }
+            else
+            {
+                // Disable editing
+                editableText.IsReadOnly = true;
+                editableText.Background = new SolidColorBrush(Colors.LightGray);
+                editableText.Foreground = new SolidColorBrush(Colors.Black);
+                editableText.Focusable = false;
+                editButton.Content = "Edit";
+            }
+        };
+
     }
+
 
     private void SearchBox_KeyUp(object? sender, KeyEventArgs e)
     {
@@ -137,4 +182,64 @@ public partial class MainWindow : Window
             }
         }
     }
+
+    [System.Obsolete]
+    private async void Export_Click(object? sender, RoutedEventArgs e)
+    {
+        var fileDialog = new SaveFileDialog
+        {
+            Filters = new List<FileDialogFilter>
+            {
+                new FileDialogFilter { Name = "JSON Files", Extensions = { "json" } }
+            },
+            DefaultExtension = "json"
+        };
+
+        var path = await fileDialog.ShowAsync(this);
+        if (path == null) return;
+
+        var entries = allEntryPanels.Select(panel =>
+        {
+            var title = (panel.Children[0] as TextBlock)?.Text ?? "";
+            var text = (panel.Children[1] as TextBox)?.Text ?? "";
+            return new EntryData { Title = title, Text = text };
+        }).ToList();
+
+        var json = JsonSerializer.Serialize(entries, new JsonSerializerOptions { WriteIndented = true });
+        await File.WriteAllTextAsync(path, json);
+    }
+
+    [System.Obsolete]
+    private async void Import_Click(object? sender, RoutedEventArgs e)
+    {
+        var fileDialog = new OpenFileDialog
+        {
+            AllowMultiple = false,
+            Filters = new List<FileDialogFilter>
+            {
+                new FileDialogFilter { Name = "JSON Files", Extensions = { "json" } }
+            }
+        };
+
+        var result = await fileDialog.ShowAsync(this);
+        var path = result?.FirstOrDefault();
+        if (path == null || !File.Exists(path)) return;
+
+        var json = await File.ReadAllTextAsync(path);
+        var entries = JsonSerializer.Deserialize<List<EntryData>>(json);
+
+        if (entries == null) return;
+
+        // Clear existing entries
+        var stack = this.FindControl<StackPanel>("ItemsPanel")!;
+        stack.Children.Clear();
+        allEntryPanels.Clear();
+
+        // Add imported ones
+        foreach (var entry in entries)
+        {
+            AddEntry(entry.Title, entry.Text);
+        }
+    }
+
 }

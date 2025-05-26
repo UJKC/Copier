@@ -26,7 +26,7 @@ public partial class MainWindow : Window
     public MainWindow()
     {
         ShortcutHelper.CreateShortcutIfNeeded();
-        
+
         InitializeComponent();
 
         AutoLoad();
@@ -284,5 +284,11 @@ public partial class MainWindow : Window
             AddEntry(entry.Title, entry.Text);
     }
 
+    private void ClearAll_Click(object? sender, RoutedEventArgs e)
+    {
+        var stack = this.FindControl<StackPanel>("ItemsPanel")!;
+        stack.Children.Clear();
+        allEntryPanels.Clear();
+    }
 
 }

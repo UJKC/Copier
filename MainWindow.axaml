@@ -27,6 +27,7 @@
             <StackPanel Orientation="Horizontal" Margin="0 0 0 10" Spacing="10">
                 <Button Content="Export" Click="Export_Click"/>
                 <Button Content="Import" Click="Import_Click"/>
+                <Button Content="Clear All" Click="ClearAll_Click"/>
             </StackPanel>
 
         </DockPanel>

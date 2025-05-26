@@ -65,3 +65,4 @@ C:\Users\Asus\OneDrive\Desktop\Copier\obj\Debug\net8.0\refint\Copier.dll
 C:\Users\Asus\OneDrive\Desktop\Copier\obj\Debug\net8.0\Copier.pdb
 C:\Users\Asus\OneDrive\Desktop\Copier\obj\Debug\net8.0\Copier.genruntimeconfig.cache
 C:\Users\Asus\OneDrive\Desktop\Copier\obj\Debug\net8.0\ref\Copier.dll
+C:\Users\Asus\OneDrive\Desktop\Copier\obj\Debug\net8.0\Copier.sourcelink.json

@@ -6,11 +6,14 @@ using Avalonia.Interactivity;
 using Avalonia.Layout;
 using Avalonia.Markup.Xaml;
 using Avalonia.Media;
+using System.Collections.Generic;
 
 namespace copier;
 
 public partial class MainWindow : Window
 {
+    private readonly List<StackPanel> allEntryPanels = new();
+
     public MainWindow()
     {
         InitializeComponent();
@@ -42,11 +45,10 @@ public partial class MainWindow : Window
     {
         var stack = this.FindControl<StackPanel>("ItemsPanel")!;
 
-        // Create controls
         var titleText = new TextBlock
         {
             Text = title,
-            FontWeight = Avalonia.Media.FontWeight.Bold
+            FontWeight = FontWeight.Bold
         };
 
         var editableText = new TextBox
@@ -70,13 +72,11 @@ public partial class MainWindow : Window
             Width = 60
         };
 
-        // Create panel to hold title + text + buttons
         var entryPanel = new StackPanel
         {
             Spacing = 5
         };
 
-        // Buttons in a row
         var buttonPanel = new StackPanel
         {
             Orientation = Orientation.Horizontal,
@@ -90,9 +90,9 @@ public partial class MainWindow : Window
         entryPanel.Children.Add(editableText);
         entryPanel.Children.Add(buttonPanel);
 
+        allEntryPanels.Add(entryPanel);
         stack.Children.Add(entryPanel);
 
-        // Clipboard support
         copyButton.Click += async (_, _) =>
         {
             var clipboard = TopLevel.GetTopLevel(this)?.Clipboard;
@@ -102,7 +102,39 @@ public partial class MainWindow : Window
 
         removeButton.Click += (_, _) =>
         {
+            allEntryPanels.Remove(entryPanel);
             stack.Children.Remove(entryPanel);
         };
+    }
+
+    private void SearchBox_KeyUp(object? sender, KeyEventArgs e)
+    {
+        var searchBox = this.FindControl<TextBox>("SearchBox")!;
+        FilterEntries(searchBox.Text);
+    }
+
+    private void FilterEntries(string? filter)
+    {
+        var stack = this.FindControl<StackPanel>("ItemsPanel")!;
+        stack.Children.Clear();
+
+        filter = filter?.Trim().ToLower() ?? "";
+
+        foreach (var entry in allEntryPanels)
+        {
+            var titleText = entry.Children[0] as TextBlock;
+            // Remove below to remove filtering editableText
+            // var editableText = entry.Children[1] as TextBox;
+
+            string title = titleText?.Text?.ToLower() ?? "";
+            // Remove below to remove filtering editableText
+            // string text = editableText?.Text?.ToLower() ?? "";
+
+            // Remove second part to dosable filtering editable text
+            if (title.Contains(filter))
+            {
+                stack.Children.Add(entry);
+            }
+        }
     }
 }

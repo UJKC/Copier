@@ -3,17 +3,26 @@
         x:Class="copier.MainWindow"
         Title="Copier App"
         Width="600" Height="400">
-    <DockPanel Margin="10">
-        <!-- Input area for new title/text -->
-        <StackPanel DockPanel.Dock="Top" Orientation="Horizontal" Spacing="10">
-            <TextBox x:Name="TitleInputBox" Width="150" Watermark="Enter title..." />
-            <TextBox x:Name="TextInputBox" Width="250" Watermark="Enter text..." />
-            <Button Content="Add" Click="Add_Click"/>
-        </StackPanel>
+        <DockPanel Margin="10">
 
-        <!-- Scrollable list of entries -->
-        <ScrollViewer VerticalScrollBarVisibility="Auto">
-            <StackPanel x:Name="ItemsPanel" Margin="0 10 0 0" Spacing="10"/>
-        </ScrollViewer>
-    </DockPanel>
+            <!-- Search bar -->
+            <TextBox x:Name="SearchBox" 
+                    Watermark="Search titles or text..." 
+                    DockPanel.Dock="Top" 
+                    Margin="0 0 0 10"
+                    KeyUp="SearchBox_KeyUp"/>
+
+            <!-- Input area for new title/text -->
+            <StackPanel DockPanel.Dock="Top" Orientation="Horizontal" Spacing="10">
+                <TextBox x:Name="TitleInputBox" Width="150" Watermark="Enter title..." />
+                <TextBox x:Name="TextInputBox" Width="250" Watermark="Enter text..." />
+                <Button Content="Add" Click="Add_Click"/>
+            </StackPanel>
+
+            <!-- Scrollable list of entries -->
+            <ScrollViewer VerticalScrollBarVisibility="Auto">
+                <StackPanel x:Name="ItemsPanel" Margin="0 10 0 0" Spacing="10"/>
+            </ScrollViewer>
+        </DockPanel>
+
 </Window>

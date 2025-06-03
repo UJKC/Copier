@@ -15,7 +15,13 @@
             <!-- Input area for new title/text -->
             <StackPanel DockPanel.Dock="Top" Orientation="Horizontal" Spacing="10">
                 <TextBox x:Name="TitleInputBox" Width="150" Watermark="Enter title..." />
-                <TextBox x:Name="TextInputBox" Width="250" Watermark="Enter text..." />
+                <TextBox x:Name="TextInputBox"
+         Width="250"
+         Height="150"
+         AcceptsReturn="True"
+         TextWrapping="Wrap"
+         Watermark="Enter text..." />
+
                 <Button Content="Add" Click="Add_Click"/>
             </StackPanel>
 

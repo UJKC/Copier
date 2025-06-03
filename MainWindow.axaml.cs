@@ -74,7 +74,6 @@ public partial class MainWindow : Window
             IsReadOnly = true,
             Focusable = false,
             Width = 400,
-            Height = 60,
             TextWrapping = TextWrapping.Wrap,
             Background = Brushes.LightGray,            // No hover highlight
             Foreground = Brushes.Black,

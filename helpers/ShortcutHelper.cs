@@ -3,7 +3,7 @@ using System.Diagnostics;
 using System.IO;
 using System.Runtime.InteropServices;
 
-namespace copier;
+namespace copier.Helper;
 
 public static class ShortcutHelper
 {

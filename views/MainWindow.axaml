@@ -1,14 +1,14 @@
 <Window xmlns="https://github.com/avaloniaui"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        x:Class="copier.MainWindow"
+        x:Class="copier.Views.MainWindow"
         Title="Copier App"
         Width="600" Height="400">
         <DockPanel Margin="10">
 
             <!-- Search bar -->
-            <TextBox x:Name="SearchBox" 
-                    Watermark="Search titles or text..." 
-                    DockPanel.Dock="Top" 
+            <TextBox x:Name="SearchBox"
+                    Watermark="Search titles or text..."
+                    DockPanel.Dock="Top"
                     Margin="0 0 0 10"
                     KeyUp="SearchBox_KeyUp"/>
 

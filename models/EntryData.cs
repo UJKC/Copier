@@ -1,3 +1,5 @@
+namespace copier.Models;
+
 public class EntryData
 {
     public string Title { get; set; } = "";

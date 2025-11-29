@@ -18,6 +18,7 @@ namespace copier.Views;
 public partial class MainWindow : Window
 {
     private readonly List<StackPanel> allEntryPanels = new();
+
     private readonly string AutoSavePath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "CopierApp", "autosave.json");
     public MainWindow()
     {
@@ -25,6 +26,7 @@ public partial class MainWindow : Window
         InitializeComponent();
         AutoLoad();
         this.Closing += (_, _) => AutoSave();
+        this.AddHandler(Button.ClickEvent, Remove_Click);
 
         // 🧠 save on exit
     }
@@ -78,7 +80,28 @@ public partial class MainWindow : Window
             if (title.Contains(filter)) { stack.Children.Add(entry); }
         }
     }
-    [System.Obsolete] private async void Export_Click(object? sender, RoutedEventArgs e) { var fileDialog = new SaveFileDialog { Filters = new List<FileDialogFilter> { new FileDialogFilter { Name = "JSON Files", Extensions = { "json" } } }, DefaultExtension = "json" }; var path = await fileDialog.ShowAsync(this); if (path == null) return; var entries = allEntryPanels.Select(panel => { var title = (panel.Children[0] as TextBlock)?.Text ?? ""; var text = (panel.Children[1] as TextBox)?.Text ?? ""; return new EntryData { Title = title, Text = text }; }).ToList(); var json = JsonSerializer.Serialize(entries, new JsonSerializerOptions { WriteIndented = true }); await File.WriteAllTextAsync(path, json); }
+    [System.Obsolete]
+    private async void Export_Click(object? sender, RoutedEventArgs e)
+    {
+        var fileDialog = new SaveFileDialog
+        {
+            Filters = new List<FileDialogFilter> {
+                new FileDialogFilter { Name = "JSON Files", Extensions = { "json" }
+                }
+                },
+            DefaultExtension = "json"
+        };
+        var path = await fileDialog.ShowAsync(this);
+        if (path == null) return;
+        var entries = allEntryPanels.Select(panel =>
+        {
+            var title = (panel.Children[0] as TextBlock)?.Text ?? "";
+            var text = (panel.Children[1] as TextBox)?.Text ?? "";
+            return new EntryData { Title = title, Text = text };
+        }).ToList();
+        var json = JsonSerializer.Serialize(entries, new JsonSerializerOptions { WriteIndented = true });
+        await File.WriteAllTextAsync(path, json);
+    }
     [System.Obsolete]
     private async void Import_Click(object? sender, RoutedEventArgs e)
     {
@@ -123,4 +146,23 @@ public partial class MainWindow : Window
         stack.Children.Clear();
         allEntryPanels.Clear();
     }
+
+    private void Remove_Click(object? sender, RoutedEventArgs e)
+    {
+        if (e.Source is Button btn && btn.Content?.ToString() == "Remove")
+        {
+            // The button contains the reference to the entry panel in Tag
+            if (btn.Tag is StackPanel entryPanel)
+            {
+                var stack = this.FindControl<StackPanel>("ItemsPanel")!;
+
+                // Remove from UI
+                stack.Children.Remove(entryPanel);
+
+                // Remove from internal list
+                allEntryPanels.Remove(entryPanel);
+            }
+        }
+    }
+
 }

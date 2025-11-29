@@ -16,7 +16,7 @@ public class EntryManager
         this.Panels = allEntryPanels;
     }
 
-    public List<StackPanel> Panels { get; } = new();
+    public List<StackPanel> Panels { get; }
 
     public StackPanel CreateEntryPanel(
         string title,
@@ -77,22 +77,34 @@ public class EntryManager
         {
             if (editableText.IsReadOnly)
             {
+                // enable editing
                 editableText.IsReadOnly = false;
+                editableText.Focusable = true;                 // <- important
+                editableText.IsHitTestVisible = true;
                 editableText.Background = Brushes.White;
                 editableText.Foreground = Brushes.Black;
-                editableText.IsHitTestVisible = true;
+
+                // put caret at the end so user can continue typing
+                editableText.CaretIndex = (editableText.Text ?? "").Length;
+
+                // focus
                 editableText.Focus();
+
                 editButton.Content = "Save";
             }
             else
             {
+                // disable editing (save state is the TextBox.Text)
                 editableText.IsReadOnly = true;
+                editableText.Focusable = false;                // <- disable again
+                editableText.IsHitTestVisible = false;
                 editableText.Background = Brushes.LightGray;
                 editableText.Foreground = Brushes.Black;
-                editableText.IsHitTestVisible = false;
+
                 editButton.Content = "Edit";
             }
         };
+
 
         Panels.Add(entryPanel);
         return entryPanel;

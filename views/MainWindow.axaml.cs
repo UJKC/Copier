@@ -19,6 +19,7 @@ namespace copier.Views
     {
         private readonly List<StackPanel> allEntryPanels = new();
         private readonly EntryManager entryManager;
+        private System.Timers.Timer? _debounceTimer;
 
         private readonly string AutoSavePath =
             Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "CopierApp", "autosave.json");
@@ -74,8 +75,33 @@ namespace copier.Views
         private void SearchBox_KeyUp(object? sender, KeyEventArgs e)
         {
             var searchBox = this.FindControl<TextBox>("SearchBox")!;
-            FilterEntries(searchBox.Text);
+            string text = searchBox.Text ?? "";
+
+            // stop previous timer if typing continues
+            if (_debounceTimer != null)
+            {
+                _debounceTimer.Stop();
+                _debounceTimer.Dispose();
+            }
+
+            _debounceTimer = new System.Timers.Timer(250); // 250ms debounce
+            _debounceTimer.Elapsed += (s, _) =>
+            {
+                _debounceTimer?.Stop();
+                _debounceTimer?.Dispose();
+                _debounceTimer = null;
+
+                // Ensure UI thread invocation
+                Avalonia.Threading.Dispatcher.UIThread.Post(() =>
+                {
+                    FilterEntries(text);
+                });
+            };
+
+            _debounceTimer.AutoReset = false;
+            _debounceTimer.Start();
         }
+
 
         private void FilterEntries(string? filter)
         {

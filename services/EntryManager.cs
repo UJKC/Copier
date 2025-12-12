@@ -36,14 +36,14 @@ namespace copier.Services
             var titleText = new TextBlock
             {
                 Text = title,
-                FontWeight = Avalonia.Media.FontWeight.Bold
+                FontWeight = Avalonia.Media.FontWeight.Bold,
+                TextWrapping = TextWrapping.Wrap // Makes it wrap on smaller widths
             };
 
             var editableText = new TextBox
             {
                 Text = text,
                 AcceptsReturn = true,
-                Width = 400,
                 TextWrapping = TextWrapping.Wrap,
                 Background = Brushes.LightGray,
                 Foreground = Brushes.Black,
@@ -58,22 +58,37 @@ namespace copier.Services
             var pinButton = new Button { Content = "Pin", Width = 60 };
             var removeButton = new Button { Content = "Remove", Width = 60 };
 
-            var buttonPanel = new StackPanel
+            // Let each button stretch evenly
+            copyButton.HorizontalAlignment = Avalonia.Layout.HorizontalAlignment.Stretch;
+            editButton.HorizontalAlignment = Avalonia.Layout.HorizontalAlignment.Stretch;
+            pinButton.HorizontalAlignment = Avalonia.Layout.HorizontalAlignment.Stretch;
+            removeButton.HorizontalAlignment = Avalonia.Layout.HorizontalAlignment.Stretch;
+
+            // Wrap buttons in DockPanel to let them share space evenly
+            var buttonPanel = new WrapPanel
             {
-                Orientation = Orientation.Horizontal,
-                Spacing = 5
+                Orientation = Avalonia.Layout.Orientation.Horizontal,
+                HorizontalAlignment = Avalonia.Layout.HorizontalAlignment.Left,
+                ItemWidth = 80, // optional: preferred button width
+                ItemHeight = 30 // optional: uniform button height
             };
+
             buttonPanel.Children.Add(copyButton);
             buttonPanel.Children.Add(editButton);
             buttonPanel.Children.Add(pinButton);
             buttonPanel.Children.Add(removeButton);
 
-            var entryPanel = new StackPanel { Spacing = 5 };
+            // Entry panel
+            var entryPanel = new StackPanel
+            {
+                Spacing = 5,
+                HorizontalAlignment = Avalonia.Layout.HorizontalAlignment.Stretch
+            };
             entryPanel.Children.Add(titleText);
             entryPanel.Children.Add(editableText);
             entryPanel.Children.Add(buttonPanel);
 
-            // attach state object so we can persist pin status
+            // Attach state object so we can persist pin status
             entryPanel.Tag = new EntryPanelState { IsPinned = false };
 
             // copy event

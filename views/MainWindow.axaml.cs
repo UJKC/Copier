@@ -412,6 +412,24 @@ namespace copier.Views
                 _selectedPanel = stack.Children[prevIndex] as StackPanel;
                 UpdateSelection(stack);
             }
+
+            if (e.KeyModifiers == KeyModifiers.Control && e.Key == Key.C)
+            {
+                if (_selectedPanel != null)
+                {
+                    string text = "";
+
+                    if (_selectedPanel.Children[1] is TextBox tb)
+                        text = tb.Text ?? "";
+                    else if (_selectedPanel.Children[1] is TextBlock tblock)
+                        text = tblock.Text ?? "";
+
+                    string combined = $"{text}";
+
+                    // Copy to clipboard using Avalonia's IClipboard
+                    this.Clipboard.SetTextAsync(combined);
+                }
+            }
         }
 
         private bool CanSwitchPanels()

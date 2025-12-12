@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Copier")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Release")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+87e880e7161436daf6b1d2fccf890fc64d3eae97")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+0e9cabc55a603641f429dfea62cd2a9e27bedce9")]
 [assembly: System.Reflection.AssemblyProductAttribute("Copier")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Copier")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

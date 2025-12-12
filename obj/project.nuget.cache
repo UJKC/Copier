@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "3GWzxGKiPwM=",
+  "dgSpecHash": "KdBj/zv0PA8=",
   "success": true,
   "projectFilePath": "C:\\Users\\UDAI KC\\OneDrive\\Desktop\\documents\\Copier\\Copier.csproj",
   "expectedPackageFiles": [
@@ -25,13 +25,17 @@
     "C:\\Users\\UDAI KC\\.nuget\\packages\\harfbuzzsharp.nativeassets.webassembly\\7.3.0.3\\harfbuzzsharp.nativeassets.webassembly.7.3.0.3.nupkg.sha512",
     "C:\\Users\\UDAI KC\\.nuget\\packages\\harfbuzzsharp.nativeassets.win32\\7.3.0.3\\harfbuzzsharp.nativeassets.win32.7.3.0.3.nupkg.sha512",
     "C:\\Users\\UDAI KC\\.nuget\\packages\\microcom.runtime\\0.11.0\\microcom.runtime.0.11.0.nupkg.sha512",
+    "C:\\Users\\UDAI KC\\.nuget\\packages\\microsoft.net.illink.tasks\\8.0.7\\microsoft.net.illink.tasks.8.0.7.nupkg.sha512",
     "C:\\Users\\UDAI KC\\.nuget\\packages\\skiasharp\\2.88.9\\skiasharp.2.88.9.nupkg.sha512",
     "C:\\Users\\UDAI KC\\.nuget\\packages\\skiasharp.nativeassets.linux\\2.88.9\\skiasharp.nativeassets.linux.2.88.9.nupkg.sha512",
     "C:\\Users\\UDAI KC\\.nuget\\packages\\skiasharp.nativeassets.macos\\2.88.9\\skiasharp.nativeassets.macos.2.88.9.nupkg.sha512",
     "C:\\Users\\UDAI KC\\.nuget\\packages\\skiasharp.nativeassets.webassembly\\2.88.9\\skiasharp.nativeassets.webassembly.2.88.9.nupkg.sha512",
     "C:\\Users\\UDAI KC\\.nuget\\packages\\skiasharp.nativeassets.win32\\2.88.9\\skiasharp.nativeassets.win32.2.88.9.nupkg.sha512",
     "C:\\Users\\UDAI KC\\.nuget\\packages\\system.io.pipelines\\8.0.0\\system.io.pipelines.8.0.0.nupkg.sha512",
-    "C:\\Users\\UDAI KC\\.nuget\\packages\\tmds.dbus.protocol\\0.21.2\\tmds.dbus.protocol.0.21.2.nupkg.sha512"
+    "C:\\Users\\UDAI KC\\.nuget\\packages\\tmds.dbus.protocol\\0.21.2\\tmds.dbus.protocol.0.21.2.nupkg.sha512",
+    "C:\\Users\\UDAI KC\\.nuget\\packages\\microsoft.netcore.app.runtime.win-x64\\8.0.7\\microsoft.netcore.app.runtime.win-x64.8.0.7.nupkg.sha512",
+    "C:\\Users\\UDAI KC\\.nuget\\packages\\microsoft.windowsdesktop.app.runtime.win-x64\\8.0.7\\microsoft.windowsdesktop.app.runtime.win-x64.8.0.7.nupkg.sha512",
+    "C:\\Users\\UDAI KC\\.nuget\\packages\\microsoft.aspnetcore.app.runtime.win-x64\\8.0.7\\microsoft.aspnetcore.app.runtime.win-x64.8.0.7.nupkg.sha512"
   ],
   "logs": []
 }

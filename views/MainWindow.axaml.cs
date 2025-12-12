@@ -12,6 +12,7 @@ using System;
 using copier.Models;
 using copier.Services;
 using copier.Helper;
+using Avalonia.Media;
 
 namespace copier.Views
 {
@@ -23,6 +24,8 @@ namespace copier.Views
         private bool _isAutoSaveDone = false;
         private bool _isNewPanelOpen = false;
         private bool _isSearchPanelOpen = false;
+        private int _selectedIndex = -1;
+        private StackPanel? _selectedPanel = null;
 
         private readonly string AutoSavePath =
             Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "CopierApp", "autosave.json");
@@ -124,17 +127,22 @@ namespace copier.Views
                 var titleText = entry.Children[0] as TextBlock;
                 string title = titleText?.Text?.ToLower() ?? "";
 
-                // If you also want to search in body, include editableText check:
-                // var editableText = entry.Children[1] as TextBox;
-                // string text = editableText?.Text?.ToLower() ?? "";
-                // if (title.Contains(filter) || text.Contains(filter)) { ... }
-
                 if (title.Contains(filter))
                 {
                     stack.Children.Add(entry);
                 }
             }
+
+            // If the currently selected panel is visible in the new filtered list, keep it.
+            // Otherwise, select the first visible panel (if any)
+            if (_selectedPanel == null || !stack.Children.Contains(_selectedPanel))
+            {
+                _selectedPanel = stack.Children.FirstOrDefault() as StackPanel;
+            }
+
+            UpdateSelection(stack);
         }
+
 
         [Obsolete]
         private async void Export_Click(object? sender, RoutedEventArgs e)
@@ -348,6 +356,10 @@ namespace copier.Views
             // Reset the filter (show all items)
             FilterEntries("");
 
+            _selectedIndex = -1;
+            var stack = this.FindControl<StackPanel>("ItemsPanel")!;
+            UpdateSelection(stack);
+
             // Now hide the panel
             HideSearchPanel();
         }
@@ -381,6 +393,25 @@ namespace copier.Views
                     HideInputPanel();
                 }
             }
+
+            var stack = this.FindControl<StackPanel>("ItemsPanel");
+            if (stack.Children.Count == 0)
+                return;
+
+            if (e.Key == Key.Down)
+            {
+                int currentIndex = _selectedPanel != null ? stack.Children.IndexOf(_selectedPanel) : -1;
+                int nextIndex = Math.Min(currentIndex + 1, stack.Children.Count - 1);
+                _selectedPanel = stack.Children[nextIndex] as StackPanel;
+                UpdateSelection(stack);
+            }
+            else if (e.Key == Key.Up)
+            {
+                int currentIndex = _selectedPanel != null ? stack.Children.IndexOf(_selectedPanel) : stack.Children.Count;
+                int prevIndex = Math.Max(currentIndex - 1, 0);
+                _selectedPanel = stack.Children[prevIndex] as StackPanel;
+                UpdateSelection(stack);
+            }
         }
 
         private bool CanSwitchPanels()
@@ -404,5 +435,19 @@ namespace copier.Views
 
             return true;
         }
+
+        private void UpdateSelection(StackPanel itemsPanel)
+        {
+            var highlightBrush = new SolidColorBrush(Color.Parse("#ADD8E6")); // Light blue
+            var defaultBrush = new SolidColorBrush(Colors.Transparent);
+
+            foreach (var child in itemsPanel.Children.OfType<StackPanel>())
+            {
+                child.Background = (child == _selectedPanel) ? highlightBrush : defaultBrush;
+            }
+
+            _selectedPanel?.BringIntoView();
+        }
+
     }
 }

@@ -136,6 +136,12 @@ namespace copier.Services
                 {
                     ReorderPanels(parent);
                 }
+
+                var searchBox = window.FindControl<TextBox>("SearchBox");
+                if (searchBox != null)
+                {
+                    searchBox.Text = "";
+                }
             };
 
             // Add to internal list (Panels). Caller may also choose to add it to UI container.

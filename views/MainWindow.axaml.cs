@@ -21,6 +21,8 @@ namespace copier.Views
         private readonly EntryManager entryManager;
         private System.Timers.Timer? _debounceTimer;
         private bool _isAutoSaveDone = false;
+        private bool _isNewPanelOpen = false;
+        private bool _isSearchPanelOpen = false;
 
         private readonly string AutoSavePath =
             Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "CopierApp", "autosave.json");
@@ -34,6 +36,7 @@ namespace copier.Views
             entryManager = new EntryManager(allEntryPanels);
 
             AutoLoad();
+            this.KeyUp += MainWindow_KeyUp;
             this.Closing += OnWindowClosing;
             this.AddHandler(Button.ClickEvent, Remove_Click);
         }
@@ -77,7 +80,11 @@ namespace copier.Views
 
         private void SearchBox_KeyUp(object? sender, KeyEventArgs e)
         {
-            var searchBox = this.FindControl<TextBox>("SearchBox")!;
+            // 🛑 Ignore ESC key – let MainWindow handle it
+            if (e.Key == Key.Escape)
+                return;
+
+            var searchBox = this.FindControl<TextBox>("SearchInputBox")!;
             string text = searchBox.Text ?? "";
 
             // stop previous timer if typing continues
@@ -87,14 +94,13 @@ namespace copier.Views
                 _debounceTimer.Dispose();
             }
 
-            _debounceTimer = new System.Timers.Timer(250); // 250ms debounce
+            _debounceTimer = new System.Timers.Timer(250); // debounce
             _debounceTimer.Elapsed += (s, _) =>
             {
                 _debounceTimer?.Stop();
                 _debounceTimer?.Dispose();
                 _debounceTimer = null;
 
-                // Ensure UI thread invocation
                 Avalonia.Threading.Dispatcher.UIThread.Post(() =>
                 {
                     FilterEntries(text);
@@ -104,6 +110,7 @@ namespace copier.Views
             _debounceTimer.AutoReset = false;
             _debounceTimer.Start();
         }
+
 
 
         private void FilterEntries(string? filter)
@@ -250,11 +257,17 @@ namespace copier.Views
 
         private void ShowInputPanel()
         {
+            if (!CanSwitchPanels()) return;
+
+            HideSearchPanel(); // ensure no conflict
+
             var inputPanel = this.FindControl<StackPanel>("InputPanel");
             inputPanel.IsVisible = true;
 
-            // focus title box
             this.FindControl<TextBox>("TitleInputBox").Focus();
+
+            _isNewPanelOpen = true;
+            _isSearchPanelOpen = false;
         }
 
         private void HideInputPanel()
@@ -262,12 +275,10 @@ namespace copier.Views
             var inputPanel = this.FindControl<StackPanel>("InputPanel");
             inputPanel.IsVisible = false;
 
-            // clear fields
-            var box = this.FindControl<TextBox>("TitleInputBox");
-            if (box != null) box.Text = "";
+            this.FindControl<TextBox>("TitleInputBox").Text = "";
+            this.FindControl<TextBox>("TextInputBox").Text = "";
 
-            var box1= this.FindControl<TextBox>("TextInputBox");
-            if (box1 != null) box1.Text = "";
+            _isNewPanelOpen = false;
         }
 
         private void New_Click(object? sender, RoutedEventArgs e)
@@ -297,5 +308,102 @@ namespace copier.Views
 
             AutoSave();
         }
+
+        private void ShowSearchPanel()
+        {
+            if (!CanSwitchPanels()) return;
+
+            // Ensure NewPanel is closed first
+            HideInputPanel();
+
+            var panel = this.FindControl<StackPanel>("SearchPanel");
+            panel.IsVisible = true;
+
+            _isSearchPanelOpen = true;
+            _isNewPanelOpen = false;
+
+            this.FindControl<TextBox>("SearchInputBox").Focus();
+        }
+
+        private void HideSearchPanel()
+        {
+            var panel = this.FindControl<StackPanel>("SearchPanel");
+            panel.IsVisible = false;
+
+            _isSearchPanelOpen = false;
+        }
+
+        private void Search_Click(object? sender, RoutedEventArgs e)
+        {
+            ShowSearchPanel();
+        }
+
+        private void CancelSearch_Click(object? sender, RoutedEventArgs e)
+        {
+            var searchBox = this.FindControl<TextBox>("SearchInputBox")!;
+
+            // Clear the text
+            searchBox.Text = "";
+
+            // Reset the filter (show all items)
+            FilterEntries("");
+
+            // Now hide the panel
+            HideSearchPanel();
+        }
+
+
+        private void MainWindow_KeyUp(object? sender, KeyEventArgs e)
+        {
+            // CTRL + F opens search
+            if (e.KeyModifiers == KeyModifiers.Control && e.Key == Key.F)
+            {
+                ShowSearchPanel();
+            }
+
+            if (e.KeyModifiers == KeyModifiers.Control && e.Key == Key.N)
+            {
+                ShowInputPanel();
+            }
+
+            // ESC closes whichever is open
+            if (e.Key == Key.Escape)
+            {
+                if (_isSearchPanelOpen)
+                {
+                    var searchBox = this.FindControl<TextBox>("SearchInputBox");
+                    searchBox.Text = "";   // clear filter
+                    FilterEntries("");     // reset list
+                    HideSearchPanel();     // hide panel
+                }
+                else if (_isNewPanelOpen)
+                {
+                    HideInputPanel();
+                }
+            }
+        }
+
+        private bool CanSwitchPanels()
+        {
+            var titleBox = this.FindControl<TextBox>("TitleInputBox");
+            var textBox = this.FindControl<TextBox>("TextInputBox");
+            var searchBox = this.FindControl<TextBox>("SearchInputBox");
+
+            bool inputHasText = !string.IsNullOrWhiteSpace(titleBox.Text)
+                                || !string.IsNullOrWhiteSpace(textBox.Text);
+
+            bool searchHasText = !string.IsNullOrWhiteSpace(searchBox.Text);
+
+            // If New panel is open AND user typed something → cannot switch
+            if (_isNewPanelOpen && inputHasText)
+                return false;
+
+            // If Search panel is open AND user typed something → cannot switch
+            if (_isSearchPanelOpen && searchHasText)
+                return false;
+
+            return true;
+        }
+
     }
 }

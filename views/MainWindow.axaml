@@ -12,11 +12,20 @@
         <DockPanel Margin="10 50 10 10">
 
             <!-- Search bar -->
-            <TextBox x:Name="SearchBox"
-                    Watermark="Search titles or text..."
-                    DockPanel.Dock="Top"
-                    Margin="0 0 0 10"
-                    KeyUp="SearchBox_KeyUp"/>
+            <StackPanel x:Name="SearchPanel"
+                        DockPanel.Dock="Top"
+                        Orientation="Horizontal"
+                        Spacing="10"
+                        IsVisible="False">
+
+                <TextBox x:Name="SearchInputBox"
+                        Width="250"
+                        Watermark="Type to search..."
+                        KeyUp="SearchBox_KeyUp"/>
+
+                <Button Content="Cancel Search"
+                        Click="CancelSearch_Click"/>
+            </StackPanel>
 
             <!-- Input area for new title/text -->
             <StackPanel DockPanel.Dock="Top" Orientation="Horizontal" Spacing="10"

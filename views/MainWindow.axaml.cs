@@ -404,6 +404,5 @@ namespace copier.Views
 
             return true;
         }
-
     }
 }

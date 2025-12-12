@@ -47,7 +47,10 @@
                 </StackPanel>
             </StackPanel>
 
-            <Button Content="New" Click="New_Click"/>
+            <StackPanel Orientation="Horizontal" Spacing="10">
+                <Button Content="Search" Click="Search_Click"/>
+                <Button Content="New" Click="New_Click"/>
+            </StackPanel>
 
             <!-- Scrollable list of entries -->
             <ScrollViewer VerticalScrollBarVisibility="Auto">

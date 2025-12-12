@@ -20,6 +20,7 @@ namespace copier.Views
         private readonly List<StackPanel> allEntryPanels = new();
         private readonly EntryManager entryManager;
         private System.Timers.Timer? _debounceTimer;
+        private bool _isAutoSaveDone = false;
 
         private readonly string AutoSavePath =
             Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "CopierApp", "autosave.json");
@@ -33,7 +34,7 @@ namespace copier.Views
             entryManager = new EntryManager(allEntryPanels);
 
             AutoLoad();
-            this.Closing += (_, _) => AutoSave();
+            this.Closing += OnWindowClosing;
             this.AddHandler(Button.ClickEvent, Remove_Click);
         }
 
@@ -289,5 +290,12 @@ namespace copier.Views
             }
         }
 
+        private void OnWindowClosing(object? sender, WindowClosingEventArgs e)
+        {
+            if (_isAutoSaveDone) return;   // Prevent double-save
+            _isAutoSaveDone = true;
+
+            AutoSave();
+        }
     }
 }

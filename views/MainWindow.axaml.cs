@@ -47,7 +47,7 @@ namespace copier.Views
             string title = titleBox.Text ?? "";
             string text = textBox.Text ?? "";
 
-            if (string.IsNullOrWhiteSpace(title) && string.IsNullOrWhiteSpace(text))
+            if (string.IsNullOrWhiteSpace(title) || string.IsNullOrWhiteSpace(text))
                 return;
 
             AddEntry(title, text);

@@ -4,6 +4,7 @@
         Title="Copier App"
         Background="Transparent"
         Width="600" Height="400">
+
         <DockPanel Margin="10">
 
             <!-- Search bar -->
@@ -14,17 +15,26 @@
                     KeyUp="SearchBox_KeyUp"/>
 
             <!-- Input area for new title/text -->
-            <StackPanel DockPanel.Dock="Top" Orientation="Horizontal" Spacing="10">
-                <TextBox x:Name="TitleInputBox" Width="150" Watermark="Enter title..." />
-                <TextBox x:Name="TextInputBox"
-         Width="250"
-         Height="150"
-         AcceptsReturn="True"
-         TextWrapping="Wrap"
-         Watermark="Enter text..." />
+            <StackPanel DockPanel.Dock="Top" Orientation="Horizontal" Spacing="10"
+                        x:Name="InputPanel"
+                        IsVisible="False">  <!-- Hidden by default -->
 
-                <Button Content="Add" Click="Add_Click"/>
+                <TextBox x:Name="TitleInputBox" Width="150" Watermark="Enter title..." />
+
+                <TextBox x:Name="TextInputBox"
+                        Width="250"
+                        Height="150"
+                        AcceptsReturn="True"
+                        TextWrapping="Wrap"
+                        Watermark="Enter text..." />
+
+                <StackPanel Orientation="Vertical" Spacing="5">
+                    <Button Content="Add" Click="Add_Click"/>
+                    <Button Content="Cancel" Click="Cancel_Click"/>
+                </StackPanel>
             </StackPanel>
+
+            <Button Content="New" Click="New_Click"/>
 
             <!-- Scrollable list of entries -->
             <ScrollViewer VerticalScrollBarVisibility="Auto">

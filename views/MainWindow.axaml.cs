@@ -47,12 +47,14 @@ namespace copier.Views
             string title = titleBox.Text ?? "";
             string text = textBox.Text ?? "";
 
-            if (string.IsNullOrWhiteSpace(title) && string.IsNullOrWhiteSpace(text)) return;
+            if (string.IsNullOrWhiteSpace(title) && string.IsNullOrWhiteSpace(text))
+                return;
 
             AddEntry(title, text);
-            titleBox.Text = "";
-            textBox.Text = "";
+
+            HideInputPanel();
         }
+
 
         /// <summary>
         /// Adds a new entry to UI and internal lists. New entries are unpinned by default.
@@ -244,5 +246,48 @@ namespace copier.Views
                 }
             }
         }
+
+        private void ShowInputPanel()
+        {
+            var inputPanel = this.FindControl<StackPanel>("InputPanel");
+            inputPanel.IsVisible = true;
+
+            // focus title box
+            this.FindControl<TextBox>("TitleInputBox").Focus();
+        }
+
+        private void HideInputPanel()
+        {
+            var inputPanel = this.FindControl<StackPanel>("InputPanel");
+            inputPanel.IsVisible = false;
+
+            // clear fields
+            var box = this.FindControl<TextBox>("TitleInputBox");
+            if (box != null) box.Text = "";
+
+            var box1= this.FindControl<TextBox>("TextInputBox");
+            if (box1 != null) box1.Text = "";
+        }
+
+        private void New_Click(object? sender, RoutedEventArgs e)
+        {
+            ShowInputPanel();
+        }
+
+        private void Cancel_Click(object? sender, RoutedEventArgs e)
+        {
+            HideInputPanel();
+        }
+
+        protected override void OnKeyUp(KeyEventArgs e)
+        {
+            base.OnKeyUp(e);
+
+            if (e.KeyModifiers == KeyModifiers.Control && e.Key == Key.N)
+            {
+                ShowInputPanel();
+            }
+        }
+
     }
 }

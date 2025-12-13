@@ -367,6 +367,7 @@ namespace copier.Views
 
         private void MainWindow_KeyUp(object? sender, KeyEventArgs e)
         {
+
             // CTRL + F opens search
             if (e.KeyModifiers == KeyModifiers.Control && e.Key == Key.F)
             {
@@ -397,6 +398,19 @@ namespace copier.Views
             var stack = this.FindControl<StackPanel>("ItemsPanel");
             if (stack.Children.Count == 0)
                 return;
+
+            if (_selectedPanel != null)
+            {
+                var editingBox = _selectedPanel.Children
+                    .OfType<TextBox>()
+                    .FirstOrDefault(tb => !tb.IsReadOnly);
+
+                if (editingBox != null)
+                {
+                    // Prevent selection movement when editing
+                    return;
+                }
+            }
 
             if (e.Key == Key.Down)
             {
@@ -430,6 +444,45 @@ namespace copier.Views
                     this.Clipboard.SetTextAsync(combined);
                 }
             }
+
+            if (e.Key == Avalonia.Input.Key.F2 && _selectedPanel != null)
+            {
+                // find the editable TextBox (it is a direct child at index 1)
+                var editableText = _selectedPanel.Children.OfType<TextBox>().FirstOrDefault();
+
+                // find any Panel child (WrapPanel) that contains the buttons, then pick the Edit/Save button
+                var buttonsContainer = _selectedPanel.Children.OfType<Panel>().FirstOrDefault(); // this will match the WrapPanel
+                Button? editButton = null;
+                if (buttonsContainer != null)
+                {
+                    editButton = buttonsContainer.Children
+                        .OfType<Button>()
+                        .FirstOrDefault(b => (b.Content?.ToString() == "Edit") || (b.Content?.ToString() == "Save"));
+                }
+
+                if (editableText != null && editButton != null)
+                {
+                    // Only *start* editing on F2 (don't toggle to Save). Shift+Enter will handle saving.
+                    if (editableText.IsReadOnly)
+                    {
+                        editableText.IsReadOnly = false;
+                        editableText.Focusable = true;
+                        editableText.IsHitTestVisible = true;
+                        editableText.Background = Brushes.White;
+                        editableText.Foreground = Brushes.Black;
+
+                        // put caret at the end after focus
+                        editableText.Focus();
+                        Avalonia.Threading.Dispatcher.UIThread.Post(() =>
+                        {
+                            editableText.CaretIndex = (editableText.Text ?? "").Length;
+                        });
+
+                        editButton.Content = "Save";
+                    }
+                }
+            }
+
         }
 
         private bool CanSwitchPanels()

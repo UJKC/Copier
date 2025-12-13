@@ -135,6 +135,30 @@ namespace copier.Services
                 }
             };
 
+            // allow Shift+Enter to save (when editing) — use KeyUp which is more reliable for modifier state
+            editableText.KeyUp += (_, e) =>
+            {
+                if (e.Key == Avalonia.Input.Key.Enter && e.KeyModifiers.HasFlag(Avalonia.Input.KeyModifiers.Shift))
+                {
+                    // Only save if currently editable
+                    if (!editableText.IsReadOnly)
+                    {
+                        editableText.IsReadOnly = true;
+                        editableText.Focusable = false;
+                        editableText.IsHitTestVisible = false;
+                        editableText.Background = Brushes.LightGray;
+                        editableText.Foreground = Brushes.Black;
+
+                        editButton.Content = "Edit";
+
+                        // mark handled so the Enter doesn't insert an extra newline
+                        e.Handled = true;
+                    }
+                }
+            };
+
+
+
             // pin toggle: toggles the EntryPanelState and updates button text
             pinButton.Click += (_, _) =>
             {
@@ -152,7 +176,7 @@ namespace copier.Services
                     ReorderPanels(parent);
                 }
 
-                var searchBox = window.FindControl<TextBox>("SearchBox");
+                var searchBox = window.FindControl<TextBox>("SearchInputBox");
                 if (searchBox != null)
                 {
                     searchBox.Text = "";
@@ -200,9 +224,8 @@ namespace copier.Services
                     state.IsPinned = entry.IsPinned;
 
                     // update pin button label (button is in panel.Children[2] StackPanel)
-                    if (panel.Children[2] is StackPanel sp)
+                    if (panel.Children[2] is Panel sp)
                     {
-                        // find the pin button
                         var pinBtn = sp.Children.OfType<Button>().FirstOrDefault(b =>
                             (b.Content?.ToString() == "Pin" || b.Content?.ToString() == "Unpin"));
                         if (pinBtn != null)

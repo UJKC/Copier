@@ -19,12 +19,14 @@ namespace copier.Services
 
         private System.Timers.Timer? _debounceTimer;
         private StackPanel? _selectedPanel;
+        private readonly Action _hideSearchPanel;
 
         public SearchService(
             Window window,
             List<StackPanel> allEntryPanels,
             Func<bool> canSwitchPanels,
             Action hideInputPanel,
+            Action hideSearchPanel,   // 👈 ADD
             Action<bool> setSearchPanelOpen,
             Action<bool> setNewPanelOpen)
         {
@@ -32,36 +34,9 @@ namespace copier.Services
             _allEntryPanels = allEntryPanels;
             _canSwitchPanels = canSwitchPanels;
             _hideInputPanel = hideInputPanel;
+            _hideSearchPanel = hideSearchPanel;
             _setSearchPanelOpen = setSearchPanelOpen;
             _setNewPanelOpen = setNewPanelOpen;
-        }
-
-        // -----------------------------
-        // Show / Hide Search Panel
-        // -----------------------------
-        public void ShowSearchPanel()
-        {
-            if (!_canSwitchPanels())
-                return;
-
-            // Ensure NewPanel is closed first
-            _hideInputPanel();
-
-            var panel = _window.FindControl<StackPanel>("SearchPanel");
-            panel.IsVisible = true;
-
-            _setSearchPanelOpen(true);
-            _setNewPanelOpen(false);
-
-            _window.FindControl<TextBox>("SearchInputBox").Focus();
-        }
-
-        public void HideSearchPanel()
-        {
-            var panel = _window.FindControl<StackPanel>("SearchPanel");
-            panel.IsVisible = false;
-
-            _setSearchPanelOpen(false);
         }
 
         // -----------------------------
@@ -125,7 +100,7 @@ namespace copier.Services
             searchBox.Text = "";
 
             FilterEntries("");
-            HideSearchPanel();
+            _hideSearchPanel();
         }
 
         // -----------------------------

@@ -25,10 +25,6 @@ namespace copier.Views
         private readonly SearchService searchService;
         private System.Timers.Timer? _debounceTimer;
         private bool _isAutoSaveDone = false;
-        private bool _isNewPanelOpen = false;
-        private bool _isSearchPanelOpen = false;
-        private int _selectedIndex = -1;
-        private StackPanel? _selectedPanel = null;
 
         private readonly string AutoSavePath =
             Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "CopierApp", "autosave.json");
@@ -42,7 +38,15 @@ namespace copier.Views
             entryManager = new EntryManager(allEntryPanels);
             uiManager = new UIManager(this, entryManager, allEntryPanels);
             autoSaveService = new AutoSaveService(AutoSavePath, this, entryManager, allEntryPanels);
-            searchService = new SearchService(this, allEntryPanels, CanSwitchPanels, HideInputPanel, v => _isSearchPanelOpen = v, v => _isNewPanelOpen = v);
+            searchService = new SearchService(
+                this,
+                allEntryPanels,
+                uiManager.CanSwitchPanels,
+                uiManager.HideInputPanel,
+                uiManager.HideSearchPanel,
+                uiManager.SetSearchPanelOpen,
+                uiManager.SetNewPanelOpen
+            );
 
             AutoLoad();
             this.KeyUp += MainWindow_KeyUp;
@@ -55,7 +59,7 @@ namespace copier.Views
         private void Add_Click(object? sender, RoutedEventArgs e)
         {
             if (uiManager.AddEntryAndClose())
-                    _isNewPanelOpen = false;
+                uiManager.SetNewPanelOpen(false);
         }
 
         private void SearchBox_KeyUp(object? sender, KeyEventArgs e)
@@ -108,40 +112,14 @@ namespace copier.Views
             }
         }
 
-        private void ShowInputPanel()
-        {
-            if (!CanSwitchPanels()) return;
-
-            HideSearchPanel(); // ensure no conflict
-
-            var inputPanel = this.FindControl<StackPanel>("InputPanel");
-            inputPanel.IsVisible = true;
-
-            this.FindControl<TextBox>("TitleInputBox").Focus();
-
-            _isNewPanelOpen = true;
-            _isSearchPanelOpen = false;
-        }
-
-        private void HideInputPanel()
-        {
-            var inputPanel = this.FindControl<StackPanel>("InputPanel");
-            inputPanel.IsVisible = false;
-
-            this.FindControl<TextBox>("TitleInputBox").Text = "";
-            this.FindControl<TextBox>("TextInputBox").Text = "";
-
-            _isNewPanelOpen = false;
-        }
-
         private void New_Click(object? sender, RoutedEventArgs e)
         {
-            ShowInputPanel();
+            uiManager.ShowInputPanel();
         }
 
         private void Cancel_Click(object? sender, RoutedEventArgs e)
         {
-            HideInputPanel();
+            uiManager.HideInputPanel();
         }
 
         protected override void OnKeyUp(KeyEventArgs e)
@@ -150,7 +128,7 @@ namespace copier.Views
 
             if (e.KeyModifiers == KeyModifiers.Control && e.Key == Key.N)
             {
-                ShowInputPanel();
+                uiManager.ShowInputPanel();
             }
         }
 
@@ -159,33 +137,9 @@ namespace copier.Views
             await autoSaveService.AutoSaveAsync();
         }
 
-        private void ShowSearchPanel()
-        {
-            if (!CanSwitchPanels()) return;
-
-            // Ensure NewPanel is closed first
-            HideInputPanel();
-
-            var panel = this.FindControl<StackPanel>("SearchPanel");
-            panel.IsVisible = true;
-
-            _isSearchPanelOpen = true;
-            _isNewPanelOpen = false;
-
-            this.FindControl<TextBox>("SearchInputBox").Focus();
-        }
-
-        private void HideSearchPanel()
-        {
-            var panel = this.FindControl<StackPanel>("SearchPanel");
-            panel.IsVisible = false;
-
-            _isSearchPanelOpen = false;
-        }
-
         private void Search_Click(object? sender, RoutedEventArgs e)
         {
-            searchService.ShowSearchPanel();
+            uiManager.ShowSearchPanel();
         }
 
         private void CancelSearch_Click(object? sender, RoutedEventArgs e)
@@ -196,49 +150,43 @@ namespace copier.Views
 
         private void MainWindow_KeyUp(object? sender, KeyEventArgs e)
         {
+            var selected = uiManager.SelectedPanel;
 
             // CTRL + F opens search
             if (e.KeyModifiers == KeyModifiers.Control && e.Key == Key.F)
             {
-                ShowSearchPanel();
+                uiManager.ShowSearchPanel();
             }
 
             if (e.KeyModifiers == KeyModifiers.Control && e.Key == Key.N)
             {
-                ShowInputPanel();
+                uiManager.ShowInputPanel();
             }
 
             // ESC closes whichever is open
             if (e.Key == Key.Escape)
             {
-                // ESC → close Search panel
-                if (_isSearchPanelOpen)
+                if (uiManager.IsSearchPanelOpen)
                 {
-                    var searchBox = this.FindControl<TextBox>("SearchInputBox");
+                    var searchBox = this.FindControl<TextBox>("SearchInputBox")!;
                     searchBox.Text = "";
                     searchService.FilterEntries("");
-                    searchService.HideSearchPanel();
+                    uiManager.HideSearchPanel();
                 }
-                // ESC → close New Entry panel
-                else if (_isNewPanelOpen)
+                else if (uiManager.IsNewPanelOpen)
                 {
-                    var titleBox = this.FindControl<TextBox>("TitleInputBox");
-                    var textBox  = this.FindControl<TextBox>("TextInputBox");
-
-                    titleBox.Text = "";
-                    textBox.Text  = "";
-
-                    HideInputPanel();
+                    uiManager.HideInputPanel();
                 }
             }
+
 
             var stack = this.FindControl<StackPanel>("ItemsPanel");
             if (stack.Children.Count == 0)
                 return;
 
-            if (_selectedPanel != null)
+            if (uiManager.SelectedPanel != null)
             {
-                var editingBox = _selectedPanel.Children
+                var editingBox = uiManager.SelectedPanel.Children
                     .OfType<TextBox>()
                     .FirstOrDefault(tb => !tb.IsReadOnly);
 
@@ -251,28 +199,28 @@ namespace copier.Views
 
             if (e.Key == Key.Down)
             {
-                int currentIndex = _selectedPanel != null ? stack.Children.IndexOf(_selectedPanel) : -1;
+                int currentIndex = uiManager.SelectedPanel != null ? stack.Children.IndexOf(uiManager.SelectedPanel) : -1;
                 int nextIndex = Math.Min(currentIndex + 1, stack.Children.Count - 1);
-                _selectedPanel = stack.Children[nextIndex] as StackPanel;
-                UpdateSelection(stack);
+                uiManager.SetSelectedPanel(stack.Children[nextIndex] as StackPanel);
+                uiManager.UpdateSelection(stack);
             }
             else if (e.Key == Key.Up)
             {
-                int currentIndex = _selectedPanel != null ? stack.Children.IndexOf(_selectedPanel) : stack.Children.Count;
+                int currentIndex = uiManager.SelectedPanel != null ? stack.Children.IndexOf(uiManager.SelectedPanel) : stack.Children.Count;
                 int prevIndex = Math.Max(currentIndex - 1, 0);
-                _selectedPanel = stack.Children[prevIndex] as StackPanel;
-                UpdateSelection(stack);
+                uiManager.SetSelectedPanel(stack.Children[prevIndex] as StackPanel);
+                uiManager.UpdateSelection(stack);
             }
 
             if (e.KeyModifiers == KeyModifiers.Control && e.Key == Key.C)
             {
-                if (_selectedPanel != null)
+                if (selected != null)
                 {
                     string text = "";
 
-                    if (_selectedPanel.Children[1] is TextBox tb)
+                    if (selected.Children[1] is TextBox tb)
                         text = tb.Text ?? "";
-                    else if (_selectedPanel.Children[1] is TextBlock tblock)
+                    else if (selected.Children[1] is TextBlock tblock)
                         text = tblock.Text ?? "";
 
                     string combined = $"{text}";
@@ -282,13 +230,13 @@ namespace copier.Views
                 }
             }
 
-            if (e.Key == Avalonia.Input.Key.F2 && _selectedPanel != null)
+            if (e.Key == Avalonia.Input.Key.F2 && selected != null)
             {
                 // find the editable TextBox (it is a direct child at index 1)
-                var editableText = _selectedPanel.Children.OfType<TextBox>().FirstOrDefault();
+                var editableText = selected.Children.OfType<TextBox>().FirstOrDefault();
 
                 // find any Panel child (WrapPanel) that contains the buttons, then pick the Edit/Save button
-                var buttonsContainer = _selectedPanel.Children.OfType<Panel>().FirstOrDefault(); // this will match the WrapPanel
+                var buttonsContainer = selected.Children.OfType<Panel>().FirstOrDefault(); // this will match the WrapPanel
                 Button? editButton = null;
                 if (buttonsContainer != null)
                 {
@@ -320,41 +268,6 @@ namespace copier.Views
                 }
             }
 
-        }
-
-        private bool CanSwitchPanels()
-        {
-            var titleBox = this.FindControl<TextBox>("TitleInputBox");
-            var textBox = this.FindControl<TextBox>("TextInputBox");
-            var searchBox = this.FindControl<TextBox>("SearchInputBox");
-
-            bool inputHasText = !string.IsNullOrWhiteSpace(titleBox.Text)
-                                || !string.IsNullOrWhiteSpace(textBox.Text);
-
-            bool searchHasText = !string.IsNullOrWhiteSpace(searchBox.Text);
-
-            // If New panel is open AND user typed something → cannot switch
-            if (_isNewPanelOpen && inputHasText)
-                return false;
-
-            // If Search panel is open AND user typed something → cannot switch
-            if (_isSearchPanelOpen && searchHasText)
-                return false;
-
-            return true;
-        }
-
-        private void UpdateSelection(StackPanel itemsPanel)
-        {
-            var highlightBrush = new SolidColorBrush(Color.Parse("#ADD8E6")); // Light blue
-            var defaultBrush = new SolidColorBrush(Colors.Transparent);
-
-            foreach (var child in itemsPanel.Children.OfType<StackPanel>())
-            {
-                child.Background = (child == _selectedPanel) ? highlightBrush : defaultBrush;
-            }
-
-            _selectedPanel?.BringIntoView();
         }
 
     }

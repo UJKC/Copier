@@ -20,6 +20,7 @@ namespace copier.Views
     {
         private readonly List<StackPanel> allEntryPanels = new();
         private readonly EntryManager entryManager;
+        private readonly UIManager uiManager;
         private System.Timers.Timer? _debounceTimer;
         private bool _isAutoSaveDone = false;
         private bool _isNewPanelOpen = false;
@@ -37,6 +38,7 @@ namespace copier.Views
 
             // Create the EntryManager once and reuse it (shares the allEntryPanels list)
             entryManager = new EntryManager(allEntryPanels);
+            uiManager = new UIManager(this, entryManager, allEntryPanels);
 
             AutoLoad();
             this.KeyUp += MainWindow_KeyUp;
@@ -48,37 +50,8 @@ namespace copier.Views
 
         private void Add_Click(object? sender, RoutedEventArgs e)
         {
-            var titleBox = this.FindControl<TextBox>("TitleInputBox")!;
-            var textBox = this.FindControl<TextBox>("TextInputBox")!;
-
-            string title = titleBox.Text ?? "";
-            string text = textBox.Text ?? "";
-
-            if (string.IsNullOrWhiteSpace(title) || string.IsNullOrWhiteSpace(text))
-                return;
-
-            AddEntry(title, text);
-
-            HideInputPanel();
-        }
-
-
-        /// <summary>
-        /// Adds a new entry to UI and internal lists. New entries are unpinned by default.
-        /// </summary>
-        private void AddEntry(string title, string text)
-        {
-            var itemsPanel = this.FindControl<StackPanel>("ItemsPanel")!;
-
-            // Use the shared EntryManager to create the entry UI
-            var entryPanel = entryManager.CreateEntryPanel(title, text, this);
-
-            // Add to visual container (at end). Reorder will place pinned items above automatically.
-            itemsPanel.Children.Add(entryPanel);
-
-            // Ensure Panels list (allEntryPanels) is consistent (CreateEntryPanel already added it)
-            // Reorder so new pinned items (if any) are correctly placed (new ones are unpinned by default).
-            entryManager.ReorderPanels(itemsPanel);
+            if (uiManager.AddEntryAndClose())
+                    _isNewPanelOpen = false;
         }
 
         private void SearchBox_KeyUp(object? sender, KeyEventArgs e)

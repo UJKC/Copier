@@ -5,6 +5,7 @@ using System.Text.Json;
 using System.Threading.Tasks;
 using Avalonia.Controls;
 using copier.Models;
+using System.Linq;
 
 namespace copier.Services
 {
@@ -72,5 +73,85 @@ namespace copier.Services
                 // suppress autosave errors
             }
         }
+
+        public async Task ImportAsync()
+        {
+            try
+            {
+                var fileDialog = new OpenFileDialog
+                {
+                    AllowMultiple = false,
+                    Filters = new List<FileDialogFilter>
+                    {
+                        new FileDialogFilter
+                        {
+                            Name = "JSON Files",
+                            Extensions = { "json" }
+                        }
+                    }
+                };
+
+                var result = await fileDialog.ShowAsync(_window);
+                var path = result?.FirstOrDefault();
+
+                if (path == null || !File.Exists(path))
+                    return;
+
+                var json = await File.ReadAllTextAsync(path);
+                var entries = JsonSerializer.Deserialize<List<EntryData>>(json);
+                if (entries == null)
+                    return;
+
+                var stack = _window.FindControl<StackPanel>("ItemsPanel")!;
+
+                // Clear existing entries
+                stack.Children.Clear();
+                _allEntryPanels.Clear();
+                _entryManager.Panels.Clear();
+
+                // Load imported entries (pinned-first handled internally)
+                _entryManager.LoadPanels(entries, _window, stack);
+            }
+            catch
+            {
+                // optionally log
+            }
+        }
+
+        public async Task ExportAsync()
+        {
+            try
+            {
+                var fileDialog = new SaveFileDialog
+                {
+                    Filters = new List<FileDialogFilter>
+                    {
+                        new FileDialogFilter
+                        {
+                            Name = "JSON Files",
+                            Extensions = { "json" }
+                        }
+                    },
+                    DefaultExtension = "json"
+                };
+
+                var path = await fileDialog.ShowAsync(_window);
+                if (string.IsNullOrWhiteSpace(path))
+                    return;
+
+                var entries = _entryManager.ToEntryList();
+
+                var json = JsonSerializer.Serialize(
+                    entries,
+                    new JsonSerializerOptions { WriteIndented = true });
+
+                await File.WriteAllTextAsync(path, json);
+            }
+            catch
+            {
+                // optionally log
+            }
+        }
+
     }
 }

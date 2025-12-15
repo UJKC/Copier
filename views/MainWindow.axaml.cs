@@ -122,50 +122,13 @@ namespace copier.Views
         [Obsolete]
         private async void Export_Click(object? sender, RoutedEventArgs e)
         {
-            var fileDialog = new SaveFileDialog
-            {
-                Filters = new List<FileDialogFilter> {
-                    new FileDialogFilter { Name = "JSON Files", Extensions = { "json" } }
-                },
-                DefaultExtension = "json"
-            };
-            var path = await fileDialog.ShowAsync(this);
-            if (path == null) return;
-
-            // Use EntryManager to build the data list (includes pinned state)
-            var entries = entryManager.ToEntryList();
-
-            var json = JsonSerializer.Serialize(entries, new JsonSerializerOptions { WriteIndented = true });
-            await File.WriteAllTextAsync(path, json);
+            await autoSaveService.ExportAsync();
         }
 
         [Obsolete]
         private async void Import_Click(object? sender, RoutedEventArgs e)
         {
-            var fileDialog = new OpenFileDialog
-            {
-                AllowMultiple = false,
-                Filters = new List<FileDialogFilter> {
-                    new FileDialogFilter { Name = "JSON Files", Extensions = { "json" } }
-                }
-            };
-
-            var result = await fileDialog.ShowAsync(this);
-            var path = result?.FirstOrDefault();
-            if (path == null || !File.Exists(path)) return;
-
-            var json = await File.ReadAllTextAsync(path);
-            var entries = JsonSerializer.Deserialize<List<EntryData>>(json);
-            if (entries == null) return;
-
-            // Clear existing entries
-            var stack = this.FindControl<StackPanel>("ItemsPanel")!;
-            stack.Children.Clear();
-            allEntryPanels.Clear();
-            entryManager.Panels.Clear();
-
-            // Add imported ones (LoadPanels will ensure pinned-first order)
-            entryManager.LoadPanels(entries, this, stack);
+            await autoSaveService.ImportAsync();
         }
 
         private async void AutoLoad()

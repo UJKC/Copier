@@ -34,6 +34,7 @@ namespace copier.Views
         {
             ShortcutHelper.CreateShortcutIfNeeded();
             InitializeComponent();
+            AppFileLogger.AddText("Hello");
 
             // Create the EntryManager once and reuse it (shares the allEntryPanels list)
             entryManager = new EntryManager(allEntryPanels);

@@ -23,6 +23,7 @@ namespace copier.Views
         private readonly UIManager uiManager;
         private readonly AutoSaveService autoSaveService;
         private readonly SearchService searchService;
+        private readonly KeyboardManager _keyboardManager;
         private System.Timers.Timer? _debounceTimer;
         private bool _isAutoSaveDone = false;
 
@@ -49,7 +50,8 @@ namespace copier.Views
             );
 
             AutoLoad();
-            this.KeyUp += MainWindow_KeyUp;
+            _keyboardManager = new KeyboardManager(this, uiManager, searchService);
+            this.KeyUp += _keyboardManager.HandleKeyUp;
             this.Closing += OnWindowClosing;
             this.AddHandler(Button.ClickEvent, Remove_Click);
         }

@@ -3,37 +3,74 @@ using System.Collections.Generic;
 using System.IO;
 using System.Text.Json;
 using System.Threading.Tasks;
+using Avalonia.Controls;
 using copier.Models;
 
-namespace copier.Services;
-
-public class AutoSaveService
+namespace copier.Services
 {
-    private readonly string filePath;
-
-    public AutoSaveService(string path)
+    public class AutoSaveService
     {
-        filePath = path;
-    }
+        private readonly string _filePath;
+        private readonly Window _window;
+        private readonly EntryManager _entryManager;
+        private readonly List<StackPanel> _allEntryPanels;
 
-    public async Task SaveAsync(List<EntryData> entries)
-    {
-        Directory.CreateDirectory(Path.GetDirectoryName(filePath)!);
-
-        var json = JsonSerializer.Serialize(entries, new JsonSerializerOptions
+        public AutoSaveService(
+            string filePath,
+            Window window,
+            EntryManager entryManager,
+            List<StackPanel> allEntryPanels)
         {
-            WriteIndented = true
-        });
+            _filePath = filePath;
+            _window = window;
+            _entryManager = entryManager;
+            _allEntryPanels = allEntryPanels;
+        }
 
-        await File.WriteAllTextAsync(filePath, json);
-    }
+        public async Task AutoLoadAsync()
+        {
+            try
+            {
+                if (!File.Exists(_filePath))
+                    return;
 
-    public async Task<List<EntryData>?> LoadAsync()
-    {
-        if (!File.Exists(filePath))
-            return null;
+                var json = await File.ReadAllTextAsync(_filePath);
+                var entries = JsonSerializer.Deserialize<List<EntryData>>(json);
+                if (entries == null)
+                    return;
 
-        var json = await File.ReadAllTextAsync(filePath);
-        return JsonSerializer.Deserialize<List<EntryData>>(json);
+                var stack = _window.FindControl<StackPanel>("ItemsPanel")!;
+
+                _allEntryPanels.Clear();
+                stack.Children.Clear();
+                _entryManager.Panels.Clear();
+
+                _entryManager.LoadPanels(entries, _window, stack);
+            }
+            catch
+            {
+                // optionally log
+            }
+        }
+
+        public async Task AutoSaveAsync()
+        {
+            try
+            {
+                Directory.CreateDirectory(Path.GetDirectoryName(_filePath)!);
+
+                var entries = _entryManager.ToEntryList();
+                var json = JsonSerializer.Serialize(entries, new JsonSerializerOptions
+                {
+                    WriteIndented = true
+                });
+
+                await File.WriteAllTextAsync(_filePath, json);
+            }
+            catch
+            {
+                // suppress autosave errors
+            }
+        }
     }
 }

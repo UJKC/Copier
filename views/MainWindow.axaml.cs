@@ -21,6 +21,7 @@ namespace copier.Views
         private readonly List<StackPanel> allEntryPanels = new();
         private readonly EntryManager entryManager;
         private readonly UIManager uiManager;
+        private readonly AutoSaveService autoSaveService;
         private System.Timers.Timer? _debounceTimer;
         private bool _isAutoSaveDone = false;
         private bool _isNewPanelOpen = false;
@@ -39,6 +40,7 @@ namespace copier.Views
             // Create the EntryManager once and reuse it (shares the allEntryPanels list)
             entryManager = new EntryManager(allEntryPanels);
             uiManager = new UIManager(this, entryManager, allEntryPanels);
+            autoSaveService = new AutoSaveService(AutoSavePath, this, entryManager, allEntryPanels);
 
             AutoLoad();
             this.KeyUp += MainWindow_KeyUp;
@@ -166,47 +168,9 @@ namespace copier.Views
             entryManager.LoadPanels(entries, this, stack);
         }
 
-        private async void AutoSave()
-        {
-            try
-            {
-                var saveDir = Path.GetDirectoryName(AutoSavePath);
-                if (!Directory.Exists(saveDir))
-                    Directory.CreateDirectory(saveDir!);
-
-                var entries = entryManager.ToEntryList();
-
-                var json = JsonSerializer.Serialize(entries, new JsonSerializerOptions { WriteIndented = true });
-                await File.WriteAllTextAsync(AutoSavePath, json);
-            }
-            catch
-            {
-                // suppress autosave errors to avoid crashing on exit; optionally log
-            }
-        }
-
         private async void AutoLoad()
         {
-            try
-            {
-                if (!File.Exists(AutoSavePath)) return;
-
-                var json = await File.ReadAllTextAsync(AutoSavePath);
-                var entries = JsonSerializer.Deserialize<List<EntryData>>(json);
-                if (entries == null) return;
-
-                var stack = this.FindControl<StackPanel>("ItemsPanel")!;
-                allEntryPanels.Clear();
-                stack.Children.Clear();
-                entryManager.Panels.Clear();
-
-                // Use EntryManager.LoadPanels which also reorders pinned-first
-                entryManager.LoadPanels(entries, this, stack);
-            }
-            catch
-            {
-                // ignore load errors (corrupt file etc.), or optionally show a message
-            }
+            await autoSaveService.AutoLoadAsync();
         }
 
         private void ClearAll_Click(object? sender, RoutedEventArgs e)
@@ -282,12 +246,9 @@ namespace copier.Views
             }
         }
 
-        private void OnWindowClosing(object? sender, WindowClosingEventArgs e)
+        private async void OnWindowClosing(object? sender, WindowClosingEventArgs e)
         {
-            if (_isAutoSaveDone) return;   // Prevent double-save
-            _isAutoSaveDone = true;
-
-            AutoSave();
+            await autoSaveService.AutoSaveAsync();
         }
 
         private void ShowSearchPanel()

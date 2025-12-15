@@ -22,6 +22,7 @@ namespace copier.Views
         private readonly EntryManager entryManager;
         private readonly UIManager uiManager;
         private readonly AutoSaveService autoSaveService;
+        private readonly SearchService searchService;
         private System.Timers.Timer? _debounceTimer;
         private bool _isAutoSaveDone = false;
         private bool _isNewPanelOpen = false;
@@ -41,6 +42,7 @@ namespace copier.Views
             entryManager = new EntryManager(allEntryPanels);
             uiManager = new UIManager(this, entryManager, allEntryPanels);
             autoSaveService = new AutoSaveService(AutoSavePath, this, entryManager, allEntryPanels);
+            searchService = new SearchService(this, allEntryPanels, CanSwitchPanels, HideInputPanel, v => _isSearchPanelOpen = v, v => _isNewPanelOpen = v);
 
             AutoLoad();
             this.KeyUp += MainWindow_KeyUp;
@@ -58,64 +60,7 @@ namespace copier.Views
 
         private void SearchBox_KeyUp(object? sender, KeyEventArgs e)
         {
-            // 🛑 Ignore ESC key – let MainWindow handle it
-            if (e.Key == Key.Escape)
-                return;
-
-            var searchBox = this.FindControl<TextBox>("SearchInputBox")!;
-            string text = searchBox.Text ?? "";
-
-            // stop previous timer if typing continues
-            if (_debounceTimer != null)
-            {
-                _debounceTimer.Stop();
-                _debounceTimer.Dispose();
-            }
-
-            _debounceTimer = new System.Timers.Timer(250); // debounce
-            _debounceTimer.Elapsed += (s, _) =>
-            {
-                _debounceTimer?.Stop();
-                _debounceTimer?.Dispose();
-                _debounceTimer = null;
-
-                Avalonia.Threading.Dispatcher.UIThread.Post(() =>
-                {
-                    FilterEntries(text);
-                });
-            };
-
-            _debounceTimer.AutoReset = false;
-            _debounceTimer.Start();
-        }
-
-
-
-        private void FilterEntries(string? filter)
-        {
-            var stack = this.FindControl<StackPanel>("ItemsPanel")!;
-            stack.Children.Clear();
-            filter = filter?.Trim().ToLower() ?? "";
-
-            foreach (var entry in allEntryPanels)
-            {
-                var titleText = entry.Children[0] as TextBlock;
-                string title = titleText?.Text?.ToLower() ?? "";
-
-                if (title.Contains(filter))
-                {
-                    stack.Children.Add(entry);
-                }
-            }
-
-            // If the currently selected panel is visible in the new filtered list, keep it.
-            // Otherwise, select the first visible panel (if any)
-            if (_selectedPanel == null || !stack.Children.Contains(_selectedPanel))
-            {
-                _selectedPanel = stack.Children.FirstOrDefault() as StackPanel;
-            }
-
-            UpdateSelection(stack);
+            searchService.SearchBox_KeyUp(sender, e);
         }
 
 
@@ -240,25 +185,12 @@ namespace copier.Views
 
         private void Search_Click(object? sender, RoutedEventArgs e)
         {
-            ShowSearchPanel();
+            searchService.ShowSearchPanel();
         }
 
         private void CancelSearch_Click(object? sender, RoutedEventArgs e)
         {
-            var searchBox = this.FindControl<TextBox>("SearchInputBox")!;
-
-            // Clear the text
-            searchBox.Text = "";
-
-            // Reset the filter (show all items)
-            FilterEntries("");
-
-            _selectedIndex = -1;
-            var stack = this.FindControl<StackPanel>("ItemsPanel")!;
-            UpdateSelection(stack);
-
-            // Now hide the panel
-            HideSearchPanel();
+            searchService.CancelSearch_Click(sender, e);
         }
 
 
@@ -279,15 +211,23 @@ namespace copier.Views
             // ESC closes whichever is open
             if (e.Key == Key.Escape)
             {
+                // ESC → close Search panel
                 if (_isSearchPanelOpen)
                 {
                     var searchBox = this.FindControl<TextBox>("SearchInputBox");
-                    searchBox.Text = "";   // clear filter
-                    FilterEntries("");     // reset list
-                    HideSearchPanel();     // hide panel
+                    searchBox.Text = "";
+                    searchService.FilterEntries("");
+                    searchService.HideSearchPanel();
                 }
+                // ESC → close New Entry panel
                 else if (_isNewPanelOpen)
                 {
+                    var titleBox = this.FindControl<TextBox>("TitleInputBox");
+                    var textBox  = this.FindControl<TextBox>("TextInputBox");
+
+                    titleBox.Text = "";
+                    textBox.Text  = "";
+
                     HideInputPanel();
                 }
             }

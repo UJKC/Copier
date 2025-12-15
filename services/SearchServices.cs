@@ -69,7 +69,7 @@ namespace copier.Services
         // -----------------------------
         // Filter entries
         // -----------------------------
-        public void FilterEntries(string? filter)
+        public void FilterEntries(string? filter, StackPanel? currentlySelected = null)
         {
             var itemsPanel = _window.FindControl<StackPanel>("ItemsPanel")!;
             itemsPanel.Children.Clear();
@@ -85,11 +85,15 @@ namespace copier.Services
                 }
             }
 
-            if (_selectedPanel == null || !itemsPanel.Children.Contains(_selectedPanel))
+            // Keep the current selection if possible
+            if (currentlySelected != null && itemsPanel.Children.Contains(currentlySelected))
+                _selectedPanel = currentlySelected;
+            else
                 _selectedPanel = itemsPanel.Children.FirstOrDefault() as StackPanel;
 
             UpdateSelection(itemsPanel);
         }
+
 
         // -----------------------------
         // Cancel search

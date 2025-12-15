@@ -39,13 +39,7 @@ namespace copier.Views
             entryManager = new EntryManager(allEntryPanels);
             uiManager = new UIManager(this, entryManager, allEntryPanels);
             autoSaveService = new AutoSaveService(AutoSavePath, this, entryManager, allEntryPanels);
-            searchService = new SearchService(
-                this,
-                allEntryPanels,
-                uiManager.CanSwitchPanels,
-                uiManager.HideInputPanel,
-                uiManager.HideSearchPanel,
-                uiManager.SetSearchPanelOpen,
+            searchService = new SearchService(this, allEntryPanels, uiManager.CanSwitchPanels, uiManager.HideInputPanel, uiManager.HideSearchPanel, uiManager.SetSearchPanelOpen,
                 uiManager.SetNewPanelOpen
             );
 
@@ -122,16 +116,6 @@ namespace copier.Views
         private void Cancel_Click(object? sender, RoutedEventArgs e)
         {
             uiManager.HideInputPanel();
-        }
-
-        protected override void OnKeyUp(KeyEventArgs e)
-        {
-            base.OnKeyUp(e);
-
-            if (e.KeyModifiers == KeyModifiers.Control && e.Key == Key.N)
-            {
-                uiManager.ShowInputPanel();
-            }
         }
 
         private async void OnWindowClosing(object? sender, WindowClosingEventArgs e)

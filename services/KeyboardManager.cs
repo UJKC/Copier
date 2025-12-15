@@ -89,7 +89,10 @@ namespace copier.Services
             {
                 var searchBox = _window.FindControl<TextBox>("SearchInputBox")!;
                 searchBox.Text = "";
-                _searchService.FilterEntries("");
+
+                // Pass the currently selected panel
+                _searchService.FilterEntries("", _uiManager.SelectedPanel);
+
                 _uiManager.HideSearchPanel();
             }
             else if (_uiManager.IsNewPanelOpen)
@@ -98,18 +101,27 @@ namespace copier.Services
             }
         }
 
+
         private void MoveSelection(StackPanel stack, int direction)
         {
+            if (stack.Children.Count == 0)
+                return;
+
             int currentIndex = _uiManager.SelectedPanel != null
                 ? stack.Children.IndexOf(_uiManager.SelectedPanel)
                 : (direction > 0 ? -1 : stack.Children.Count);
 
             int nextIndex = direction > 0
                 ? Math.Min(currentIndex + 1, stack.Children.Count - 1)
-                : Math.Max(currentIndex + direction, 0);
+                : Math.Max(currentIndex - 1, 0);
 
-            _uiManager.SetSelectedPanel(stack.Children[nextIndex] as StackPanel);
-            _uiManager.UpdateSelection(stack);
+            var nextPanel = stack.Children[nextIndex] as StackPanel;
+
+            if (nextPanel != null && nextPanel != _uiManager.SelectedPanel)
+            {
+                _uiManager.SetSelectedPanel(nextPanel);
+                _uiManager.UpdateSelection(stack);
+            }
         }
 
         private void CopySelectedText(StackPanel? selected)

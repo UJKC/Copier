@@ -74,6 +74,7 @@ namespace copier.Services
             }
         }
 
+        [Obsolete]
         public async Task ImportAsync()
         {
             try
@@ -118,6 +119,7 @@ namespace copier.Services
             }
         }
 
+        [Obsolete]
         public async Task ExportAsync()
         {
             try

@@ -13,13 +13,15 @@ namespace copier.Services
     {
         private readonly UIManager _uiManager;
         private readonly SearchService _searchService;
+        private readonly EntryManager _entryManager;
         private readonly Window _window;
 
-        public KeyboardManager(Window window, UIManager uiManager, SearchService searchService)
+        public KeyboardManager(Window window, UIManager uiManager, SearchService searchService, EntryManager entryManager)
         {
             _window = window;
             _uiManager = uiManager;
             _searchService = searchService;
+            _entryManager = entryManager;
         }
 
         public async void HandleKeyUp(object? sender, KeyEventArgs e)
@@ -56,6 +58,16 @@ namespace copier.Services
                 if (selected != null)
                 {
                     SaveSelectedEntry(selected);
+                    e.Handled = true;
+                }
+                return;
+            }
+
+            if (e.KeyModifiers == KeyModifiers.Control && e.Key == Key.P)
+            {
+                if (selected != null)
+                {
+                    TogglePinSelectedEntry(selected);
                     e.Handled = true;
                 }
                 return;
@@ -197,11 +209,42 @@ namespace copier.Services
             editableText.Foreground = Brushes.Black;
 
             TopLevel.GetTopLevel(editableText)?
-        .FocusManager?
-        .ClearFocus();
+                .FocusManager?
+                .ClearFocus();
 
             if (editButton != null)
                 editButton.Content = "Edit";
         }
+
+        private void TogglePinSelectedEntry(StackPanel selected)
+        {
+            if (selected.Tag is not EntryPanelState state)
+                return;
+
+            // Toggle pinned state
+            state.IsPinned = !state.IsPinned;
+
+            // Update button text
+            var buttonPanel = selected.Children.OfType<Panel>().FirstOrDefault();
+            var pinButton = buttonPanel?.Children
+                .OfType<Button>()
+                .FirstOrDefault(b =>
+                    b.Content?.ToString() == "Pin" ||
+                    b.Content?.ToString() == "Unpin");
+
+            if (pinButton != null)
+                pinButton.Content = state.IsPinned ? "Unpin" : "Pin";
+
+            // 🔥 Delegate reorder to EntryManager
+            var parent = selected.Parent as Panel;
+            if (parent != null)
+                _entryManager.ReorderPanels(parent);
+
+            // Clear search box
+            var searchBox = _window.FindControl<TextBox>("SearchInputBox");
+            if (searchBox != null)
+                searchBox.Text = "";
+        }
+
     }
 }

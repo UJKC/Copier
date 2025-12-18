@@ -45,7 +45,7 @@ namespace copier.Views
             );
 
             AutoLoad();
-            _keyboardManager = new KeyboardManager(this, uiManager, searchService);
+            _keyboardManager = new KeyboardManager(this, uiManager, searchService, entryManager);
             this.KeyUp += _keyboardManager.HandleKeyUp;
             this.Closing += OnWindowClosing;
             this.AddHandler(Button.ClickEvent, Remove_Click);

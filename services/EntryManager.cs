@@ -135,30 +135,6 @@ namespace copier.Services
                 }
             };
 
-            // allow Shift+Enter to save (when editing) — use KeyUp which is more reliable for modifier state
-            editableText.KeyUp += (_, e) =>
-            {
-                if (e.Key == Avalonia.Input.Key.Enter && e.KeyModifiers.HasFlag(Avalonia.Input.KeyModifiers.Shift))
-                {
-                    // Only save if currently editable
-                    if (!editableText.IsReadOnly)
-                    {
-                        editableText.IsReadOnly = true;
-                        editableText.Focusable = false;
-                        editableText.IsHitTestVisible = false;
-                        editableText.Background = Brushes.LightGray;
-                        editableText.Foreground = Brushes.Black;
-
-                        editButton.Content = "Edit";
-
-                        // mark handled so the Enter doesn't insert an extra newline
-                        e.Handled = true;
-                    }
-                }
-            };
-
-
-
             // pin toggle: toggles the EntryPanelState and updates button text
             pinButton.Click += (_, _) =>
             {

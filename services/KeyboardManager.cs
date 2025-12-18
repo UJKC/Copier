@@ -51,6 +51,16 @@ namespace copier.Services
                 return;
             }
 
+            if (e.KeyModifiers == KeyModifiers.Control && e.Key == Key.S)
+            {
+                if (selected != null)
+                {
+                    SaveSelectedEntry(selected);
+                    e.Handled = true;
+                }
+                return;
+            }
+
             // Prevent movement if editing
             if (selected != null)
             {
@@ -161,6 +171,37 @@ namespace copier.Services
 
                 editButton.Content = "Save";
             }
+        }
+
+        private void SaveSelectedEntry(StackPanel selected)
+        {
+            var editableText = selected.Children
+                .OfType<TextBox>()
+                .FirstOrDefault(tb => !tb.IsReadOnly);
+
+            if (editableText == null)
+                return;
+
+            var buttonsContainer = selected.Children.OfType<Panel>().FirstOrDefault();
+            Button? editButton = buttonsContainer?.Children
+                .OfType<Button>()
+                .FirstOrDefault(b =>
+                    b.Content?.ToString() == "Save" ||
+                    b.Content?.ToString() == "Edit");
+
+            // Lock textbox
+            editableText.IsReadOnly = true;
+            editableText.Focusable = false;
+            editableText.IsHitTestVisible = false;
+            editableText.Background = Brushes.LightGray;
+            editableText.Foreground = Brushes.Black;
+
+            TopLevel.GetTopLevel(editableText)?
+        .FocusManager?
+        .ClearFocus();
+
+            if (editButton != null)
+                editButton.Content = "Edit";
         }
     }
 }

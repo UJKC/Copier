@@ -105,6 +105,7 @@ namespace copier.Views
                     // Remove from internal list
                     allEntryPanels.Remove(entryPanel);
                     entryManager.Panels.Remove(entryPanel);
+                    uiManager.ClearSelection();
                 }
             }
         }

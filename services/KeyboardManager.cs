@@ -73,6 +73,16 @@ namespace copier.Services
                 return;
             }
 
+            if (e.KeyModifiers == KeyModifiers.Control && e.Key == Key.D)
+            {
+                if (selected != null)
+                {
+                    RemoveSelectedEntry(selected);
+                    e.Handled = true;
+                }
+                return;
+            }
+
             // Prevent movement if editing
             if (selected != null)
             {
@@ -245,6 +255,23 @@ namespace copier.Services
             if (searchBox != null)
                 searchBox.Text = "";
         }
+
+        private void RemoveSelectedEntry(StackPanel selected)
+        {
+            var parent = selected.Parent as StackPanel;
+            if (parent == null)
+                return;
+
+            // Remove from UI
+            parent.Children.Remove(selected);
+
+            // Remove from EntryManager list
+            _entryManager.Panels.Remove(selected);
+
+            // Clear selection
+            _uiManager.ClearSelection();
+        }
+
 
     }
 }

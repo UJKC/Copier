@@ -107,8 +107,8 @@ namespace copier.Services
 
         public bool CanSwitchPanels()
         {
-            var titleBox  = _window.FindControl<TextBox>("TitleInputBox")!;
-            var textBox   = _window.FindControl<TextBox>("TextInputBox")!;
+            var titleBox = _window.FindControl<TextBox>("TitleInputBox")!;
+            var textBox = _window.FindControl<TextBox>("TextInputBox")!;
             var searchBox = _window.FindControl<TextBox>("SearchInputBox")!;
 
             bool inputHasText =
@@ -139,7 +139,7 @@ namespace copier.Services
         public void UpdateSelection(StackPanel itemsPanel)
         {
             var highlightBrush = new SolidColorBrush(Color.Parse("#ADD8E6"));
-            var defaultBrush   = new SolidColorBrush(Colors.Transparent);
+            var defaultBrush = new SolidColorBrush(Colors.Transparent);
 
             foreach (var child in itemsPanel.Children.OfType<StackPanel>())
             {
@@ -158,10 +158,10 @@ namespace copier.Services
         public bool AddEntryAndClose()
         {
             var titleBox = _window.FindControl<TextBox>("TitleInputBox")!;
-            var textBox  = _window.FindControl<TextBox>("TextInputBox")!;
+            var textBox = _window.FindControl<TextBox>("TextInputBox")!;
 
             string title = titleBox.Text ?? "";
-            string text  = textBox.Text ?? "";
+            string text = textBox.Text ?? "";
 
             if (string.IsNullOrWhiteSpace(title) || string.IsNullOrWhiteSpace(text))
                 return false;
@@ -176,5 +176,17 @@ namespace copier.Services
             HideInputPanel();
             return true;
         }
+
+        public void ClearSelection()
+        {
+            if (_selectedPanel == null)
+                return;
+
+            // Optional: remove visual highlight
+            _selectedPanel.Classes.Remove("selected");
+
+            _selectedPanel = null;
+        }
+
     }
 }

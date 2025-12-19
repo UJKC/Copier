@@ -1,0 +1,194 @@
+2025-12-20 01:46:52 - Hello
+2025-12-20 01:46:52 - Entry Manager Object Created!
+2025-12-20 01:46:52 - Selected Panel: 
+2025-12-20 01:46:52 - Is Update Possible: True
+2025-12-20 01:46:52 - UI Manager Object Created!
+2025-12-20 01:46:52 - Auto Save Service Object Created!
+2025-12-20 01:46:52 - Search Service Object Created!
+2025-12-20 01:46:52 - keyboard Manager Object Created!
+2025-12-20 01:46:52 - Auto Loading in Progress!
+2025-12-20 01:46:52 - Loading!
+2025-12-20 01:46:52 - Loading Each
+2025-12-20 01:46:52 - Reordering!
+2025-12-20 01:46:52 - Loaded Each!
+2025-12-20 01:46:52 - Loaded!
+2025-12-20 01:46:52 - Auto loading complete!
+2025-12-20 01:46:52 - No of Panel: 2
+2025-12-20 01:46:54 - Handling Key Up!
+2025-12-20 01:46:54 - Var Selected: 
+2025-12-20 01:46:54 - Here1
+2025-12-20 01:46:54 - Ctrl + F typed
+2025-12-20 01:46:54 - Set Selectd Panel came here! As it is not null making it null
+2025-12-20 01:46:54 - After making it null I came here!
+2025-12-20 01:46:54 - Set Selectd Panel came here! As it is not null making it null
+2025-12-20 01:46:54 - Update Selection in Progress!
+2025-12-20 01:46:54 - Updated Selection!
+2025-12-20 01:46:54 - Input Panel Hidden!
+2025-12-20 01:46:54 - Search Panel Visible!
+2025-12-20 01:46:54 - Focus on Search Input Box!
+2025-12-20 01:46:54 - Set Selectd Panel came here! As it is not null making it null
+2025-12-20 01:46:54 - Update Selection in Progress!
+2025-12-20 01:46:54 - Updated Selection!
+2025-12-20 01:46:54 - Search Open Process Complete!
+2025-12-20 01:46:54 - ------------------------------------------
+2025-12-20 01:46:54 - Selected Panel: 
+2025-12-20 01:46:55 - Searching!!
+2025-12-20 01:46:55 - Searching afte Debounce
+2025-12-20 01:46:55 - Text: 
+2025-12-20 01:46:55 - Filte Process Started
+2025-12-20 01:46:56 - Searching!!
+2025-12-20 01:46:56 - Handling Key Up!
+2025-12-20 01:46:56 - Var Selected: 
+2025-12-20 01:46:56 - Here1
+2025-12-20 01:46:56 - Here2
+2025-12-20 01:46:56 - Here3
+2025-12-20 01:46:56 - Here4
+2025-12-20 01:46:56 - Here5
+2025-12-20 01:46:56 - Here6
+2025-12-20 01:46:56 - Here7
+2025-12-20 01:46:56 - Here8
+2025-12-20 01:46:56 - Here9
+2025-12-20 01:46:56 - Here10
+2025-12-20 01:46:56 - Searching!!
+2025-12-20 01:46:56 - Searching afte Debounce
+2025-12-20 01:46:56 - Text: U
+2025-12-20 01:46:56 - Filte Process Started
+2025-12-20 01:46:58 - Searching!!
+2025-12-20 01:46:58 - Handling Key Up!
+2025-12-20 01:46:58 - Var Selected: 
+2025-12-20 01:46:58 - Here1
+2025-12-20 01:46:58 - Here2
+2025-12-20 01:46:58 - Here3
+2025-12-20 01:46:58 - Here4
+2025-12-20 01:46:58 - Here5
+2025-12-20 01:46:58 - Here6
+2025-12-20 01:46:58 - Here7
+2025-12-20 01:46:58 - Here8
+2025-12-20 01:46:58 - Here9
+2025-12-20 01:46:58 - Here10
+2025-12-20 01:46:59 - Searching afte Debounce
+2025-12-20 01:46:59 - Text: Uj
+2025-12-20 01:46:59 - Filte Process Started
+2025-12-20 01:46:59 - Searching!!
+2025-12-20 01:46:59 - Handling Key Up!
+2025-12-20 01:46:59 - Var Selected: 
+2025-12-20 01:46:59 - Here1
+2025-12-20 01:46:59 - Here2
+2025-12-20 01:46:59 - Here3
+2025-12-20 01:46:59 - Here4
+2025-12-20 01:46:59 - Here5
+2025-12-20 01:46:59 - Here6
+2025-12-20 01:46:59 - Here7
+2025-12-20 01:46:59 - Here8
+2025-12-20 01:46:59 - Here9
+2025-12-20 01:46:59 - Here10
+2025-12-20 01:47:00 - Searching!!
+2025-12-20 01:47:00 - Handling Key Up!
+2025-12-20 01:47:00 - Var Selected: 
+2025-12-20 01:47:00 - Here1
+2025-12-20 01:47:00 - Here2
+2025-12-20 01:47:00 - Here3
+2025-12-20 01:47:00 - Here4
+2025-12-20 01:47:00 - Here5
+2025-12-20 01:47:00 - Here6
+2025-12-20 01:47:00 - Here7
+2025-12-20 01:47:00 - Here8
+2025-12-20 01:47:00 - Here9
+2025-12-20 01:47:00 - Here10
+2025-12-20 01:47:00 - Searching afte Debounce
+2025-12-20 01:47:00 - Text: Ujwa
+2025-12-20 01:47:00 - Filte Process Started
+2025-12-20 01:47:00 - Searching!!
+2025-12-20 01:47:00 - Handling Key Up!
+2025-12-20 01:47:00 - Var Selected: 
+2025-12-20 01:47:00 - Here1
+2025-12-20 01:47:00 - Here2
+2025-12-20 01:47:00 - Here3
+2025-12-20 01:47:00 - Here4
+2025-12-20 01:47:00 - Here5
+2025-12-20 01:47:00 - Here6
+2025-12-20 01:47:00 - Here7
+2025-12-20 01:47:00 - Here8
+2025-12-20 01:47:00 - Here9
+2025-12-20 01:47:00 - Here10
+2025-12-20 01:47:00 - Searching afte Debounce
+2025-12-20 01:47:00 - Text: Ujwal
+2025-12-20 01:47:00 - Filte Process Started
+2025-12-20 01:47:01 - Searching!!
+2025-12-20 01:47:01 - Handling Key Up!
+2025-12-20 01:47:01 - Var Selected: 
+2025-12-20 01:47:01 - Here1
+2025-12-20 01:47:01 - Here2
+2025-12-20 01:47:01 - Here3
+2025-12-20 01:47:01 - Here4
+2025-12-20 01:47:01 - Here5
+2025-12-20 01:47:01 - Here6
+2025-12-20 01:47:01 - Here7
+2025-12-20 01:47:01 - Here8
+2025-12-20 01:47:01 - Down key pressed
+2025-12-20 01:47:01 - Current Index: -1
+2025-12-20 01:47:01 - Next Index: 0
+2025-12-20 01:47:01 - Set Selectd Panel came here!
+2025-12-20 01:47:01 - Current Panel: 0
+2025-12-20 01:47:01 - Update Selection in Progress!
+2025-12-20 01:47:01 - Updated Selection!
+2025-12-20 01:47:01 - Updated Panels
+2025-12-20 01:47:01 - -------------------------------------------------------------------
+2025-12-20 01:47:01 - Here9
+2025-12-20 01:47:01 - Here10
+2025-12-20 01:47:04 - Searching!!
+2025-12-20 01:47:04 - Handling Key Up!
+2025-12-20 01:47:04 - Var Selected: Avalonia.Controls.StackPanel
+2025-12-20 01:47:04 - Here1
+2025-12-20 01:47:04 - Here2
+2025-12-20 01:47:04 - Here3
+2025-12-20 01:47:04 - Here4
+2025-12-20 01:47:04 - Here5
+2025-12-20 01:47:04 - Here6
+2025-12-20 01:47:04 - Here7
+2025-12-20 01:47:04 - Here8
+2025-12-20 01:47:04 - Here9
+2025-12-20 01:47:04 - Here10
+2025-12-20 01:47:04 - Here11
+2025-12-20 01:47:06 - Handling Key Up!
+2025-12-20 01:47:06 - Var Selected: Avalonia.Controls.StackPanel
+2025-12-20 01:47:06 - Here1
+2025-12-20 01:47:06 - Here2
+2025-12-20 01:47:06 - Here3
+2025-12-20 01:47:06 - Here4
+2025-12-20 01:47:06 - Here5
+2025-12-20 01:47:06 - Here6
+2025-12-20 01:47:06 - Here7
+2025-12-20 01:47:06 - Handling Key Up!
+2025-12-20 01:47:06 - Var Selected: Avalonia.Controls.StackPanel
+2025-12-20 01:47:06 - Here1
+2025-12-20 01:47:06 - Here2
+2025-12-20 01:47:06 - Here3
+2025-12-20 01:47:06 - Here4
+2025-12-20 01:47:06 - Here5
+2025-12-20 01:47:06 - Here6
+2025-12-20 01:47:06 - Here7
+2025-12-20 01:47:06 - Handling Key Up!
+2025-12-20 01:47:06 - Var Selected: Avalonia.Controls.StackPanel
+2025-12-20 01:47:06 - Here1
+2025-12-20 01:47:06 - Here2
+2025-12-20 01:47:06 - Here3
+2025-12-20 01:47:06 - Here4
+2025-12-20 01:47:06 - Here5
+2025-12-20 01:47:06 - Here6
+2025-12-20 01:47:06 - Here7
+2025-12-20 01:47:09 - Handling Key Up!
+2025-12-20 01:47:09 - Var Selected: Avalonia.Controls.StackPanel
+2025-12-20 01:47:09 - Here1
+2025-12-20 01:47:09 - Here2
+2025-12-20 01:47:09 - Here3
+2025-12-20 01:47:09 - Here4
+2025-12-20 01:47:12 - Handling Key Up!
+2025-12-20 01:47:12 - Var Selected: Avalonia.Controls.StackPanel
+2025-12-20 01:47:12 - Here1
+2025-12-20 01:47:12 - Here2
+2025-12-20 01:47:12 - Here3
+2025-12-20 01:47:12 - Filte Process Started
+2025-12-20 01:47:12 - Set Selectd Panel came here! As it is not null making it null
+2025-12-20 01:47:12 - Update Selection in Progress!
+2025-12-20 01:47:12 - Updated Selection!

@@ -52,7 +52,6 @@ namespace copier.Services
             if (e.Key == Key.Escape)
                 return;
 
-
             AppFileLogger.AddText("Searching!!");
             var searchBox = _window.FindControl<TextBox>("SearchInputBox")!;
             string text = searchBox.Text ?? "";
@@ -67,6 +66,20 @@ namespace copier.Services
 
             _debounceTimer.Elapsed += (_, _) =>
             {
+                if (_uiManager.SelectedPanel != null)
+                {
+                    var editingBox = _uiManager.SelectedPanel
+                        .Children
+                        .OfType<TextBox>()
+                        .FirstOrDefault(tb => !tb.IsReadOnly);
+
+                    if (editingBox != null)
+                    {
+                        AppFileLogger.AddText("Searching stopped!");
+                        return; // 🚫 block search during edit
+                    }
+                }
+
                 AppFileLogger.AddText("Searching afte Debounce");
                 AppFileLogger.AddText("Text: " + text);
                 Dispatcher.UIThread.Post(() => FilterEntries(text));

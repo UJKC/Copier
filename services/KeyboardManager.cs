@@ -35,9 +35,8 @@ namespace copier.Services
             }
             AppFileLogger.AddText("Handling Key Up!");
             var stack = _window.FindControl<StackPanel>("ItemsPanel");
-            if (stack == null || stack.Children.Count == 0)
+            if (_entryManager.Panels.Count == 0)
             {
-                AppFileLogger.AddText("No stack Panels Available!");
                 _uiManager.SetSelectedPanelNull(_uiManager.SelectedPanel);
                 _uiManager.ShowInputPanel();
                 return;

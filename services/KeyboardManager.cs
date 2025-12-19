@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using copier.Views;
 using copier.Services;
 using System;
+using copier.Helper;
 
 namespace copier.Services
 {
@@ -26,33 +27,62 @@ namespace copier.Services
 
         public async void HandleKeyUp(object? sender, KeyEventArgs e)
         {
+            if (e.Key is Key.LeftCtrl or Key.RightCtrl or
+              Key.LeftShift or Key.RightShift or
+              Key.LeftAlt or Key.RightAlt)
+            {
+                return;
+            }
+            AppFileLogger.AddText("Handling Key Up!");
             var stack = _window.FindControl<StackPanel>("ItemsPanel");
             if (stack == null || stack.Children.Count == 0)
+            {
+                AppFileLogger.AddText("No stack Panels Available!");
+                _uiManager.SetSelectedPanelNull(_uiManager.SelectedPanel);
+                _uiManager.ShowInputPanel();
                 return;
-
+            }
             var selected = _uiManager.SelectedPanel;
+            AppFileLogger.AddText("Var Selected: " + selected);
 
-            // CTRL + F opens search
+            AppFileLogger.AddText("Here1");
+
+            // CTRL + F opens search and No need of Selection
             if (e.KeyModifiers == KeyModifiers.Control && e.Key == Key.F)
             {
+                AppFileLogger.AddText("Ctrl + F typed");
+                if (_uiManager.SelectedPanel == null)
+                {
+                    _uiManager.SetSelectedPanelNull(_uiManager.SelectedPanel);
+                    AppFileLogger.AddText("After making it null I came here!");
+                }
                 _uiManager.ShowSearchPanel();
+                AppFileLogger.AddText("Selected Panel: " + _uiManager.SelectedPanel);
                 return;
             }
 
-            // CTRL + N opens input panel
+            AppFileLogger.AddText("Here2");
+
+            // CTRL + N opens input panel and no need of selection
             if (e.KeyModifiers == KeyModifiers.Control && e.Key == Key.N)
             {
+                AppFileLogger.AddText("Ctrl + N clicked!");
                 _uiManager.ShowInputPanel();
                 return;
             }
 
-            // ESC closes whichever panel is open
+            AppFileLogger.AddText("Here3");
+
+            // ESC closes whichever panel is open and no need of selection
             if (e.Key == Key.Escape)
             {
                 HandleEscape();
                 return;
             }
 
+            AppFileLogger.AddText("Here4");
+
+            // Selection Needed
             if (e.KeyModifiers == KeyModifiers.Control && e.Key == Key.S)
             {
                 if (selected != null)
@@ -62,6 +92,8 @@ namespace copier.Services
                 }
                 return;
             }
+
+            AppFileLogger.AddText("Here5");
 
             if (e.KeyModifiers == KeyModifiers.Control && e.Key == Key.P)
             {
@@ -73,6 +105,8 @@ namespace copier.Services
                 return;
             }
 
+            AppFileLogger.AddText("Here6");
+
             if (e.KeyModifiers == KeyModifiers.Control && e.Key == Key.D)
             {
                 if (selected != null)
@@ -83,6 +117,8 @@ namespace copier.Services
                 return;
             }
 
+            AppFileLogger.AddText("Here7");
+
             // Prevent movement if editing
             if (selected != null)
             {
@@ -92,15 +128,23 @@ namespace copier.Services
                 if (editingBox != null) return;
             }
 
+            AppFileLogger.AddText("Here8");
+
             // Arrow navigation
             if (e.Key == Key.Down)
             {
-                MoveSelection(stack, 1);
+                AppFileLogger.AddText("Down key pressed");
+                if (_uiManager.isUpdatePossible == true)
+                    MoveSelection(stack, 1);
             }
             else if (e.Key == Key.Up)
             {
-                MoveSelection(stack, -1);
+                AppFileLogger.AddText("Down Up pressed");
+                if (_uiManager.isUpdatePossible == true)
+                    MoveSelection(stack, -1);
             }
+
+            AppFileLogger.AddText("Here9");
 
             // CTRL + C copies content
             if (e.KeyModifiers == KeyModifiers.Control && e.Key == Key.C)
@@ -108,9 +152,12 @@ namespace copier.Services
                 CopySelectedText(selected);
             }
 
+            AppFileLogger.AddText("Here10");
+
             // F2 edits the selected entry
             if (e.Key == Key.F2 && selected != null)
             {
+                AppFileLogger.AddText("Here11");
                 EditSelectedEntry(selected);
             }
         }
@@ -137,22 +184,38 @@ namespace copier.Services
         private void MoveSelection(StackPanel stack, int direction)
         {
             if (stack.Children.Count == 0)
+            {
+                AppFileLogger.AddText("No panels");
                 return;
+            }
 
             int currentIndex = _uiManager.SelectedPanel != null
                 ? stack.Children.IndexOf(_uiManager.SelectedPanel)
                 : (direction > 0 ? -1 : stack.Children.Count);
 
+            AppFileLogger.AddText("Current Index: " + currentIndex);
+
             int nextIndex = direction > 0
                 ? Math.Min(currentIndex + 1, stack.Children.Count - 1)
                 : Math.Max(currentIndex - 1, 0);
 
+            AppFileLogger.AddText("Next Index: " + nextIndex);
+
             var nextPanel = stack.Children[nextIndex] as StackPanel;
+
+            if (nextPanel == null)
+            {
+                AppFileLogger.AddText("Next Panel is null");
+            }
 
             if (nextPanel != null && nextPanel != _uiManager.SelectedPanel)
             {
                 _uiManager.SetSelectedPanel(nextPanel);
+                currentIndex = _uiManager.SelectedPanel != null ? stack.Children.IndexOf(_uiManager.SelectedPanel) : (direction > 0 ? -1 : stack.Children.Count);
+                AppFileLogger.AddText("Current Panel: " + currentIndex);
                 _uiManager.UpdateSelection(stack);
+                AppFileLogger.AddText("Updated Panels");
+                AppFileLogger.AddText("-------------------------------------------------------------------");
             }
         }
 

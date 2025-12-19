@@ -1,6 +1,7 @@
 using Avalonia.Controls;
 using Avalonia.Input;
 using Avalonia.Threading;
+using copier.Helper;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -18,20 +19,24 @@ namespace copier.Services
         private readonly Action<bool> _setNewPanelOpen;
 
         private System.Timers.Timer? _debounceTimer;
-        private StackPanel? _selectedPanel;
+
         private readonly Action _hideSearchPanel;
+
+        private readonly UIManager _uiManager;
 
         public SearchService(
             Window window,
             List<StackPanel> allEntryPanels,
+            UIManager uiManager,
             Func<bool> canSwitchPanels,
             Action hideInputPanel,
-            Action hideSearchPanel,   // 👈 ADD
+            Action hideSearchPanel,
             Action<bool> setSearchPanelOpen,
             Action<bool> setNewPanelOpen)
         {
             _window = window;
             _allEntryPanels = allEntryPanels;
+            _uiManager = uiManager;
             _canSwitchPanels = canSwitchPanels;
             _hideInputPanel = hideInputPanel;
             _hideSearchPanel = hideSearchPanel;
@@ -47,6 +52,8 @@ namespace copier.Services
             if (e.Key == Key.Escape)
                 return;
 
+
+            AppFileLogger.AddText("Searching!!");
             var searchBox = _window.FindControl<TextBox>("SearchInputBox")!;
             string text = searchBox.Text ?? "";
 
@@ -60,6 +67,8 @@ namespace copier.Services
 
             _debounceTimer.Elapsed += (_, _) =>
             {
+                AppFileLogger.AddText("Searching afte Debounce");
+                AppFileLogger.AddText("Text: " + text);
                 Dispatcher.UIThread.Post(() => FilterEntries(text));
             };
 
@@ -71,6 +80,7 @@ namespace copier.Services
         // -----------------------------
         public void FilterEntries(string? filter, StackPanel? currentlySelected = null)
         {
+            AppFileLogger.AddText("Filte Process Started");
             var itemsPanel = _window.FindControl<StackPanel>("ItemsPanel")!;
             itemsPanel.Children.Clear();
 
@@ -84,16 +94,7 @@ namespace copier.Services
                     itemsPanel.Children.Add(entry);
                 }
             }
-
-            // Keep the current selection if possible
-            if (currentlySelected != null && itemsPanel.Children.Contains(currentlySelected))
-                _selectedPanel = currentlySelected;
-            else
-                _selectedPanel = itemsPanel.Children.FirstOrDefault() as StackPanel;
-
-            UpdateSelection(itemsPanel);
         }
-
 
         // -----------------------------
         // Cancel search
@@ -105,21 +106,6 @@ namespace copier.Services
 
             FilterEntries("");
             _hideSearchPanel();
-        }
-
-        // -----------------------------
-        // Selection highlight
-        // -----------------------------
-        private void UpdateSelection(StackPanel itemsPanel)
-        {
-            foreach (var child in itemsPanel.Children.OfType<StackPanel>())
-            {
-                child.Background = child == _selectedPanel
-                    ? Avalonia.Media.Brushes.LightBlue
-                    : Avalonia.Media.Brushes.Transparent;
-            }
-
-            _selectedPanel?.BringIntoView();
         }
     }
 }

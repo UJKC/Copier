@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using Avalonia.Controls;
 using copier.Models;
 using System.Linq;
+using copier.Helper;
 
 namespace copier.Services
 {
@@ -32,6 +33,7 @@ namespace copier.Services
         {
             try
             {
+                AppFileLogger.AddText("Loading!");
                 if (!File.Exists(_filePath))
                     return;
 
@@ -47,6 +49,7 @@ namespace copier.Services
                 _entryManager.Panels.Clear();
 
                 _entryManager.LoadPanels(entries, _window, stack);
+                AppFileLogger.AddText("Loaded!");
             }
             catch
             {

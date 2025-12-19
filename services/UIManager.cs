@@ -1,6 +1,7 @@
 using Avalonia.Controls;
 using Avalonia.Layout;
 using Avalonia.Media;
+using copier.Helper;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,10 +12,12 @@ namespace copier.Services
     {
         private readonly Window _window;
         private readonly EntryManager _entryManager;
-        private readonly List<StackPanel> _allEntryPanels;
+        public List<StackPanel> _allEntryPanels;
 
         private bool _isSearchPanelOpen;
         private bool _isNewPanelOpen;
+
+        public bool isUpdatePossible = true;
         private StackPanel? _selectedPanel;
 
         public bool IsSearchPanelOpen => _isSearchPanelOpen;
@@ -29,6 +32,8 @@ namespace copier.Services
             _window = window;
             _entryManager = entryManager;
             _allEntryPanels = allEntryPanels;
+            AppFileLogger.AddText("Selected Panel: " + _selectedPanel);
+            AppFileLogger.AddText("Is Update Possible: " + isUpdatePossible);
         }
 
         public void SetSearchPanelOpen(bool value)
@@ -53,6 +58,8 @@ namespace copier.Services
 
             HideSearchPanel();
 
+            isUpdatePossible = false;
+
             var inputPanel = _window.FindControl<StackPanel>("InputPanel")!;
             inputPanel.IsVisible = true;
 
@@ -60,6 +67,14 @@ namespace copier.Services
 
             _isNewPanelOpen = true;
             _isSearchPanelOpen = false;
+
+            SetSelectedPanelNull(_selectedPanel);
+
+            var itemsPanel = _window.FindControl<StackPanel>("ItemsPanel");
+            if (itemsPanel != null)
+            {
+                UpdateSelection(itemsPanel);
+            }
         }
 
         public void HideInputPanel()
@@ -70,7 +85,17 @@ namespace copier.Services
             _window.FindControl<TextBox>("TitleInputBox")!.Text = "";
             _window.FindControl<TextBox>("TextInputBox")!.Text = "";
 
+            isUpdatePossible = true;
+
             _isNewPanelOpen = false;
+
+            SetSelectedPanelNull(_selectedPanel);
+
+            var itemsPanel = _window.FindControl<StackPanel>("ItemsPanel");
+            if (itemsPanel != null)
+            {
+                UpdateSelection(itemsPanel);
+            }
         }
 
         // -----------------------------
@@ -83,14 +108,29 @@ namespace copier.Services
                 return;
 
             HideInputPanel();
+            AppFileLogger.AddText("Input Panel Hidden!");
 
             var searchPanel = _window.FindControl<StackPanel>("SearchPanel")!;
             searchPanel.IsVisible = true;
 
+            AppFileLogger.AddText("Search Panel Visible!");
+
             _window.FindControl<TextBox>("SearchInputBox")!.Focus();
+
+            AppFileLogger.AddText("Focus on Search Input Box!");
 
             _isSearchPanelOpen = true;
             _isNewPanelOpen = false;
+
+            SetSelectedPanelNull(_selectedPanel);
+
+            var itemsPanel = _window.FindControl<StackPanel>("ItemsPanel");
+            if (itemsPanel != null)
+            {
+                UpdateSelection(itemsPanel);
+            }
+            AppFileLogger.AddText("Search Open Process Complete!");
+            AppFileLogger.AddText("------------------------------------------");
         }
 
         public void HideSearchPanel()
@@ -99,6 +139,14 @@ namespace copier.Services
             searchPanel.IsVisible = false;
 
             _isSearchPanelOpen = false;
+
+            SetSelectedPanelNull(_selectedPanel);
+
+            var itemsPanel = _window.FindControl<StackPanel>("ItemsPanel");
+            if (itemsPanel != null)
+            {
+                UpdateSelection(itemsPanel);
+            }
         }
 
         // -----------------------------
@@ -133,11 +181,19 @@ namespace copier.Services
 
         public void SetSelectedPanel(StackPanel? panel)
         {
+            AppFileLogger.AddText("Set Selectd Panel came here!");
             _selectedPanel = panel;
+        }
+
+        public void SetSelectedPanelNull(StackPanel? panel)
+        {
+            AppFileLogger.AddText("Set Selectd Panel came here! As it is not null making it null");
+            _selectedPanel = null;
         }
 
         public void UpdateSelection(StackPanel itemsPanel)
         {
+            AppFileLogger.AddText("Update Selection in Progress!");
             var highlightBrush = new SolidColorBrush(Color.Parse("#ADD8E6"));
             var defaultBrush = new SolidColorBrush(Colors.Transparent);
 
@@ -147,6 +203,8 @@ namespace copier.Services
                     ? highlightBrush
                     : defaultBrush;
             }
+
+            AppFileLogger.AddText("Updated Selection!");
 
             _selectedPanel?.BringIntoView();
         }

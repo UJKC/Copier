@@ -18,7 +18,7 @@ namespace copier.Views
 {
     public partial class MainWindow : Window
     {
-        private readonly List<StackPanel> allEntryPanels = new();
+        public readonly List<StackPanel> allEntryPanels = new();
         private readonly EntryManager entryManager;
         private readonly UIManager uiManager;
         private readonly AutoSaveService autoSaveService;
@@ -38,14 +38,18 @@ namespace copier.Views
 
             // Create the EntryManager once and reuse it (shares the allEntryPanels list)
             entryManager = new EntryManager(allEntryPanels);
+            AppFileLogger.AddText("Entry Manager Object Created!");
             uiManager = new UIManager(this, entryManager, allEntryPanels);
+            AppFileLogger.AddText("UI Manager Object Created!");
             autoSaveService = new AutoSaveService(AutoSavePath, this, entryManager, allEntryPanels);
-            searchService = new SearchService(this, allEntryPanels, uiManager.CanSwitchPanels, uiManager.HideInputPanel, uiManager.HideSearchPanel, uiManager.SetSearchPanelOpen,
+            AppFileLogger.AddText("Auto Save Service Object Created!");
+            searchService = new SearchService(this, allEntryPanels, uiManager, uiManager.CanSwitchPanels, uiManager.HideInputPanel, uiManager.HideSearchPanel, uiManager.SetSearchPanelOpen,
                 uiManager.SetNewPanelOpen
             );
-
-            AutoLoad();
+            AppFileLogger.AddText("Search Service Object Created!");
             _keyboardManager = new KeyboardManager(this, uiManager, searchService, entryManager);
+            AppFileLogger.AddText("keyboard Manager Object Created!");
+            AutoLoad();
             this.KeyUp += _keyboardManager.HandleKeyUp;
             this.Closing += OnWindowClosing;
             this.AddHandler(Button.ClickEvent, Remove_Click);
@@ -79,7 +83,10 @@ namespace copier.Views
 
         private async void AutoLoad()
         {
+            AppFileLogger.AddText("Auto Loading in Progress!");
             await autoSaveService.AutoLoadAsync();
+            AppFileLogger.AddText("Auto loading complete!");
+            AppFileLogger.AddText("No of Panel: " + allEntryPanels.Count);
         }
 
         private void ClearAll_Click(object? sender, RoutedEventArgs e)
@@ -122,7 +129,9 @@ namespace copier.Views
 
         private async void OnWindowClosing(object? sender, WindowClosingEventArgs e)
         {
+            AppFileLogger.AddText("Auto Save in Progress!");
             await autoSaveService.AutoSaveAsync();
+            AppFileLogger.AddText("Closing!");
         }
 
         private void Search_Click(object? sender, RoutedEventArgs e)

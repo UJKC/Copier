@@ -109,3 +109,158 @@
 2025-12-20 12:33:56 - Set Selectd Panel came here! As it is not null making it null
 2025-12-20 12:33:56 - Update Selection in Progress!
 2025-12-20 12:33:56 - Updated Selection!
+2025-12-20 12:34:35 - Auto Save in Progress!
+2025-12-20 12:35:18 - Hello
+2025-12-20 12:35:18 - Entry Manager Object Created!
+2025-12-20 12:35:18 - Selected Panel: 
+2025-12-20 12:35:18 - Is Update Possible: True
+2025-12-20 12:35:18 - UI Manager Object Created!
+2025-12-20 12:35:18 - Auto Save Service Object Created!
+2025-12-20 12:35:18 - Search Service Object Created!
+2025-12-20 12:35:18 - keyboard Manager Object Created!
+2025-12-20 12:35:18 - Auto Loading in Progress!
+2025-12-20 12:35:18 - Loading!
+2025-12-20 12:35:18 - Loading Each
+2025-12-20 12:35:18 - Reordering!
+2025-12-20 12:35:18 - Loaded Each!
+2025-12-20 12:35:18 - Loaded!
+2025-12-20 12:35:18 - Auto loading complete!
+2025-12-20 12:35:18 - No of Panel: 2
+2025-12-20 12:35:21 - Handling Key Up!
+2025-12-20 12:35:21 - Var Selected: 
+2025-12-20 12:35:21 - Here1
+2025-12-20 12:35:21 - Clear All
+2025-12-20 12:35:21 - Here2
+2025-12-20 12:35:21 - Here3
+2025-12-20 12:35:21 - Here4
+2025-12-20 12:35:21 - Here5
+2025-12-20 12:35:21 - Here6
+2025-12-20 12:35:21 - Here7
+2025-12-20 12:35:21 - Here8
+2025-12-20 12:35:21 - Here9
+2025-12-20 12:35:21 - Here10
+2025-12-20 12:35:22 - Handling Key Up!
+2025-12-20 12:35:22 - Set Selectd Panel came here! As it is not null making it null
+2025-12-20 12:35:22 - Set Selectd Panel came here! As it is not null making it null
+2025-12-20 12:35:22 - Update Selection in Progress!
+2025-12-20 12:35:22 - Updated Selection!
+2025-12-20 12:35:22 - Set Selectd Panel came here! As it is not null making it null
+2025-12-20 12:35:22 - Update Selection in Progress!
+2025-12-20 12:35:22 - Updated Selection!
+2025-12-20 12:35:23 - Handling Key Up!
+2025-12-20 12:35:23 - Set Selectd Panel came here! As it is not null making it null
+2025-12-20 12:35:23 - Set Selectd Panel came here! As it is not null making it null
+2025-12-20 12:35:23 - Update Selection in Progress!
+2025-12-20 12:35:23 - Updated Selection!
+2025-12-20 12:35:23 - Set Selectd Panel came here! As it is not null making it null
+2025-12-20 12:35:23 - Update Selection in Progress!
+2025-12-20 12:35:23 - Updated Selection!
+2025-12-20 12:35:25 - Handling Key Up!
+2025-12-20 12:35:25 - Var Selected: 
+2025-12-20 12:35:25 - Here1
+2025-12-20 12:35:25 - Import
+2025-12-20 12:35:25 - Here2
+2025-12-20 12:35:25 - Here3
+2025-12-20 12:35:25 - Here4
+2025-12-20 12:35:25 - Here5
+2025-12-20 12:35:25 - Here6
+2025-12-20 12:35:25 - Here7
+2025-12-20 12:35:25 - Here8
+2025-12-20 12:35:25 - Here9
+2025-12-20 12:35:25 - Here10
+2025-12-20 12:35:30 - Loading Each
+2025-12-20 12:35:30 - Reordering!
+2025-12-20 12:35:30 - Loaded Each!
+2025-12-20 12:35:31 - Handling Key Up!
+2025-12-20 12:35:31 - Var Selected: 
+2025-12-20 12:35:31 - Here1
+2025-12-20 12:35:31 - Here2
+2025-12-20 12:35:31 - Here3
+2025-12-20 12:35:31 - Here4
+2025-12-20 12:35:31 - Here5
+2025-12-20 12:35:31 - Here6
+2025-12-20 12:35:31 - Here7
+2025-12-20 12:35:31 - Here8
+2025-12-20 12:35:31 - Down key pressed
+2025-12-20 12:35:31 - Here9
+2025-12-20 12:35:31 - Here10
+2025-12-20 12:35:32 - Handling Key Up!
+2025-12-20 12:35:32 - Var Selected: 
+2025-12-20 12:35:32 - Here1
+2025-12-20 12:35:32 - Here2
+2025-12-20 12:35:32 - Here3
+2025-12-20 12:35:32 - Set Selectd Panel came here! As it is not null making it null
+2025-12-20 12:35:32 - Update Selection in Progress!
+2025-12-20 12:35:32 - Updated Selection!
+2025-12-20 12:35:33 - Handling Key Up!
+2025-12-20 12:35:33 - Var Selected: 
+2025-12-20 12:35:33 - Here1
+2025-12-20 12:35:33 - Here2
+2025-12-20 12:35:33 - Here3
+2025-12-20 12:35:33 - Here4
+2025-12-20 12:35:33 - Here5
+2025-12-20 12:35:33 - Here6
+2025-12-20 12:35:33 - Here7
+2025-12-20 12:35:33 - Here8
+2025-12-20 12:35:33 - Down key pressed
+2025-12-20 12:35:33 - Current Index: -1
+2025-12-20 12:35:33 - Next Index: 0
+2025-12-20 12:35:33 - Set Selectd Panel came here!
+2025-12-20 12:35:33 - Current Panel: 0
+2025-12-20 12:35:33 - Update Selection in Progress!
+2025-12-20 12:35:33 - Updated Selection!
+2025-12-20 12:35:33 - Updated Panels
+2025-12-20 12:35:33 - -------------------------------------------------------------------
+2025-12-20 12:35:33 - Here9
+2025-12-20 12:35:33 - Here10
+2025-12-20 12:35:33 - Handling Key Up!
+2025-12-20 12:35:33 - Var Selected: Avalonia.Controls.StackPanel
+2025-12-20 12:35:33 - Here1
+2025-12-20 12:35:33 - Here2
+2025-12-20 12:35:33 - Here3
+2025-12-20 12:35:33 - Here4
+2025-12-20 12:35:33 - Here5
+2025-12-20 12:35:33 - Here6
+2025-12-20 12:35:33 - Here7
+2025-12-20 12:35:33 - Here8
+2025-12-20 12:35:33 - Down key pressed
+2025-12-20 12:35:33 - Current Index: 0
+2025-12-20 12:35:33 - Next Index: 1
+2025-12-20 12:35:33 - Set Selectd Panel came here!
+2025-12-20 12:35:33 - Current Panel: 1
+2025-12-20 12:35:33 - Update Selection in Progress!
+2025-12-20 12:35:33 - Updated Selection!
+2025-12-20 12:35:33 - Updated Panels
+2025-12-20 12:35:33 - -------------------------------------------------------------------
+2025-12-20 12:35:33 - Here9
+2025-12-20 12:35:33 - Here10
+2025-12-20 12:35:34 - Handling Key Up!
+2025-12-20 12:35:34 - Var Selected: Avalonia.Controls.StackPanel
+2025-12-20 12:35:34 - Here1
+2025-12-20 12:35:34 - Here2
+2025-12-20 12:35:34 - Here3
+2025-12-20 12:35:34 - Here4
+2025-12-20 12:35:34 - Here5
+2025-12-20 12:35:34 - Here6
+2025-12-20 12:35:34 - Here7
+2025-12-20 12:35:34 - Here8
+2025-12-20 12:35:34 - Here9
+2025-12-20 12:35:34 - Here10
+2025-12-20 12:35:41 - Handling Key Up!
+2025-12-20 12:35:41 - Var Selected: Avalonia.Controls.StackPanel
+2025-12-20 12:35:41 - Here1
+2025-12-20 12:35:41 - Here2
+2025-12-20 12:35:41 - Here3
+2025-12-20 12:35:43 - Handling Key Up!
+2025-12-20 12:35:43 - Var Selected: Avalonia.Controls.StackPanel
+2025-12-20 12:35:43 - Here1
+2025-12-20 12:35:43 - Here2
+2025-12-20 12:35:43 - Here3
+2025-12-20 12:35:43 - Here4
+2025-12-20 12:35:43 - Here5
+2025-12-20 12:35:43 - Here6
+2025-12-20 12:35:43 - Here7
+2025-12-20 12:35:43 - Here8
+2025-12-20 12:35:43 - Here9
+2025-12-20 12:35:43 - Here10
+2025-12-20 12:35:47 - Auto Save in Progress!

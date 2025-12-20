@@ -39,7 +39,7 @@ namespace copier.Services
             AppFileLogger.AddText("Handling Key Up!");
             var stack = _window.FindControl<StackPanel>("ItemsPanel");
             if (_entryManager.Panels.Count == 0 &&
-                !(e.KeyModifiers == KeyModifiers.Control && (e.Key == Key.E || e.Key == Key.I)))
+                !(e.KeyModifiers == KeyModifiers.Control && e.Key == Key.I))
             {
                 _uiManager.SetSelectedPanelNull(_uiManager.SelectedPanel);
                 _uiManager.ShowInputPanel();

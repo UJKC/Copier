@@ -1,111 +1,111 @@
-2025-12-20 11:52:33 - Hello
-2025-12-20 11:52:33 - Entry Manager Object Created!
-2025-12-20 11:52:33 - Selected Panel: 
-2025-12-20 11:52:33 - Is Update Possible: True
-2025-12-20 11:52:33 - UI Manager Object Created!
-2025-12-20 11:52:33 - Auto Save Service Object Created!
-2025-12-20 11:52:33 - Search Service Object Created!
-2025-12-20 11:52:33 - keyboard Manager Object Created!
-2025-12-20 11:52:33 - Auto Loading in Progress!
-2025-12-20 11:52:33 - Loading!
-2025-12-20 11:52:33 - Loading Each
-2025-12-20 11:52:33 - Reordering!
-2025-12-20 11:52:33 - Loaded Each!
-2025-12-20 11:52:33 - Loaded!
-2025-12-20 11:52:33 - Auto loading complete!
-2025-12-20 11:52:33 - No of Panel: 2
-2025-12-20 11:52:35 - Handling Key Up!
-2025-12-20 11:52:35 - Var Selected: 
-2025-12-20 11:52:35 - Here1
-2025-12-20 11:52:35 - Export
-2025-12-20 11:52:35 - Here2
-2025-12-20 11:52:35 - Here3
-2025-12-20 11:52:35 - Here4
-2025-12-20 11:52:35 - Here5
-2025-12-20 11:52:35 - Here6
-2025-12-20 11:52:35 - Here7
-2025-12-20 11:52:35 - Here8
-2025-12-20 11:52:35 - Here9
-2025-12-20 11:52:35 - Here10
-2025-12-20 11:52:59 - Auto Save in Progress!
-2025-12-20 12:23:19 - Hello
-2025-12-20 12:23:19 - Entry Manager Object Created!
-2025-12-20 12:23:19 - Selected Panel: 
-2025-12-20 12:23:19 - Is Update Possible: True
-2025-12-20 12:23:19 - UI Manager Object Created!
-2025-12-20 12:23:19 - Auto Save Service Object Created!
-2025-12-20 12:23:19 - Search Service Object Created!
-2025-12-20 12:23:19 - keyboard Manager Object Created!
-2025-12-20 12:23:19 - Auto Loading in Progress!
-2025-12-20 12:23:19 - Loading!
-2025-12-20 12:23:19 - Loading Each
-2025-12-20 12:23:19 - Reordering!
-2025-12-20 12:23:19 - Loaded Each!
-2025-12-20 12:23:19 - Loaded!
-2025-12-20 12:23:19 - Auto loading complete!
-2025-12-20 12:23:19 - No of Panel: 2
-2025-12-20 12:23:23 - Handling Key Up!
-2025-12-20 12:23:23 - Var Selected: 
-2025-12-20 12:23:23 - Here1
-2025-12-20 12:23:23 - Export
-2025-12-20 12:23:23 - Here2
-2025-12-20 12:23:23 - Here3
-2025-12-20 12:23:23 - Here4
-2025-12-20 12:23:23 - Here5
-2025-12-20 12:23:23 - Here6
-2025-12-20 12:23:23 - Here7
-2025-12-20 12:23:23 - Here8
-2025-12-20 12:23:23 - Here9
-2025-12-20 12:23:23 - Here10
-2025-12-20 12:23:27 - Handling Key Up!
-2025-12-20 12:23:27 - Var Selected: 
-2025-12-20 12:23:27 - Here1
-2025-12-20 12:23:27 - Here2
-2025-12-20 12:23:27 - Here3
-2025-12-20 12:23:29 - Handling Key Up!
-2025-12-20 12:23:29 - Var Selected: 
-2025-12-20 12:23:29 - Here1
-2025-12-20 12:23:29 - Import
-2025-12-20 12:23:29 - Here2
-2025-12-20 12:23:29 - Here3
-2025-12-20 12:23:29 - Here4
-2025-12-20 12:23:29 - Here5
-2025-12-20 12:23:29 - Here6
-2025-12-20 12:23:29 - Here7
-2025-12-20 12:23:29 - Here8
-2025-12-20 12:23:29 - Here9
-2025-12-20 12:23:29 - Here10
-2025-12-20 12:23:33 - Loading Each
-2025-12-20 12:23:33 - Reordering!
-2025-12-20 12:23:33 - Loaded Each!
-2025-12-20 12:23:35 - Handling Key Up!
-2025-12-20 12:23:35 - Var Selected: 
-2025-12-20 12:23:35 - Here1
-2025-12-20 12:23:35 - Clear All
-2025-12-20 12:23:35 - Here2
-2025-12-20 12:23:35 - Here3
-2025-12-20 12:23:35 - Here4
-2025-12-20 12:23:35 - Here5
-2025-12-20 12:23:35 - Here6
-2025-12-20 12:23:35 - Here7
-2025-12-20 12:23:35 - Here8
-2025-12-20 12:23:35 - Here9
-2025-12-20 12:23:35 - Here10
-2025-12-20 12:23:38 - Auto Save in Progress!
-2025-12-20 12:23:43 - Hello
-2025-12-20 12:23:43 - Entry Manager Object Created!
-2025-12-20 12:23:43 - Selected Panel: 
-2025-12-20 12:23:43 - Is Update Possible: True
-2025-12-20 12:23:43 - UI Manager Object Created!
-2025-12-20 12:23:43 - Auto Save Service Object Created!
-2025-12-20 12:23:43 - Search Service Object Created!
-2025-12-20 12:23:43 - keyboard Manager Object Created!
-2025-12-20 12:23:43 - Auto Loading in Progress!
-2025-12-20 12:23:43 - Loading!
-2025-12-20 12:23:44 - Loading Each
-2025-12-20 12:23:44 - Reordering!
-2025-12-20 12:23:44 - Loaded Each!
-2025-12-20 12:23:44 - Loaded!
-2025-12-20 12:23:44 - Auto loading complete!
-2025-12-20 12:23:44 - No of Panel: 0
-2025-12-20 12:23:47 - Auto Save in Progress!
+2025-12-20 12:27:03 - Handling Key Up!
+2025-12-20 12:27:03 - Set Selectd Panel came here! As it is not null making it null
+2025-12-20 12:27:03 - Set Selectd Panel came here! As it is not null making it null
+2025-12-20 12:27:03 - Update Selection in Progress!
+2025-12-20 12:27:03 - Updated Selection!
+2025-12-20 12:27:03 - Set Selectd Panel came here! As it is not null making it null
+2025-12-20 12:27:03 - Update Selection in Progress!
+2025-12-20 12:27:03 - Updated Selection!
+2025-12-20 12:28:01 - Handling Key Up!
+2025-12-20 12:28:01 - Set Selectd Panel came here! As it is not null making it null
+2025-12-20 12:28:01 - Set Selectd Panel came here! As it is not null making it null
+2025-12-20 12:28:01 - Update Selection in Progress!
+2025-12-20 12:28:01 - Updated Selection!
+2025-12-20 12:28:01 - Set Selectd Panel came here! As it is not null making it null
+2025-12-20 12:28:01 - Update Selection in Progress!
+2025-12-20 12:28:01 - Updated Selection!
+2025-12-20 12:28:04 - Auto Save in Progress!
+2025-12-20 12:28:09 - Hello
+2025-12-20 12:28:09 - Entry Manager Object Created!
+2025-12-20 12:28:09 - Selected Panel: 
+2025-12-20 12:28:09 - Is Update Possible: True
+2025-12-20 12:28:09 - UI Manager Object Created!
+2025-12-20 12:28:09 - Auto Save Service Object Created!
+2025-12-20 12:28:09 - Search Service Object Created!
+2025-12-20 12:28:09 - keyboard Manager Object Created!
+2025-12-20 12:28:09 - Auto Loading in Progress!
+2025-12-20 12:28:09 - Loading!
+2025-12-20 12:28:09 - Loading Each
+2025-12-20 12:28:09 - Reordering!
+2025-12-20 12:28:09 - Loaded Each!
+2025-12-20 12:28:09 - Loaded!
+2025-12-20 12:28:09 - Auto loading complete!
+2025-12-20 12:28:09 - No of Panel: 0
+2025-12-20 12:28:10 - Handling Key Up!
+2025-12-20 12:28:10 - Set Selectd Panel came here! As it is not null making it null
+2025-12-20 12:28:10 - Set Selectd Panel came here! As it is not null making it null
+2025-12-20 12:28:10 - Update Selection in Progress!
+2025-12-20 12:28:10 - Updated Selection!
+2025-12-20 12:28:10 - Set Selectd Panel came here! As it is not null making it null
+2025-12-20 12:28:10 - Update Selection in Progress!
+2025-12-20 12:28:10 - Updated Selection!
+2025-12-20 12:28:12 - Handling Key Up!
+2025-12-20 12:28:12 - Set Selectd Panel came here! As it is not null making it null
+2025-12-20 12:28:12 - Set Selectd Panel came here! As it is not null making it null
+2025-12-20 12:28:12 - Update Selection in Progress!
+2025-12-20 12:28:12 - Updated Selection!
+2025-12-20 12:28:12 - Set Selectd Panel came here! As it is not null making it null
+2025-12-20 12:28:12 - Update Selection in Progress!
+2025-12-20 12:28:12 - Updated Selection!
+2025-12-20 12:28:13 - Auto Save in Progress!
+2025-12-20 12:33:36 - Hello
+2025-12-20 12:33:36 - Entry Manager Object Created!
+2025-12-20 12:33:36 - Selected Panel: 
+2025-12-20 12:33:36 - Is Update Possible: True
+2025-12-20 12:33:36 - UI Manager Object Created!
+2025-12-20 12:33:36 - Auto Save Service Object Created!
+2025-12-20 12:33:36 - Search Service Object Created!
+2025-12-20 12:33:36 - keyboard Manager Object Created!
+2025-12-20 12:33:36 - Auto Loading in Progress!
+2025-12-20 12:33:36 - Loading!
+2025-12-20 12:33:37 - Loading Each
+2025-12-20 12:33:37 - Reordering!
+2025-12-20 12:33:37 - Loaded Each!
+2025-12-20 12:33:37 - Loaded!
+2025-12-20 12:33:37 - Auto loading complete!
+2025-12-20 12:33:37 - No of Panel: 0
+2025-12-20 12:33:42 - Handling Key Up!
+2025-12-20 12:33:42 - Var Selected: 
+2025-12-20 12:33:42 - Here1
+2025-12-20 12:33:42 - Export
+2025-12-20 12:33:42 - Here2
+2025-12-20 12:33:42 - Here3
+2025-12-20 12:33:42 - Here4
+2025-12-20 12:33:42 - Here5
+2025-12-20 12:33:42 - Here6
+2025-12-20 12:33:42 - Here7
+2025-12-20 12:33:42 - Here8
+2025-12-20 12:33:42 - Here9
+2025-12-20 12:33:42 - Here10
+2025-12-20 12:33:44 - Handling Key Up!
+2025-12-20 12:33:44 - Set Selectd Panel came here! As it is not null making it null
+2025-12-20 12:33:44 - Set Selectd Panel came here! As it is not null making it null
+2025-12-20 12:33:44 - Update Selection in Progress!
+2025-12-20 12:33:44 - Updated Selection!
+2025-12-20 12:33:44 - Set Selectd Panel came here! As it is not null making it null
+2025-12-20 12:33:44 - Update Selection in Progress!
+2025-12-20 12:33:44 - Updated Selection!
+2025-12-20 12:33:48 - Handling Key Up!
+2025-12-20 12:33:48 - Var Selected: 
+2025-12-20 12:33:48 - Here1
+2025-12-20 12:33:48 - Import
+2025-12-20 12:33:48 - Here2
+2025-12-20 12:33:48 - Here3
+2025-12-20 12:33:48 - Here4
+2025-12-20 12:33:48 - Here5
+2025-12-20 12:33:48 - Here6
+2025-12-20 12:33:48 - Here7
+2025-12-20 12:33:48 - Here8
+2025-12-20 12:33:48 - Here9
+2025-12-20 12:33:48 - Here10
+2025-12-20 12:33:53 - Loading Each
+2025-12-20 12:33:53 - Reordering!
+2025-12-20 12:33:53 - Loaded Each!
+2025-12-20 12:33:56 - Handling Key Up!
+2025-12-20 12:33:56 - Var Selected: 
+2025-12-20 12:33:56 - Here1
+2025-12-20 12:33:56 - Here2
+2025-12-20 12:33:56 - Here3
+2025-12-20 12:33:56 - Set Selectd Panel came here! As it is not null making it null
+2025-12-20 12:33:56 - Update Selection in Progress!
+2025-12-20 12:33:56 - Updated Selection!

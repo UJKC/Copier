@@ -230,7 +230,6 @@ C:\Users\Asus\OneDrive\Desktop\Copier\obj\Release\net8.0\win-x64\Copier.genrunti
 C:\Users\Asus\OneDrive\Desktop\Copier\obj\Release\net8.0\win-x64\ref\Copier.dll
 C:\Users\UDAI KC\OneDrive\Desktop\documents\Copier\bin\Release\net8.0\win-x64\Copier.exe
 C:\Users\UDAI KC\OneDrive\Desktop\documents\Copier\bin\Release\net8.0\win-x64\Copier.deps.json
-C:\Users\UDAI KC\OneDrive\Desktop\documents\Copier\bin\Release\net8.0\win-x64\Copier.runtimeconfig.json
 C:\Users\UDAI KC\OneDrive\Desktop\documents\Copier\bin\Release\net8.0\win-x64\Copier.dll
 C:\Users\UDAI KC\OneDrive\Desktop\documents\Copier\bin\Release\net8.0\win-x64\Avalonia.Base.dll
 C:\Users\UDAI KC\OneDrive\Desktop\documents\Copier\bin\Release\net8.0\win-x64\Avalonia.Controls.dll
@@ -453,5 +452,4 @@ C:\Users\UDAI KC\OneDrive\Desktop\documents\Copier\obj\Release\net8.0\win-x64\Co
 C:\Users\UDAI KC\OneDrive\Desktop\documents\Copier\obj\Release\net8.0\win-x64\Copier.csproj.Up2Date
 C:\Users\UDAI KC\OneDrive\Desktop\documents\Copier\obj\Release\net8.0\win-x64\Copier.dll
 C:\Users\UDAI KC\OneDrive\Desktop\documents\Copier\obj\Release\net8.0\win-x64\refint\Copier.dll
-C:\Users\UDAI KC\OneDrive\Desktop\documents\Copier\obj\Release\net8.0\win-x64\Copier.genruntimeconfig.cache
 C:\Users\UDAI KC\OneDrive\Desktop\documents\Copier\obj\Release\net8.0\win-x64\ref\Copier.dll

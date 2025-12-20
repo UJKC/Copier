@@ -15,16 +15,19 @@ namespace copier.Services
         private readonly UIManager _uiManager;
         private readonly SearchService _searchService;
         private readonly EntryManager _entryManager;
+        private readonly AutoSaveService _autoSaveService;
         private readonly Window _window;
 
-        public KeyboardManager(Window window, UIManager uiManager, SearchService searchService, EntryManager entryManager)
+        public KeyboardManager(Window window, UIManager uiManager, SearchService searchService, EntryManager entryManager, AutoSaveService autoSaveService)
         {
             _window = window;
             _uiManager = uiManager;
             _searchService = searchService;
             _entryManager = entryManager;
+            _autoSaveService = autoSaveService;
         }
 
+        [Obsolete]
         public async void HandleKeyUp(object? sender, KeyEventArgs e)
         {
             if (e.Key is Key.LeftCtrl or Key.RightCtrl or
@@ -58,6 +61,24 @@ namespace copier.Services
                 _uiManager.ShowSearchPanel();
                 AppFileLogger.AddText("Selected Panel: " + _uiManager.SelectedPanel);
                 return;
+            }
+
+            if (e.KeyModifiers == KeyModifiers.Control && e.Key == Key.E)
+            {
+                AppFileLogger.AddText("Export");
+                Export_Click();
+            }
+
+            if (e.KeyModifiers == KeyModifiers.Control && e.Key == Key.I)
+            {
+                AppFileLogger.AddText("Import");
+                Import_Click();
+            }
+
+            if (e.KeyModifiers == KeyModifiers.Control && e.Key == Key.X)
+            {
+                AppFileLogger.AddText("Clear All");
+                ClearAll_Click();
             }
 
             AppFileLogger.AddText("Here2");
@@ -334,6 +355,23 @@ namespace copier.Services
             _uiManager.ClearSelection();
         }
 
+        [Obsolete]
+        private async void Export_Click()
+        {
+            await _autoSaveService.ExportAsync();
+        }
 
+        [Obsolete]
+        private async void Import_Click()
+        {
+            await _autoSaveService.ImportAsync();
+        }
+
+        private void ClearAll_Click()
+        {
+            var stack = _window.FindControl<StackPanel>("ItemsPanel")!;
+            stack.Children.Clear();
+            _entryManager.Panels.Clear();
+        }
     }
 }

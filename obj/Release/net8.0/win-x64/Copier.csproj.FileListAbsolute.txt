@@ -453,3 +453,4 @@ C:\Users\UDAI KC\OneDrive\Desktop\documents\Copier\obj\Release\net8.0\win-x64\Co
 C:\Users\UDAI KC\OneDrive\Desktop\documents\Copier\obj\Release\net8.0\win-x64\Copier.dll
 C:\Users\UDAI KC\OneDrive\Desktop\documents\Copier\obj\Release\net8.0\win-x64\refint\Copier.dll
 C:\Users\UDAI KC\OneDrive\Desktop\documents\Copier\obj\Release\net8.0\win-x64\ref\Copier.dll
+C:\Users\UDAI KC\OneDrive\Desktop\documents\Copier\bin\Release\net8.0\win-x64\YamlDotNet.dll

@@ -15,6 +15,7 @@
           "Avalonia.Fonts.Inter": "11.3.0",
           "Avalonia.Themes.Fluent": "11.3.0",
           "Microsoft.NET.ILLink.Tasks": "8.0.7",
+          "YamlDotNet": "16.3.0",
           "runtimepack.Microsoft.NETCore.App.Runtime.win-x64": "8.0.7"
         },
         "runtime": {
@@ -1013,6 +1014,14 @@
             "fileVersion": "0.21.2.0"
           }
         }
+      },
+      "YamlDotNet/16.3.0": {
+        "runtime": {
+          "lib/net8.0/YamlDotNet.dll": {
+            "assemblyVersion": "16.0.0.0",
+            "fileVersion": "16.3.0.0"
+          }
+        }
       }
     }
   },
@@ -1229,6 +1238,13 @@
       "sha512": "sha512-ScSMrUrrw8px4kK1Glh0fZv/HQUlg1078bNXNPfRPKQ3WbRzV9HpsydYEOgSoMK5LWICMf2bMwIFH0pGjxjcMA==",
       "path": "tmds.dbus.protocol/0.21.2",
       "hashPath": "tmds.dbus.protocol.0.21.2.nupkg.sha512"
+    },
+    "YamlDotNet/16.3.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-SgMOdxbz8X65z8hraIs6hOEdnkH6hESTAIUa7viEngHOYaH+6q5XJmwr1+yb9vJpNQ19hCQY69xbFsLtXpobQA==",
+      "path": "yamldotnet/16.3.0",
+      "hashPath": "yamldotnet.16.3.0.nupkg.sha512"
     }
   },
   "runtimes": {

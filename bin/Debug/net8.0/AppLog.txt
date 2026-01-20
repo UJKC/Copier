@@ -49,3 +49,52 @@
 2026-01-21 00:00:37 - Auto loading complete!
 2026-01-21 00:00:37 - No of Panel: 2
 2026-01-21 00:00:39 - Auto Save in Progress!
+2026-01-21 00:01:13 - Hello
+2026-01-21 00:01:13 - Entry Manager Object Created!
+2026-01-21 00:01:13 - Selected Panel: 
+2026-01-21 00:01:13 - Is Update Possible: True
+2026-01-21 00:01:13 - UI Manager Object Created!
+2026-01-21 00:01:13 - Auto Save Service Object Created!
+2026-01-21 00:01:13 - Search Service Object Created!
+2026-01-21 00:01:13 - keyboard Manager Object Created!
+2026-01-21 00:01:13 - Auto Loading in Progress!
+2026-01-21 00:01:13 - Loading!
+2026-01-21 00:01:13 - Loading Each
+2026-01-21 00:01:13 - Reordering!
+2026-01-21 00:01:13 - Loaded Each!
+2026-01-21 00:01:13 - Loaded!
+2026-01-21 00:01:13 - Auto loading complete!
+2026-01-21 00:01:13 - No of Panel: 2
+2026-01-21 00:01:14 - Handling Key Up!
+2026-01-21 00:01:14 - Var Selected: 
+2026-01-21 00:01:14 - Here1
+2026-01-21 00:01:14 - Here2
+2026-01-21 00:01:14 - Here3
+2026-01-21 00:01:14 - Here4
+2026-01-21 00:01:14 - Here5
+2026-01-21 00:01:14 - Here6
+2026-01-21 00:01:14 - Here7
+2026-01-21 00:01:14 - Here8
+2026-01-21 00:01:14 - Down key pressed
+2026-01-21 00:01:14 - Current Index: -1
+2026-01-21 00:01:14 - Next Index: 0
+2026-01-21 00:01:14 - Set Selectd Panel came here!
+2026-01-21 00:01:14 - Current Panel: 0
+2026-01-21 00:01:14 - Update Selection in Progress!
+2026-01-21 00:01:14 - Updated Selection!
+2026-01-21 00:01:14 - Updated Panels
+2026-01-21 00:01:14 - -------------------------------------------------------------------
+2026-01-21 00:01:14 - Here9
+2026-01-21 00:01:14 - Here10
+2026-01-21 00:01:15 - Handling Key Up!
+2026-01-21 00:01:15 - Var Selected: Avalonia.Controls.StackPanel
+2026-01-21 00:01:15 - Here1
+2026-01-21 00:01:15 - Here2
+2026-01-21 00:01:15 - Here3
+2026-01-21 00:01:15 - Here4
+2026-01-21 00:01:15 - Here5
+2026-01-21 00:01:15 - Here6
+2026-01-21 00:01:15 - Here7
+2026-01-21 00:01:15 - Here8
+2026-01-21 00:01:15 - Here9
+2026-01-21 00:01:15 - Here10

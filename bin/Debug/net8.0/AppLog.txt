@@ -1,57 +1,70 @@
-2026-01-20 22:32:39 - create Pin Initialised
-2026-01-20 22:32:39 - Pin clicked: 
-2026-01-20 22:32:39 - Save Button Initialised
-2026-01-20 22:32:47 - New Copier Config Object
-2026-01-20 22:32:47 - Saved the path
-2026-01-20 22:32:47 - Password Window Open
-2026-01-20 22:32:55 - Hello
-2026-01-20 22:32:55 - Entry Manager Object Created!
-2026-01-20 22:32:55 - Selected Panel: 
-2026-01-20 22:32:55 - Is Update Possible: True
-2026-01-20 22:32:55 - UI Manager Object Created!
-2026-01-20 22:32:55 - Auto Save Service Object Created!
-2026-01-20 22:32:55 - Search Service Object Created!
-2026-01-20 22:32:55 - keyboard Manager Object Created!
-2026-01-20 22:32:55 - Auto Loading in Progress!
-2026-01-20 22:32:55 - Loading!
-2026-01-20 22:32:55 - Loading Each
-2026-01-20 22:32:55 - Reordering!
-2026-01-20 22:32:55 - Loaded Each!
-2026-01-20 22:32:55 - Loaded!
-2026-01-20 22:32:55 - Auto loading complete!
-2026-01-20 22:32:55 - No of Panel: 2
-2026-01-20 22:33:04 - Auto Save in Progress!
-2026-01-20 22:44:52 - Hello
-2026-01-20 22:44:52 - Entry Manager Object Created!
-2026-01-20 22:44:52 - Selected Panel: 
-2026-01-20 22:44:52 - Is Update Possible: True
-2026-01-20 22:44:52 - UI Manager Object Created!
-2026-01-20 22:44:52 - Auto Save Service Object Created!
-2026-01-20 22:44:52 - Search Service Object Created!
-2026-01-20 22:44:52 - keyboard Manager Object Created!
-2026-01-20 22:44:52 - Auto Loading in Progress!
-2026-01-20 22:44:53 - Loading!
-2026-01-20 22:44:53 - Loading Each
-2026-01-20 22:44:53 - Reordering!
-2026-01-20 22:44:53 - Loaded Each!
-2026-01-20 22:44:53 - Loaded!
-2026-01-20 22:44:53 - Auto loading complete!
-2026-01-20 22:44:53 - No of Panel: 2
-2026-01-20 22:44:55 - Auto Save in Progress!
-2026-01-20 22:49:35 - Hello
-2026-01-20 22:49:35 - Entry Manager Object Created!
-2026-01-20 22:49:35 - Selected Panel: 
-2026-01-20 22:49:35 - Is Update Possible: True
-2026-01-20 22:49:35 - UI Manager Object Created!
-2026-01-20 22:49:35 - Auto Save Service Object Created!
-2026-01-20 22:49:35 - Search Service Object Created!
-2026-01-20 22:49:35 - keyboard Manager Object Created!
-2026-01-20 22:49:35 - Auto Loading in Progress!
-2026-01-20 22:49:35 - Loading!
-2026-01-20 22:49:35 - Loading Each
-2026-01-20 22:49:35 - Reordering!
-2026-01-20 22:49:35 - Loaded Each!
-2026-01-20 22:49:35 - Loaded!
-2026-01-20 22:49:35 - Auto loading complete!
-2026-01-20 22:49:35 - No of Panel: 2
-2026-01-20 22:49:37 - Auto Save in Progress!
+2026-01-20 23:18:46 - Hello
+2026-01-20 23:18:46 - Entry Manager Object Created!
+2026-01-20 23:18:46 - Selected Panel: 
+2026-01-20 23:18:46 - Is Update Possible: True
+2026-01-20 23:18:46 - UI Manager Object Created!
+2026-01-20 23:18:46 - Auto Save Service Object Created!
+2026-01-20 23:18:46 - Search Service Object Created!
+2026-01-20 23:18:46 - keyboard Manager Object Created!
+2026-01-20 23:18:46 - Auto Loading in Progress!
+2026-01-20 23:18:46 - Loading!
+2026-01-20 23:18:46 - Loading Each
+2026-01-20 23:18:46 - Reordering!
+2026-01-20 23:18:46 - Loaded Each!
+2026-01-20 23:18:46 - Loaded!
+2026-01-20 23:18:46 - Auto loading complete!
+2026-01-20 23:18:46 - No of Panel: 2
+2026-01-20 23:18:48 - Auto Save in Progress!
+2026-01-20 23:18:48 - Closing!
+2026-01-20 23:19:04 - Hello
+2026-01-20 23:19:04 - Entry Manager Object Created!
+2026-01-20 23:19:04 - Selected Panel: 
+2026-01-20 23:19:04 - Is Update Possible: True
+2026-01-20 23:19:04 - UI Manager Object Created!
+2026-01-20 23:19:04 - Auto Save Service Object Created!
+2026-01-20 23:19:04 - Search Service Object Created!
+2026-01-20 23:19:04 - keyboard Manager Object Created!
+2026-01-20 23:19:04 - Auto Loading in Progress!
+2026-01-20 23:19:04 - Loading!
+2026-01-20 23:19:04 - Loading Each
+2026-01-20 23:19:04 - Reordering!
+2026-01-20 23:19:04 - Loaded Each!
+2026-01-20 23:19:04 - Loaded!
+2026-01-20 23:19:04 - Auto loading complete!
+2026-01-20 23:19:04 - No of Panel: 2
+2026-01-20 23:19:07 - Auto Save in Progress!
+2026-01-20 23:19:25 - Hello
+2026-01-20 23:19:25 - Entry Manager Object Created!
+2026-01-20 23:19:25 - Selected Panel: 
+2026-01-20 23:19:25 - Is Update Possible: True
+2026-01-20 23:19:25 - UI Manager Object Created!
+2026-01-20 23:19:25 - Auto Save Service Object Created!
+2026-01-20 23:19:25 - Search Service Object Created!
+2026-01-20 23:19:25 - keyboard Manager Object Created!
+2026-01-20 23:19:25 - Auto Loading in Progress!
+2026-01-20 23:19:25 - Loading!
+2026-01-20 23:19:25 - Loading Each
+2026-01-20 23:19:25 - Reordering!
+2026-01-20 23:19:25 - Loaded Each!
+2026-01-20 23:19:25 - Loaded!
+2026-01-20 23:19:25 - Auto loading complete!
+2026-01-20 23:19:25 - No of Panel: 2
+2026-01-20 23:19:26 - Auto Save in Progress!
+2026-01-20 23:19:26 - Closing!
+2026-01-20 23:19:35 - Hello
+2026-01-20 23:19:35 - Entry Manager Object Created!
+2026-01-20 23:19:35 - Selected Panel: 
+2026-01-20 23:19:35 - Is Update Possible: True
+2026-01-20 23:19:35 - UI Manager Object Created!
+2026-01-20 23:19:35 - Auto Save Service Object Created!
+2026-01-20 23:19:35 - Search Service Object Created!
+2026-01-20 23:19:35 - keyboard Manager Object Created!
+2026-01-20 23:19:35 - Auto Loading in Progress!
+2026-01-20 23:19:35 - Loading!
+2026-01-20 23:19:35 - Loading Each
+2026-01-20 23:19:35 - Reordering!
+2026-01-20 23:19:35 - Loaded Each!
+2026-01-20 23:19:35 - Loaded!
+2026-01-20 23:19:35 - Auto loading complete!
+2026-01-20 23:19:35 - No of Panel: 2
+2026-01-20 23:19:41 - Auto Save in Progress!

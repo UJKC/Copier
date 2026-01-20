@@ -19,6 +19,7 @@
                 <Button Content="Export" Click="Export_Click" Margin="5"/>
                 <Button Content="Import" Click="Import_Click" Margin="5"/>
                 <Button Content="Clear All" Click="ClearAll_Click" Margin="5"/>
+                <Button Content="Settings" Click="Settings_Click" Margin="5" />
             </WrapPanel>
 
 

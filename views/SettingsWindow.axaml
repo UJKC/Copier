@@ -1,0 +1,43 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        x:Class="copier.Views.SettingsWindow"
+        Title="Settings"
+        Background="Transparent"
+        ExtendClientAreaToDecorationsHint="True"
+        ExtendClientAreaChromeHints="NoChrome"
+        ExtendClientAreaTitleBarHeightHint="-1"
+        SystemDecorations="Full"
+        Width="600"
+        Height="400">
+
+    <StackPanel Margin="20" Spacing="10">
+
+        <TextBlock Text="Change Password"
+                   FontSize="16"
+                   HorizontalAlignment="Center"/>
+
+        <!-- Password input -->
+        <TextBox x:Name="PasswordBox"
+                 PasswordChar="●"
+                 HorizontalAlignment="Stretch"/>
+
+        <!-- Error text -->
+        <TextBlock x:Name="ErrorText"
+                   Foreground="Red"
+                   HorizontalAlignment="Center"/>
+
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Spacing="10">
+
+            <!-- Back button -->
+            <Button x:Name="BackButton"
+                    Content="Back"
+                    Width="100"/>
+
+            <!-- Save button -->
+            <Button x:Name="SaveButton"
+                    Content="Save"
+                    Width="100"/>
+        </StackPanel>
+
+    </StackPanel>
+</Window>

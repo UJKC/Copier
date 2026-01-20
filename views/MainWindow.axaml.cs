@@ -20,6 +20,7 @@ namespace copier.Views
     {
         public readonly List<StackPanel> allEntryPanels = new();
         private readonly EntryManager entryManager;
+        private readonly SettingsWindow settingsWindow;
         private readonly UIManager uiManager;
         private readonly AutoSaveService autoSaveService;
         private readonly SearchService searchService;
@@ -38,6 +39,7 @@ namespace copier.Views
 
             // Create the EntryManager once and reuse it (shares the allEntryPanels list)
             entryManager = new EntryManager(allEntryPanels);
+            settingsWindow = new SettingsWindow(CopierConfigPath.GetRootConfigPath());
             AppFileLogger.AddText("Entry Manager Object Created!");
             uiManager = new UIManager(this, entryManager, allEntryPanels);
             AppFileLogger.AddText("UI Manager Object Created!");
@@ -142,6 +144,12 @@ namespace copier.Views
         private void CancelSearch_Click(object? sender, RoutedEventArgs e)
         {
             searchService.CancelSearch_Click(sender, e);
+        }
+
+        public void Settings_Click(object? sender, RoutedEventArgs e)
+        {
+            settingsWindow.Show();
+            Close();
         }
 
     }

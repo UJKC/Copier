@@ -30,3 +30,6 @@ build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
 [C:/Users/UDAI KC/OneDrive/Desktop/documents/Copier/views/PasswodWindow.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
+
+[C:/Users/UDAI KC/OneDrive/Desktop/documents/Copier/views/SettingsWindow.axaml]
+build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml

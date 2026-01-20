@@ -33,7 +33,6 @@ namespace copier.Views
 
         public MainWindow()
         {
-            ShortcutHelper.CreateShortcutIfNeeded();
             InitializeComponent();
             AppFileLogger.AddText("Hello");
 

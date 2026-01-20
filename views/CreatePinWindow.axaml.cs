@@ -17,6 +17,7 @@ namespace copier.Views
 
         public CreatePinWindow(string configPath)
         {
+            ShortcutHelper.CreateShortcutIfNeeded();
             InitializeComponent();
             AppFileLogger.AddText("create Pin Initialised");
 

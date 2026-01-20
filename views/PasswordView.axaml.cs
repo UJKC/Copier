@@ -4,6 +4,7 @@ using Avalonia;
 using Avalonia.Controls.ApplicationLifetimes;
 using Avalonia.Threading;
 using Avalonia.Input;
+using copier.Helper;
 
 namespace copier.Views
 {
@@ -15,6 +16,7 @@ namespace copier.Views
 
         public PasswordWindow(string configPath)
         {
+            ShortcutHelper.CreateShortcutIfNeeded();
             InitializeComponent();
 
             var _passwordBox = this.FindControl<TextBox>("PasswordBox");

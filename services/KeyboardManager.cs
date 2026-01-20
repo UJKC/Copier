@@ -16,15 +16,17 @@ namespace copier.Services
         private readonly SearchService _searchService;
         private readonly EntryManager _entryManager;
         private readonly AutoSaveService _autoSaveService;
+        private readonly SettingsWindow _settingsWindow;
         private readonly Window _window;
 
-        public KeyboardManager(Window window, UIManager uiManager, SearchService searchService, EntryManager entryManager, AutoSaveService autoSaveService)
+        public KeyboardManager(Window window, UIManager uiManager, SearchService searchService, EntryManager entryManager, AutoSaveService autoSaveService, SettingsWindow settingsWindow)
         {
             _window = window;
             _uiManager = uiManager;
             _searchService = searchService;
             _entryManager = entryManager;
             _autoSaveService = autoSaveService;
+            _settingsWindow = settingsWindow;
         }
 
         [Obsolete]
@@ -50,6 +52,13 @@ namespace copier.Services
             AppFileLogger.AddText("Var Selected: " + selected);
 
             AppFileLogger.AddText("Here1");
+
+            if (e.KeyModifiers == KeyModifiers.Control && e.Key == Key.OemComma)
+            {
+                if (_window is MainWindow main)
+                    main.Settings_Click(null, null); // Switch content
+                return;
+            }
 
             // CTRL + F opens search and No need of Selection
             if (e.KeyModifiers == KeyModifiers.Control && e.Key == Key.F)
@@ -182,6 +191,11 @@ namespace copier.Services
                 AppFileLogger.AddText("Here11");
                 EditSelectedEntry(selected);
             }
+        }
+
+        private void OpenSettings()
+        {
+            _settingsWindow.Show();
         }
 
         private void HandleEscape()

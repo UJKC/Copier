@@ -2,6 +2,8 @@ using Avalonia.Controls;
 using Avalonia.Interactivity;
 using Avalonia;
 using Avalonia.Controls.ApplicationLifetimes;
+using Avalonia.Threading;
+using Avalonia.Input;
 
 namespace copier.Views
 {
@@ -15,10 +17,18 @@ namespace copier.Views
         {
             InitializeComponent();
 
+            var _passwordBox = this.FindControl<TextBox>("PasswordBox");
+            Dispatcher.UIThread.Post(() =>
+            {
+                _passwordBox.Focus();
+                _passwordBox.CaretIndex = _passwordBox.Text?.Length ?? 0;
+            });
+
             var config = CopierConfigService.Load(configPath);
             _storedPassword = config.Password;
 
             LoginButton.Click += OnLoginClicked;
+            _passwordBox.KeyUp += PasswordBox_KeyUp;
         }
 
         private void OnLoginClicked(object? sender, RoutedEventArgs e)
@@ -59,6 +69,14 @@ namespace copier.Views
             mainWindow.Show();
 
             Close();
+        }
+
+        private void PasswordBox_KeyUp(object? sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.Enter)
+            {
+                OnLoginClicked(sender, e);
+            }
         }
     }
 }

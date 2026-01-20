@@ -49,7 +49,7 @@ namespace copier.Views
                 uiManager.SetNewPanelOpen
             );
             AppFileLogger.AddText("Search Service Object Created!");
-            _keyboardManager = new KeyboardManager(this, uiManager, searchService, entryManager, autoSaveService);
+            _keyboardManager = new KeyboardManager(this, uiManager, searchService, entryManager, autoSaveService, settingsWindow);
             AppFileLogger.AddText("keyboard Manager Object Created!");
             AutoLoad();
             this.KeyUp += _keyboardManager.HandleKeyUp;

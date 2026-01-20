@@ -134,3 +134,4 @@ C:\Users\UDAI KC\OneDrive\Desktop\documents\Copier\obj\Debug\net8.0\refint\Copie
 C:\Users\UDAI KC\OneDrive\Desktop\documents\Copier\obj\Debug\net8.0\Copier.pdb
 C:\Users\UDAI KC\OneDrive\Desktop\documents\Copier\obj\Debug\net8.0\Copier.genruntimeconfig.cache
 C:\Users\UDAI KC\OneDrive\Desktop\documents\Copier\obj\Debug\net8.0\ref\Copier.dll
+C:\Users\UDAI KC\OneDrive\Desktop\documents\Copier\bin\Debug\net8.0\YamlDotNet.dll

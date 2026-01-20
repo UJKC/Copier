@@ -1,0 +1,26 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        x:Class="copier.Views.CreatePinWindow"
+        Title="Create PIN"
+        Background="Transparent"
+        ExtendClientAreaToDecorationsHint="True"
+        ExtendClientAreaChromeHints="NoChrome"
+        ExtendClientAreaTitleBarHeightHint="-1"
+        SystemDecorations="Full"
+        Width="600"
+        Height="400">
+
+    <StackPanel Margin="20" Spacing="10">
+        <TextBlock Text="Create a PIN"
+                   FontSize="16"
+                   HorizontalAlignment="Center"/>
+
+        <TextBox x:Name="PinBox"
+                 PasswordChar="●"/>
+
+         <Button x:Name="SaveButton"
+                Content="Save PIN"
+                HorizontalAlignment="Center"
+                Width="120"/>
+    </StackPanel>
+</Window>

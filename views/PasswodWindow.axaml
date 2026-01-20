@@ -1,0 +1,35 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        x:Class="copier.Views.PasswordWindow"
+        Title="Authentication Required"
+        Background="Transparent"
+        ExtendClientAreaToDecorationsHint="True"
+        ExtendClientAreaChromeHints="NoChrome"
+        ExtendClientAreaTitleBarHeightHint="-1"
+        SystemDecorations="Full"
+        Width="600"
+        Height="400">
+
+    <StackPanel Margin="20" Spacing="10">
+
+        <TextBlock Text="Enter Password"
+                   FontSize="16"
+                   HorizontalAlignment="Center"/>
+
+        <!-- Password input -->
+        <TextBox x:Name="PasswordBox"
+                 PasswordChar="●"
+                 HorizontalAlignment="Stretch"/>
+
+        <!-- Error text -->
+        <TextBlock x:Name="ErrorText"
+                   Foreground="Red"
+                   HorizontalAlignment="Center"/>
+
+        <!-- Login button -->
+        <Button x:Name="LoginButton"
+                Content="Login"
+                HorizontalAlignment="Center"
+                Width="100"/>
+    </StackPanel>
+</Window>

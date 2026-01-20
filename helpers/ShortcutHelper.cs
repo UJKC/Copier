@@ -15,7 +15,13 @@ public static class ShortcutHelper
 
     public static void CreateShortcutIfNeeded()
     {
-        if (File.Exists(FirstRunFlagPath))
+        string desktopPath = Environment.GetFolderPath(Environment.SpecialFolder.DesktopDirectory);
+        string shortcutPath = Path.Combine(desktopPath, $"{AppName}.bat"); // Windows example
+
+        // Check if either shortcut does not exist OR flag file does not exist
+        bool needsCreation = !File.Exists(FirstRunFlagPath) || !File.Exists(shortcutPath);
+
+        if (!needsCreation)
             return;
 
         try
@@ -35,6 +41,7 @@ public static class ShortcutHelper
             Console.WriteLine($"Shortcut creation failed: {ex.Message}");
         }
     }
+
 
     private static void CreateWindowsShortcut()
     {

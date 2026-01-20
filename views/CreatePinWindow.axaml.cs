@@ -1,7 +1,9 @@
 using System;
 using Avalonia.Controls;
+using Avalonia.Input;
 using Avalonia.Interactivity;
 using Avalonia.Markup.Xaml;
+using Avalonia.Threading;
 using copier.Helper;
 
 namespace copier.Views
@@ -22,11 +24,25 @@ namespace copier.Views
 
             // ✅ THIS IS HOW AVALONIA WORKS
             _pinBox = this.FindControl<TextBox>("PinBox");
+            Dispatcher.UIThread.Post(() =>
+            {
+                _pinBox.Focus();
+                _pinBox.CaretIndex = _pinBox.Text?.Length ?? 0;
+            });
             AppFileLogger.AddText("Pin clicked: " + _pinBox.Text);
             _saveButton = this.FindControl<Button>("SaveButton");
             AppFileLogger.AddText("Save Button Initialised");
 
             _saveButton.Click += OnSaveClicked;
+            _pinBox.KeyUp += PinBox_KeyUp;
+        }
+
+        private void PinBox_KeyUp(object? sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.Enter)
+            {
+                OnSaveClicked(sender, e);
+            }
         }
 
         private void OnSaveClicked(object? sender, RoutedEventArgs e)

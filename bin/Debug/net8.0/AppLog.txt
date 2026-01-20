@@ -562,3 +562,53 @@
 2026-01-20 23:46:48 - Here9
 2026-01-20 23:46:48 - Here10
 2026-01-20 23:46:54 - Auto Save in Progress!
+2026-01-20 23:51:05 - Hello
+2026-01-20 23:51:05 - Entry Manager Object Created!
+2026-01-20 23:51:05 - Selected Panel: 
+2026-01-20 23:51:05 - Is Update Possible: True
+2026-01-20 23:51:05 - UI Manager Object Created!
+2026-01-20 23:51:05 - Auto Save Service Object Created!
+2026-01-20 23:51:05 - Search Service Object Created!
+2026-01-20 23:51:05 - keyboard Manager Object Created!
+2026-01-20 23:51:05 - Auto Loading in Progress!
+2026-01-20 23:51:05 - Loading!
+2026-01-20 23:51:05 - Loading Each
+2026-01-20 23:51:05 - Reordering!
+2026-01-20 23:51:05 - Loaded Each!
+2026-01-20 23:51:05 - Loaded!
+2026-01-20 23:51:05 - Auto loading complete!
+2026-01-20 23:51:05 - No of Panel: 2
+2026-01-20 23:51:07 - Handling Key Up!
+2026-01-20 23:51:07 - Var Selected: 
+2026-01-20 23:51:07 - Here1
+2026-01-20 23:51:07 - Here2
+2026-01-20 23:51:07 - Here3
+2026-01-20 23:51:07 - Here4
+2026-01-20 23:51:07 - Here5
+2026-01-20 23:51:07 - Here6
+2026-01-20 23:51:07 - Here7
+2026-01-20 23:51:07 - Here8
+2026-01-20 23:51:07 - Down key pressed
+2026-01-20 23:51:07 - Current Index: -1
+2026-01-20 23:51:07 - Next Index: 0
+2026-01-20 23:51:07 - Set Selectd Panel came here!
+2026-01-20 23:51:07 - Current Panel: 0
+2026-01-20 23:51:07 - Update Selection in Progress!
+2026-01-20 23:51:07 - Updated Selection!
+2026-01-20 23:51:07 - Updated Panels
+2026-01-20 23:51:07 - -------------------------------------------------------------------
+2026-01-20 23:51:07 - Here9
+2026-01-20 23:51:07 - Here10
+2026-01-20 23:51:08 - Handling Key Up!
+2026-01-20 23:51:08 - Var Selected: Avalonia.Controls.StackPanel
+2026-01-20 23:51:08 - Here1
+2026-01-20 23:51:08 - Here2
+2026-01-20 23:51:08 - Here3
+2026-01-20 23:51:08 - Here4
+2026-01-20 23:51:08 - Here5
+2026-01-20 23:51:08 - Here6
+2026-01-20 23:51:08 - Here7
+2026-01-20 23:51:08 - Here8
+2026-01-20 23:51:08 - Here9
+2026-01-20 23:51:08 - Here10
+2026-01-20 23:51:11 - Auto Save in Progress!

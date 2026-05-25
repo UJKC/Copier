@@ -98,3 +98,760 @@
 2026-01-21 00:01:15 - Here8
 2026-01-21 00:01:15 - Here9
 2026-01-21 00:01:15 - Here10
+2026-01-21 00:05:00 - Auto Save in Progress!
+2026-01-26 21:21:16 - Hello
+2026-01-26 21:21:16 - Entry Manager Object Created!
+2026-01-26 21:21:16 - Selected Panel: 
+2026-01-26 21:21:16 - Is Update Possible: True
+2026-01-26 21:21:16 - UI Manager Object Created!
+2026-01-26 21:21:16 - Auto Save Service Object Created!
+2026-01-26 21:21:16 - Search Service Object Created!
+2026-01-26 21:21:16 - keyboard Manager Object Created!
+2026-01-26 21:21:16 - Auto Loading in Progress!
+2026-01-26 21:21:16 - Loading!
+2026-01-26 21:21:17 - Loading Each
+2026-01-26 21:21:17 - Reordering!
+2026-01-26 21:21:17 - Loaded Each!
+2026-01-26 21:21:17 - Loaded!
+2026-01-26 21:21:17 - Auto loading complete!
+2026-01-26 21:21:17 - No of Panel: 2
+2026-01-26 21:21:19 - Handling Key Up!
+2026-01-26 21:21:19 - Var Selected: 
+2026-01-26 21:21:19 - Here1
+2026-01-26 21:21:19 - Here2
+2026-01-26 21:21:19 - Here3
+2026-01-26 21:21:19 - Here4
+2026-01-26 21:21:19 - Here5
+2026-01-26 21:21:19 - Here6
+2026-01-26 21:21:19 - Here7
+2026-01-26 21:21:19 - Here8
+2026-01-26 21:21:19 - Down key pressed
+2026-01-26 21:21:19 - Current Index: -1
+2026-01-26 21:21:19 - Next Index: 0
+2026-01-26 21:21:19 - Set Selectd Panel came here!
+2026-01-26 21:21:19 - Current Panel: 0
+2026-01-26 21:21:19 - Update Selection in Progress!
+2026-01-26 21:21:19 - Updated Selection!
+2026-01-26 21:21:19 - Updated Panels
+2026-01-26 21:21:19 - -------------------------------------------------------------------
+2026-01-26 21:21:19 - Here9
+2026-01-26 21:21:19 - Here10
+2026-01-26 21:21:20 - Handling Key Up!
+2026-01-26 21:21:20 - Var Selected: Avalonia.Controls.StackPanel
+2026-01-26 21:21:20 - Here1
+2026-01-26 21:21:20 - Here2
+2026-01-26 21:21:20 - Here3
+2026-01-26 21:21:20 - Here4
+2026-01-26 21:21:20 - Here5
+2026-01-26 21:21:20 - Here6
+2026-01-26 21:21:20 - Here7
+2026-01-26 21:21:20 - Here8
+2026-01-26 21:21:20 - Down key pressed
+2026-01-26 21:21:20 - Current Index: 0
+2026-01-26 21:21:20 - Next Index: 1
+2026-01-26 21:21:20 - Set Selectd Panel came here!
+2026-01-26 21:21:20 - Current Panel: 1
+2026-01-26 21:21:20 - Update Selection in Progress!
+2026-01-26 21:21:20 - Updated Selection!
+2026-01-26 21:21:20 - Updated Panels
+2026-01-26 21:21:20 - -------------------------------------------------------------------
+2026-01-26 21:21:20 - Here9
+2026-01-26 21:21:20 - Here10
+2026-01-26 21:21:21 - Handling Key Up!
+2026-01-26 21:21:21 - Var Selected: Avalonia.Controls.StackPanel
+2026-01-26 21:21:21 - Here1
+2026-01-26 21:21:21 - Here2
+2026-01-26 21:21:21 - Here3
+2026-01-26 21:21:21 - Here4
+2026-01-26 21:21:21 - Here5
+2026-01-26 21:21:21 - Here6
+2026-01-26 21:21:21 - Here7
+2026-01-26 21:21:21 - Here8
+2026-01-26 21:21:21 - Down Up pressed
+2026-01-26 21:21:21 - Current Index: 1
+2026-01-26 21:21:21 - Next Index: 0
+2026-01-26 21:21:21 - Set Selectd Panel came here!
+2026-01-26 21:21:21 - Current Panel: 0
+2026-01-26 21:21:21 - Update Selection in Progress!
+2026-01-26 21:21:21 - Updated Selection!
+2026-01-26 21:21:21 - Updated Panels
+2026-01-26 21:21:21 - -------------------------------------------------------------------
+2026-01-26 21:21:21 - Here9
+2026-01-26 21:21:21 - Here10
+2026-01-26 21:21:21 - Handling Key Up!
+2026-01-26 21:21:21 - Var Selected: Avalonia.Controls.StackPanel
+2026-01-26 21:21:21 - Here1
+2026-01-26 21:21:21 - Here2
+2026-01-26 21:21:21 - Here3
+2026-01-26 21:21:21 - Here4
+2026-01-26 21:21:21 - Here5
+2026-01-26 21:21:21 - Here6
+2026-01-26 21:21:21 - Here7
+2026-01-26 21:21:21 - Here8
+2026-01-26 21:21:21 - Down Up pressed
+2026-01-26 21:21:21 - Current Index: 0
+2026-01-26 21:21:21 - Next Index: 0
+2026-01-26 21:21:21 - Here9
+2026-01-26 21:21:21 - Here10
+2026-01-26 21:21:21 - Handling Key Up!
+2026-01-26 21:21:21 - Var Selected: Avalonia.Controls.StackPanel
+2026-01-26 21:21:21 - Here1
+2026-01-26 21:21:21 - Here2
+2026-01-26 21:21:21 - Here3
+2026-01-26 21:21:21 - Here4
+2026-01-26 21:21:21 - Here5
+2026-01-26 21:21:21 - Here6
+2026-01-26 21:21:21 - Here7
+2026-01-26 21:21:21 - Here8
+2026-01-26 21:21:21 - Down key pressed
+2026-01-26 21:21:21 - Current Index: 0
+2026-01-26 21:21:21 - Next Index: 1
+2026-01-26 21:21:21 - Set Selectd Panel came here!
+2026-01-26 21:21:21 - Current Panel: 1
+2026-01-26 21:21:21 - Update Selection in Progress!
+2026-01-26 21:21:21 - Updated Selection!
+2026-01-26 21:21:21 - Updated Panels
+2026-01-26 21:21:21 - -------------------------------------------------------------------
+2026-01-26 21:21:21 - Here9
+2026-01-26 21:21:21 - Here10
+2026-01-26 21:21:22 - Handling Key Up!
+2026-01-26 21:21:22 - Var Selected: Avalonia.Controls.StackPanel
+2026-01-26 21:21:22 - Here1
+2026-01-26 21:21:22 - Here2
+2026-01-26 21:21:22 - Here3
+2026-01-26 21:21:22 - Here4
+2026-01-26 21:21:22 - Here5
+2026-01-26 21:21:22 - Here6
+2026-01-26 21:21:22 - Here7
+2026-01-26 21:21:22 - Here8
+2026-01-26 21:21:22 - Down key pressed
+2026-01-26 21:21:22 - Current Index: 1
+2026-01-26 21:21:22 - Next Index: 1
+2026-01-26 21:21:22 - Here9
+2026-01-26 21:21:22 - Here10
+2026-01-26 21:21:22 - Handling Key Up!
+2026-01-26 21:21:22 - Var Selected: Avalonia.Controls.StackPanel
+2026-01-26 21:21:22 - Here1
+2026-01-26 21:21:22 - Here2
+2026-01-26 21:21:22 - Here3
+2026-01-26 21:21:22 - Here4
+2026-01-26 21:21:22 - Here5
+2026-01-26 21:21:22 - Here6
+2026-01-26 21:21:22 - Here7
+2026-01-26 21:21:22 - Here8
+2026-01-26 21:21:22 - Down Up pressed
+2026-01-26 21:21:22 - Current Index: 1
+2026-01-26 21:21:22 - Next Index: 0
+2026-01-26 21:21:22 - Set Selectd Panel came here!
+2026-01-26 21:21:22 - Current Panel: 0
+2026-01-26 21:21:22 - Update Selection in Progress!
+2026-01-26 21:21:22 - Updated Selection!
+2026-01-26 21:21:22 - Updated Panels
+2026-01-26 21:21:22 - -------------------------------------------------------------------
+2026-01-26 21:21:22 - Here9
+2026-01-26 21:21:22 - Here10
+2026-01-26 21:21:23 - Handling Key Up!
+2026-01-26 21:21:23 - Var Selected: Avalonia.Controls.StackPanel
+2026-01-26 21:21:23 - Here1
+2026-01-26 21:21:23 - Here2
+2026-01-26 21:21:23 - Here3
+2026-01-26 21:21:23 - Here4
+2026-01-26 21:21:23 - Here5
+2026-01-26 21:21:23 - Here6
+2026-01-26 21:21:23 - Here7
+2026-01-26 21:21:23 - Here8
+2026-01-26 21:21:23 - Down key pressed
+2026-01-26 21:21:23 - Current Index: 0
+2026-01-26 21:21:23 - Next Index: 1
+2026-01-26 21:21:23 - Set Selectd Panel came here!
+2026-01-26 21:21:23 - Current Panel: 1
+2026-01-26 21:21:23 - Update Selection in Progress!
+2026-01-26 21:21:23 - Updated Selection!
+2026-01-26 21:21:23 - Updated Panels
+2026-01-26 21:21:23 - -------------------------------------------------------------------
+2026-01-26 21:21:23 - Here9
+2026-01-26 21:21:23 - Here10
+2026-01-26 21:21:23 - Handling Key Up!
+2026-01-26 21:21:23 - Var Selected: Avalonia.Controls.StackPanel
+2026-01-26 21:21:23 - Here1
+2026-01-26 21:21:23 - Here2
+2026-01-26 21:21:23 - Here3
+2026-01-26 21:21:23 - Here4
+2026-01-26 21:21:23 - Here5
+2026-01-26 21:21:23 - Here6
+2026-01-26 21:21:23 - Here7
+2026-01-26 21:21:23 - Here8
+2026-01-26 21:21:23 - Down Up pressed
+2026-01-26 21:21:23 - Current Index: 1
+2026-01-26 21:21:23 - Next Index: 0
+2026-01-26 21:21:23 - Set Selectd Panel came here!
+2026-01-26 21:21:23 - Current Panel: 0
+2026-01-26 21:21:23 - Update Selection in Progress!
+2026-01-26 21:21:23 - Updated Selection!
+2026-01-26 21:21:23 - Updated Panels
+2026-01-26 21:21:23 - -------------------------------------------------------------------
+2026-01-26 21:21:23 - Here9
+2026-01-26 21:21:23 - Here10
+2026-01-26 21:21:23 - Handling Key Up!
+2026-01-26 21:21:23 - Var Selected: Avalonia.Controls.StackPanel
+2026-01-26 21:21:23 - Here1
+2026-01-26 21:21:23 - Here2
+2026-01-26 21:21:23 - Here3
+2026-01-26 21:21:23 - Here4
+2026-01-26 21:21:23 - Here5
+2026-01-26 21:21:23 - Here6
+2026-01-26 21:21:23 - Here7
+2026-01-26 21:21:23 - Here8
+2026-01-26 21:21:23 - Down key pressed
+2026-01-26 21:21:23 - Current Index: 0
+2026-01-26 21:21:23 - Next Index: 1
+2026-01-26 21:21:23 - Set Selectd Panel came here!
+2026-01-26 21:21:23 - Current Panel: 1
+2026-01-26 21:21:23 - Update Selection in Progress!
+2026-01-26 21:21:23 - Updated Selection!
+2026-01-26 21:21:23 - Updated Panels
+2026-01-26 21:21:23 - -------------------------------------------------------------------
+2026-01-26 21:21:23 - Here9
+2026-01-26 21:21:23 - Here10
+2026-01-26 21:21:29 - Auto Save in Progress!
+2026-01-26 21:23:10 - Hello
+2026-01-26 21:23:10 - Entry Manager Object Created!
+2026-01-26 21:23:10 - Selected Panel: 
+2026-01-26 21:23:10 - Is Update Possible: True
+2026-01-26 21:23:10 - UI Manager Object Created!
+2026-01-26 21:23:10 - Auto Save Service Object Created!
+2026-01-26 21:23:10 - Search Service Object Created!
+2026-01-26 21:23:10 - keyboard Manager Object Created!
+2026-01-26 21:23:10 - Auto Loading in Progress!
+2026-01-26 21:23:10 - Loading!
+2026-01-26 21:23:10 - Loading Each
+2026-01-26 21:23:10 - Reordering!
+2026-01-26 21:23:10 - Loaded Each!
+2026-01-26 21:23:10 - Loaded!
+2026-01-26 21:23:10 - Auto loading complete!
+2026-01-26 21:23:10 - No of Panel: 2
+2026-01-26 21:23:11 - Handling Key Up!
+2026-01-26 21:23:11 - Var Selected: 
+2026-01-26 21:23:11 - Here1
+2026-01-26 21:23:11 - Here2
+2026-01-26 21:23:11 - Here3
+2026-01-26 21:23:11 - Here4
+2026-01-26 21:23:11 - Here5
+2026-01-26 21:23:11 - Here6
+2026-01-26 21:23:11 - Here7
+2026-01-26 21:23:11 - Here8
+2026-01-26 21:23:11 - Down key pressed
+2026-01-26 21:23:11 - Current Index: -1
+2026-01-26 21:23:11 - Next Index: 0
+2026-01-26 21:23:11 - Set Selectd Panel came here!
+2026-01-26 21:23:11 - Current Panel: 0
+2026-01-26 21:23:11 - Update Selection in Progress!
+2026-01-26 21:23:11 - Updated Selection!
+2026-01-26 21:23:11 - Updated Panels
+2026-01-26 21:23:11 - -------------------------------------------------------------------
+2026-01-26 21:23:11 - Here9
+2026-01-26 21:23:11 - Here10
+2026-01-26 21:23:12 - Handling Key Up!
+2026-01-26 21:23:12 - Var Selected: Avalonia.Controls.StackPanel
+2026-01-26 21:23:12 - Here1
+2026-01-26 21:23:12 - Here2
+2026-01-26 21:23:12 - Here3
+2026-01-26 21:23:12 - Here4
+2026-01-26 21:23:12 - Here5
+2026-01-26 21:23:12 - Here6
+2026-01-26 21:23:12 - Here7
+2026-01-26 21:23:12 - Here8
+2026-01-26 21:23:12 - Down key pressed
+2026-01-26 21:23:12 - Current Index: 0
+2026-01-26 21:23:12 - Next Index: 1
+2026-01-26 21:23:12 - Set Selectd Panel came here!
+2026-01-26 21:23:12 - Current Panel: 1
+2026-01-26 21:23:12 - Update Selection in Progress!
+2026-01-26 21:23:12 - Updated Selection!
+2026-01-26 21:23:12 - Updated Panels
+2026-01-26 21:23:12 - -------------------------------------------------------------------
+2026-01-26 21:23:12 - Here9
+2026-01-26 21:23:12 - Here10
+2026-01-26 21:23:12 - Handling Key Up!
+2026-01-26 21:23:12 - Var Selected: Avalonia.Controls.StackPanel
+2026-01-26 21:23:12 - Here1
+2026-01-26 21:23:12 - Here2
+2026-01-26 21:23:12 - Here3
+2026-01-26 21:23:12 - Here4
+2026-01-26 21:23:12 - Here5
+2026-01-26 21:23:12 - Here6
+2026-01-26 21:23:12 - Here7
+2026-01-26 21:23:12 - Here8
+2026-01-26 21:23:12 - Down Up pressed
+2026-01-26 21:23:12 - Current Index: 1
+2026-01-26 21:23:12 - Next Index: 0
+2026-01-26 21:23:12 - Set Selectd Panel came here!
+2026-01-26 21:23:12 - Current Panel: 0
+2026-01-26 21:23:12 - Update Selection in Progress!
+2026-01-26 21:23:12 - Updated Selection!
+2026-01-26 21:23:12 - Updated Panels
+2026-01-26 21:23:12 - -------------------------------------------------------------------
+2026-01-26 21:23:12 - Here9
+2026-01-26 21:23:12 - Here10
+2026-01-26 21:23:13 - Handling Key Up!
+2026-01-26 21:23:13 - Var Selected: Avalonia.Controls.StackPanel
+2026-01-26 21:23:13 - Here1
+2026-01-26 21:23:13 - Here2
+2026-01-26 21:23:13 - Here3
+2026-01-26 21:23:13 - Here4
+2026-01-26 21:23:13 - Here5
+2026-01-26 21:23:13 - Here6
+2026-01-26 21:23:13 - Here7
+2026-01-26 21:23:13 - Here8
+2026-01-26 21:23:13 - Down key pressed
+2026-01-26 21:23:13 - Current Index: 0
+2026-01-26 21:23:13 - Next Index: 1
+2026-01-26 21:23:13 - Set Selectd Panel came here!
+2026-01-26 21:23:13 - Current Panel: 1
+2026-01-26 21:23:13 - Update Selection in Progress!
+2026-01-26 21:23:13 - Updated Selection!
+2026-01-26 21:23:13 - Updated Panels
+2026-01-26 21:23:13 - -------------------------------------------------------------------
+2026-01-26 21:23:13 - Here9
+2026-01-26 21:23:13 - Here10
+2026-01-26 21:23:13 - Handling Key Up!
+2026-01-26 21:23:13 - Var Selected: Avalonia.Controls.StackPanel
+2026-01-26 21:23:13 - Here1
+2026-01-26 21:23:13 - Here2
+2026-01-26 21:23:13 - Here3
+2026-01-26 21:23:13 - Here4
+2026-01-26 21:23:13 - Here5
+2026-01-26 21:23:13 - Here6
+2026-01-26 21:23:13 - Here7
+2026-01-26 21:23:13 - Here8
+2026-01-26 21:23:13 - Down Up pressed
+2026-01-26 21:23:13 - Current Index: 1
+2026-01-26 21:23:13 - Next Index: 0
+2026-01-26 21:23:13 - Set Selectd Panel came here!
+2026-01-26 21:23:13 - Current Panel: 0
+2026-01-26 21:23:13 - Update Selection in Progress!
+2026-01-26 21:23:13 - Updated Selection!
+2026-01-26 21:23:13 - Updated Panels
+2026-01-26 21:23:13 - -------------------------------------------------------------------
+2026-01-26 21:23:13 - Here9
+2026-01-26 21:23:13 - Here10
+2026-01-26 21:23:13 - Handling Key Up!
+2026-01-26 21:23:13 - Var Selected: Avalonia.Controls.StackPanel
+2026-01-26 21:23:13 - Here1
+2026-01-26 21:23:13 - Here2
+2026-01-26 21:23:13 - Here3
+2026-01-26 21:23:13 - Here4
+2026-01-26 21:23:13 - Here5
+2026-01-26 21:23:13 - Here6
+2026-01-26 21:23:13 - Here7
+2026-01-26 21:23:13 - Here8
+2026-01-26 21:23:13 - Down key pressed
+2026-01-26 21:23:13 - Current Index: 0
+2026-01-26 21:23:13 - Next Index: 1
+2026-01-26 21:23:13 - Set Selectd Panel came here!
+2026-01-26 21:23:13 - Current Panel: 1
+2026-01-26 21:23:13 - Update Selection in Progress!
+2026-01-26 21:23:13 - Updated Selection!
+2026-01-26 21:23:13 - Updated Panels
+2026-01-26 21:23:13 - -------------------------------------------------------------------
+2026-01-26 21:23:13 - Here9
+2026-01-26 21:23:13 - Here10
+2026-01-26 21:23:14 - Handling Key Up!
+2026-01-26 21:23:14 - Var Selected: Avalonia.Controls.StackPanel
+2026-01-26 21:23:14 - Here1
+2026-01-26 21:23:14 - Here2
+2026-01-26 21:23:14 - Here3
+2026-01-26 21:23:14 - Here4
+2026-01-26 21:23:14 - Here5
+2026-01-26 21:23:14 - Here6
+2026-01-26 21:23:14 - Here7
+2026-01-26 21:23:14 - Here8
+2026-01-26 21:23:14 - Down Up pressed
+2026-01-26 21:23:14 - Current Index: 1
+2026-01-26 21:23:14 - Next Index: 0
+2026-01-26 21:23:14 - Set Selectd Panel came here!
+2026-01-26 21:23:14 - Current Panel: 0
+2026-01-26 21:23:14 - Update Selection in Progress!
+2026-01-26 21:23:14 - Updated Selection!
+2026-01-26 21:23:14 - Updated Panels
+2026-01-26 21:23:14 - -------------------------------------------------------------------
+2026-01-26 21:23:14 - Here9
+2026-01-26 21:23:14 - Here10
+2026-01-26 21:23:14 - Handling Key Up!
+2026-01-26 21:23:14 - Var Selected: Avalonia.Controls.StackPanel
+2026-01-26 21:23:14 - Here1
+2026-01-26 21:23:14 - Here2
+2026-01-26 21:23:14 - Here3
+2026-01-26 21:23:14 - Here4
+2026-01-26 21:23:14 - Here5
+2026-01-26 21:23:14 - Here6
+2026-01-26 21:23:14 - Here7
+2026-01-26 21:23:14 - Here8
+2026-01-26 21:23:14 - Down key pressed
+2026-01-26 21:23:14 - Current Index: 0
+2026-01-26 21:23:14 - Next Index: 1
+2026-01-26 21:23:14 - Set Selectd Panel came here!
+2026-01-26 21:23:14 - Current Panel: 1
+2026-01-26 21:23:14 - Update Selection in Progress!
+2026-01-26 21:23:14 - Updated Selection!
+2026-01-26 21:23:14 - Updated Panels
+2026-01-26 21:23:14 - -------------------------------------------------------------------
+2026-01-26 21:23:14 - Here9
+2026-01-26 21:23:14 - Here10
+2026-01-26 21:23:14 - Handling Key Up!
+2026-01-26 21:23:14 - Var Selected: Avalonia.Controls.StackPanel
+2026-01-26 21:23:14 - Here1
+2026-01-26 21:23:14 - Here2
+2026-01-26 21:23:14 - Here3
+2026-01-26 21:23:14 - Here4
+2026-01-26 21:23:14 - Here5
+2026-01-26 21:23:14 - Here6
+2026-01-26 21:23:14 - Here7
+2026-01-26 21:23:14 - Here8
+2026-01-26 21:23:14 - Down Up pressed
+2026-01-26 21:23:14 - Current Index: 1
+2026-01-26 21:23:14 - Next Index: 0
+2026-01-26 21:23:14 - Set Selectd Panel came here!
+2026-01-26 21:23:14 - Current Panel: 0
+2026-01-26 21:23:14 - Update Selection in Progress!
+2026-01-26 21:23:14 - Updated Selection!
+2026-01-26 21:23:14 - Updated Panels
+2026-01-26 21:23:14 - -------------------------------------------------------------------
+2026-01-26 21:23:14 - Here9
+2026-01-26 21:23:14 - Here10
+2026-01-26 21:23:16 - Handling Key Up!
+2026-01-26 21:23:16 - Var Selected: Avalonia.Controls.StackPanel
+2026-01-26 21:23:16 - Here1
+2026-01-26 21:23:16 - Here2
+2026-01-26 21:23:16 - Here3
+2026-01-26 21:23:16 - Here4
+2026-01-26 21:23:16 - Here5
+2026-01-26 21:23:16 - Here6
+2026-01-26 21:23:16 - Here7
+2026-01-26 21:23:16 - Here8
+2026-01-26 21:23:16 - Down Up pressed
+2026-01-26 21:23:16 - Current Index: 0
+2026-01-26 21:23:16 - Next Index: 0
+2026-01-26 21:23:16 - Here9
+2026-01-26 21:23:16 - Here10
+2026-01-26 21:23:16 - Handling Key Up!
+2026-01-26 21:23:16 - Var Selected: Avalonia.Controls.StackPanel
+2026-01-26 21:23:16 - Here1
+2026-01-26 21:23:16 - Here2
+2026-01-26 21:23:16 - Here3
+2026-01-26 21:23:16 - Here4
+2026-01-26 21:23:16 - Here5
+2026-01-26 21:23:16 - Here6
+2026-01-26 21:23:16 - Here7
+2026-01-26 21:23:16 - Here8
+2026-01-26 21:23:16 - Down key pressed
+2026-01-26 21:23:16 - Current Index: 0
+2026-01-26 21:23:16 - Next Index: 1
+2026-01-26 21:23:16 - Set Selectd Panel came here!
+2026-01-26 21:23:16 - Current Panel: 1
+2026-01-26 21:23:16 - Update Selection in Progress!
+2026-01-26 21:23:16 - Updated Selection!
+2026-01-26 21:23:16 - Updated Panels
+2026-01-26 21:23:16 - -------------------------------------------------------------------
+2026-01-26 21:23:16 - Here9
+2026-01-26 21:23:16 - Here10
+2026-01-26 21:23:17 - Handling Key Up!
+2026-01-26 21:23:17 - Var Selected: Avalonia.Controls.StackPanel
+2026-01-26 21:23:17 - Here1
+2026-01-26 21:23:17 - Here2
+2026-01-26 21:23:17 - Here3
+2026-01-26 21:23:17 - Here4
+2026-01-26 21:23:17 - Here5
+2026-01-26 21:23:17 - Here6
+2026-01-26 21:23:17 - Here7
+2026-01-26 21:23:17 - Here8
+2026-01-26 21:23:17 - Down Up pressed
+2026-01-26 21:23:17 - Current Index: 1
+2026-01-26 21:23:17 - Next Index: 0
+2026-01-26 21:23:17 - Set Selectd Panel came here!
+2026-01-26 21:23:17 - Current Panel: 0
+2026-01-26 21:23:17 - Update Selection in Progress!
+2026-01-26 21:23:17 - Updated Selection!
+2026-01-26 21:23:17 - Updated Panels
+2026-01-26 21:23:17 - -------------------------------------------------------------------
+2026-01-26 21:23:17 - Here9
+2026-01-26 21:23:17 - Here10
+2026-01-26 21:23:17 - Handling Key Up!
+2026-01-26 21:23:17 - Var Selected: Avalonia.Controls.StackPanel
+2026-01-26 21:23:17 - Here1
+2026-01-26 21:23:17 - Here2
+2026-01-26 21:23:17 - Here3
+2026-01-26 21:23:17 - Here4
+2026-01-26 21:23:17 - Here5
+2026-01-26 21:23:17 - Here6
+2026-01-26 21:23:17 - Here7
+2026-01-26 21:23:17 - Here8
+2026-01-26 21:23:17 - Down key pressed
+2026-01-26 21:23:17 - Current Index: 0
+2026-01-26 21:23:17 - Next Index: 1
+2026-01-26 21:23:17 - Set Selectd Panel came here!
+2026-01-26 21:23:17 - Current Panel: 1
+2026-01-26 21:23:17 - Update Selection in Progress!
+2026-01-26 21:23:17 - Updated Selection!
+2026-01-26 21:23:17 - Updated Panels
+2026-01-26 21:23:17 - -------------------------------------------------------------------
+2026-01-26 21:23:17 - Here9
+2026-01-26 21:23:17 - Here10
+2026-01-26 21:23:18 - Handling Key Up!
+2026-01-26 21:23:18 - Var Selected: Avalonia.Controls.StackPanel
+2026-01-26 21:23:18 - Here1
+2026-01-26 21:23:18 - Here2
+2026-01-26 21:23:18 - Here3
+2026-01-26 21:23:18 - Here4
+2026-01-26 21:23:18 - Here5
+2026-01-26 21:23:18 - Here6
+2026-01-26 21:23:18 - Here7
+2026-01-26 21:23:18 - Here8
+2026-01-26 21:23:18 - Down Up pressed
+2026-01-26 21:23:18 - Current Index: 1
+2026-01-26 21:23:18 - Next Index: 0
+2026-01-26 21:23:18 - Set Selectd Panel came here!
+2026-01-26 21:23:18 - Current Panel: 0
+2026-01-26 21:23:18 - Update Selection in Progress!
+2026-01-26 21:23:18 - Updated Selection!
+2026-01-26 21:23:18 - Updated Panels
+2026-01-26 21:23:18 - -------------------------------------------------------------------
+2026-01-26 21:23:18 - Here9
+2026-01-26 21:23:18 - Here10
+2026-01-26 21:23:18 - Handling Key Up!
+2026-01-26 21:23:18 - Var Selected: Avalonia.Controls.StackPanel
+2026-01-26 21:23:18 - Here1
+2026-01-26 21:23:18 - Here2
+2026-01-26 21:23:18 - Here3
+2026-01-26 21:23:18 - Here4
+2026-01-26 21:23:18 - Here5
+2026-01-26 21:23:18 - Here6
+2026-01-26 21:23:18 - Here7
+2026-01-26 21:23:18 - Here8
+2026-01-26 21:23:18 - Down key pressed
+2026-01-26 21:23:18 - Current Index: 0
+2026-01-26 21:23:18 - Next Index: 1
+2026-01-26 21:23:18 - Set Selectd Panel came here!
+2026-01-26 21:23:18 - Current Panel: 1
+2026-01-26 21:23:18 - Update Selection in Progress!
+2026-01-26 21:23:18 - Updated Selection!
+2026-01-26 21:23:18 - Updated Panels
+2026-01-26 21:23:18 - -------------------------------------------------------------------
+2026-01-26 21:23:18 - Here9
+2026-01-26 21:23:18 - Here10
+2026-01-26 21:23:18 - Handling Key Up!
+2026-01-26 21:23:18 - Var Selected: Avalonia.Controls.StackPanel
+2026-01-26 21:23:18 - Here1
+2026-01-26 21:23:18 - Here2
+2026-01-26 21:23:18 - Here3
+2026-01-26 21:23:18 - Here4
+2026-01-26 21:23:18 - Here5
+2026-01-26 21:23:18 - Here6
+2026-01-26 21:23:18 - Here7
+2026-01-26 21:23:18 - Here8
+2026-01-26 21:23:18 - Down Up pressed
+2026-01-26 21:23:18 - Current Index: 1
+2026-01-26 21:23:18 - Next Index: 0
+2026-01-26 21:23:18 - Set Selectd Panel came here!
+2026-01-26 21:23:18 - Current Panel: 0
+2026-01-26 21:23:18 - Update Selection in Progress!
+2026-01-26 21:23:18 - Updated Selection!
+2026-01-26 21:23:18 - Updated Panels
+2026-01-26 21:23:18 - -------------------------------------------------------------------
+2026-01-26 21:23:18 - Here9
+2026-01-26 21:23:18 - Here10
+2026-01-26 21:23:19 - Handling Key Up!
+2026-01-26 21:23:19 - Var Selected: Avalonia.Controls.StackPanel
+2026-01-26 21:23:19 - Here1
+2026-01-26 21:23:19 - Here2
+2026-01-26 21:23:19 - Here3
+2026-01-26 21:23:19 - Here4
+2026-01-26 21:23:19 - Here5
+2026-01-26 21:23:19 - Here6
+2026-01-26 21:23:19 - Here7
+2026-01-26 21:23:19 - Here8
+2026-01-26 21:23:19 - Down key pressed
+2026-01-26 21:23:19 - Current Index: 0
+2026-01-26 21:23:19 - Next Index: 1
+2026-01-26 21:23:19 - Set Selectd Panel came here!
+2026-01-26 21:23:19 - Current Panel: 1
+2026-01-26 21:23:19 - Update Selection in Progress!
+2026-01-26 21:23:19 - Updated Selection!
+2026-01-26 21:23:19 - Updated Panels
+2026-01-26 21:23:19 - -------------------------------------------------------------------
+2026-01-26 21:23:19 - Here9
+2026-01-26 21:23:19 - Here10
+2026-01-26 21:23:19 - Handling Key Up!
+2026-01-26 21:23:19 - Var Selected: Avalonia.Controls.StackPanel
+2026-01-26 21:23:19 - Here1
+2026-01-26 21:23:19 - Here2
+2026-01-26 21:23:19 - Here3
+2026-01-26 21:23:19 - Here4
+2026-01-26 21:23:19 - Here5
+2026-01-26 21:23:19 - Here6
+2026-01-26 21:23:19 - Here7
+2026-01-26 21:23:19 - Here8
+2026-01-26 21:23:19 - Down Up pressed
+2026-01-26 21:23:19 - Current Index: 1
+2026-01-26 21:23:19 - Next Index: 0
+2026-01-26 21:23:19 - Set Selectd Panel came here!
+2026-01-26 21:23:19 - Current Panel: 0
+2026-01-26 21:23:19 - Update Selection in Progress!
+2026-01-26 21:23:19 - Updated Selection!
+2026-01-26 21:23:19 - Updated Panels
+2026-01-26 21:23:19 - -------------------------------------------------------------------
+2026-01-26 21:23:19 - Here9
+2026-01-26 21:23:19 - Here10
+2026-01-26 21:23:23 - Handling Key Up!
+2026-01-26 21:23:23 - Var Selected: Avalonia.Controls.StackPanel
+2026-01-26 21:23:23 - Here1
+2026-01-26 21:23:23 - Here2
+2026-01-26 21:23:23 - Here3
+2026-01-26 21:23:23 - Here4
+2026-01-26 21:23:23 - Here5
+2026-01-26 21:23:23 - Here6
+2026-01-26 21:23:23 - Here7
+2026-01-26 21:23:23 - Here8
+2026-01-26 21:23:23 - Down key pressed
+2026-01-26 21:23:23 - Current Index: 0
+2026-01-26 21:23:23 - Next Index: 1
+2026-01-26 21:23:23 - Set Selectd Panel came here!
+2026-01-26 21:23:23 - Current Panel: 1
+2026-01-26 21:23:23 - Update Selection in Progress!
+2026-01-26 21:23:23 - Updated Selection!
+2026-01-26 21:23:23 - Updated Panels
+2026-01-26 21:23:23 - -------------------------------------------------------------------
+2026-01-26 21:23:23 - Here9
+2026-01-26 21:23:23 - Here10
+2026-01-26 21:23:24 - Handling Key Up!
+2026-01-26 21:23:24 - Var Selected: Avalonia.Controls.StackPanel
+2026-01-26 21:23:24 - Here1
+2026-01-26 21:23:24 - Here2
+2026-01-26 21:23:24 - Here3
+2026-01-26 21:23:24 - Here4
+2026-01-26 21:23:24 - Here5
+2026-01-26 21:23:24 - Here6
+2026-01-26 21:23:24 - Here7
+2026-01-26 21:23:24 - Here8
+2026-01-26 21:23:24 - Down key pressed
+2026-01-26 21:23:24 - Current Index: 1
+2026-01-26 21:23:24 - Next Index: 1
+2026-01-26 21:23:24 - Here9
+2026-01-26 21:23:24 - Here10
+2026-01-26 21:23:39 - Auto Save in Progress!
+2026-01-26 21:32:46 - Hello
+2026-01-26 21:32:46 - Entry Manager Object Created!
+2026-01-26 21:32:46 - Selected Panel: 
+2026-01-26 21:32:46 - Is Update Possible: True
+2026-01-26 21:32:46 - UI Manager Object Created!
+2026-01-26 21:32:46 - Auto Save Service Object Created!
+2026-01-26 21:32:46 - Search Service Object Created!
+2026-01-26 21:32:46 - keyboard Manager Object Created!
+2026-01-26 21:32:46 - Auto Loading in Progress!
+2026-01-26 21:32:46 - Loading!
+2026-01-26 21:32:46 - Loading Each
+2026-01-26 21:32:46 - Reordering!
+2026-01-26 21:32:46 - Loaded Each!
+2026-01-26 21:32:46 - Loaded!
+2026-01-26 21:32:46 - Auto loading complete!
+2026-01-26 21:32:46 - No of Panel: 2
+2026-01-26 21:32:47 - Handling Key Up!
+2026-01-26 21:32:47 - Var Selected: 
+2026-01-26 21:32:47 - Here1
+2026-01-26 21:32:47 - Here2
+2026-01-26 21:32:47 - Here3
+2026-01-26 21:32:47 - Here4
+2026-01-26 21:32:47 - Here5
+2026-01-26 21:32:47 - Here6
+2026-01-26 21:32:47 - Here7
+2026-01-26 21:32:47 - Here8
+2026-01-26 21:32:47 - Down key pressed
+2026-01-26 21:32:47 - Current Index: -1
+2026-01-26 21:32:47 - Next Index: 0
+2026-01-26 21:32:47 - Set Selectd Panel came here!
+2026-01-26 21:32:47 - Current Panel: 0
+2026-01-26 21:32:47 - Update Selection in Progress!
+2026-01-26 21:32:47 - Updated Selection!
+2026-01-26 21:32:47 - Updated Panels
+2026-01-26 21:32:47 - -------------------------------------------------------------------
+2026-01-26 21:32:47 - Here9
+2026-01-26 21:32:47 - Here10
+2026-01-26 21:32:47 - Handling Key Up!
+2026-01-26 21:32:47 - Var Selected: Avalonia.Controls.StackPanel
+2026-01-26 21:32:47 - Here1
+2026-01-26 21:32:47 - Here2
+2026-01-26 21:32:47 - Here3
+2026-01-26 21:32:47 - Here4
+2026-01-26 21:32:47 - Here5
+2026-01-26 21:32:47 - Here6
+2026-01-26 21:32:47 - Here7
+2026-01-26 21:32:47 - Here8
+2026-01-26 21:32:47 - Down key pressed
+2026-01-26 21:32:47 - Current Index: 0
+2026-01-26 21:32:47 - Next Index: 1
+2026-01-26 21:32:47 - Set Selectd Panel came here!
+2026-01-26 21:32:47 - Current Panel: 1
+2026-01-26 21:32:47 - Update Selection in Progress!
+2026-01-26 21:32:47 - Updated Selection!
+2026-01-26 21:32:47 - Updated Panels
+2026-01-26 21:32:47 - -------------------------------------------------------------------
+2026-01-26 21:32:47 - Here9
+2026-01-26 21:32:47 - Here10
+2026-01-26 21:32:47 - Handling Key Up!
+2026-01-26 21:32:47 - Var Selected: Avalonia.Controls.StackPanel
+2026-01-26 21:32:47 - Here1
+2026-01-26 21:32:47 - Here2
+2026-01-26 21:32:47 - Here3
+2026-01-26 21:32:47 - Here4
+2026-01-26 21:32:47 - Here5
+2026-01-26 21:32:47 - Here6
+2026-01-26 21:32:47 - Here7
+2026-01-26 21:32:47 - Here8
+2026-01-26 21:32:47 - Down key pressed
+2026-01-26 21:32:47 - Current Index: 1
+2026-01-26 21:32:47 - Next Index: 1
+2026-01-26 21:32:47 - Here9
+2026-01-26 21:32:47 - Here10
+2026-01-26 21:32:48 - Handling Key Up!
+2026-01-26 21:32:48 - Var Selected: Avalonia.Controls.StackPanel
+2026-01-26 21:32:48 - Here1
+2026-01-26 21:32:48 - Here2
+2026-01-26 21:32:48 - Here3
+2026-01-26 21:32:48 - Here4
+2026-01-26 21:32:48 - Here5
+2026-01-26 21:32:48 - Here6
+2026-01-26 21:32:48 - Here7
+2026-01-26 21:32:48 - Here8
+2026-01-26 21:32:48 - Down Up pressed
+2026-01-26 21:32:48 - Current Index: 1
+2026-01-26 21:32:48 - Next Index: 0
+2026-01-26 21:32:48 - Set Selectd Panel came here!
+2026-01-26 21:32:48 - Current Panel: 0
+2026-01-26 21:32:48 - Update Selection in Progress!
+2026-01-26 21:32:48 - Updated Selection!
+2026-01-26 21:32:48 - Updated Panels
+2026-01-26 21:32:48 - -------------------------------------------------------------------
+2026-01-26 21:32:48 - Here9
+2026-01-26 21:32:48 - Here10
+2026-01-26 21:32:48 - Handling Key Up!
+2026-01-26 21:32:48 - Var Selected: Avalonia.Controls.StackPanel
+2026-01-26 21:32:48 - Here1
+2026-01-26 21:32:48 - Here2
+2026-01-26 21:32:48 - Here3
+2026-01-26 21:32:48 - Here4
+2026-01-26 21:32:48 - Here5
+2026-01-26 21:32:48 - Here6
+2026-01-26 21:32:48 - Here7
+2026-01-26 21:32:48 - Here8
+2026-01-26 21:32:48 - Down key pressed
+2026-01-26 21:32:48 - Current Index: 0
+2026-01-26 21:32:48 - Next Index: 1
+2026-01-26 21:32:48 - Set Selectd Panel came here!
+2026-01-26 21:32:48 - Current Panel: 1
+2026-01-26 21:32:48 - Update Selection in Progress!
+2026-01-26 21:32:48 - Updated Selection!
+2026-01-26 21:32:48 - Updated Panels
+2026-01-26 21:32:48 - -------------------------------------------------------------------
+2026-01-26 21:32:48 - Here9
+2026-01-26 21:32:48 - Here10
+2026-01-26 21:32:50 - Auto Save in Progress!

@@ -86,7 +86,7 @@ namespace copier.Services
                 Import_Click();
             }
 
-            if (e.KeyModifiers == KeyModifiers.Control && e.Key == Key.X)
+            if (e.KeyModifiers == (KeyModifiers.Control | KeyModifiers.Shift) && e.Key == Key.Delete)
             {
                 AppFileLogger.AddText("Clear All");
                 ClearAll_Click();

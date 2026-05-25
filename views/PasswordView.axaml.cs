@@ -66,11 +66,16 @@ namespace copier.Views
                 return;
             }
 
-            // ✅ Correct password
-            var mainWindow = new MainWindow();
-            mainWindow.Show();
+            if (Application.Current?.ApplicationLifetime is IClassicDesktopStyleApplicationLifetime appLifetime)
+            {
+                var mainWindow = new MainWindow();
 
-            Close();
+                appLifetime.MainWindow = mainWindow;
+
+                mainWindow.Show();
+
+                Close();
+            }
         }
 
         private void PasswordBox_KeyUp(object? sender, KeyEventArgs e)

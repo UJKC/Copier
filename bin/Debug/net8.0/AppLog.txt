@@ -1,213 +1,84 @@
-2026-05-26 00:44:26 - Handling Key Up!
-2026-05-26 00:44:26 - Set Selectd Panel came here! As it is not null making it null
-2026-05-26 00:44:27 - Handling Key Up!
-2026-05-26 00:44:27 - Set Selectd Panel came here! As it is not null making it null
-2026-05-26 00:44:27 - Handling Key Up!
-2026-05-26 00:44:27 - Set Selectd Panel came here! As it is not null making it null
-2026-05-26 00:44:35 - Searching!!
-2026-05-26 00:44:35 - Handling Key Up!
-2026-05-26 00:44:35 - Set Selectd Panel came here! As it is not null making it null
-2026-05-26 00:44:35 - Searching afte Debounce
-2026-05-26 00:44:35 - Text: qsq
-2026-05-26 00:44:35 - Filte Process Started
-2026-05-26 00:44:40 - Filte Process Started
-2026-05-26 00:44:40 - Set Selectd Panel came here! As it is not null making it null
-2026-05-26 00:44:40 - Update Selection in Progress!
-2026-05-26 00:44:40 - Updated Selection!
-2026-05-26 00:44:43 - Handling Key Up!
-2026-05-26 00:44:43 - Set Selectd Panel came here! As it is not null making it null
-2026-05-26 00:44:43 - Set Selectd Panel came here! As it is not null making it null
-2026-05-26 00:44:43 - Update Selection in Progress!
-2026-05-26 00:44:43 - Updated Selection!
-2026-05-26 00:44:43 - Set Selectd Panel came here! As it is not null making it null
-2026-05-26 00:44:43 - Update Selection in Progress!
-2026-05-26 00:44:43 - Updated Selection!
-2026-05-26 00:44:48 - Handling Key Up!
-2026-05-26 00:44:48 - Set Selectd Panel came here! As it is not null making it null
-2026-05-26 00:44:48 - Handling Key Up!
-2026-05-26 00:44:48 - Set Selectd Panel came here! As it is not null making it null
-2026-05-26 00:44:49 - Handling Key Up!
-2026-05-26 00:44:49 - Set Selectd Panel came here! As it is not null making it null
-2026-05-26 00:44:49 - Handling Key Up!
-2026-05-26 00:44:49 - Set Selectd Panel came here! As it is not null making it null
-2026-05-26 00:44:50 - Handling Key Up!
-2026-05-26 00:44:50 - Set Selectd Panel came here! As it is not null making it null
-2026-05-26 00:44:50 - Handling Key Up!
-2026-05-26 00:44:50 - Set Selectd Panel came here! As it is not null making it null
-2026-05-26 00:44:50 - Handling Key Up!
-2026-05-26 00:44:50 - Set Selectd Panel came here! As it is not null making it null
-2026-05-26 00:44:50 - Handling Key Up!
-2026-05-26 00:44:50 - Set Selectd Panel came here! As it is not null making it null
-2026-05-26 00:44:51 - Handling Key Up!
-2026-05-26 00:44:51 - Set Selectd Panel came here! As it is not null making it null
-2026-05-26 00:44:52 - Reordering!
-2026-05-26 00:44:52 - Set Selectd Panel came here! As it is not null making it null
-2026-05-26 00:44:52 - Update Selection in Progress!
-2026-05-26 00:44:52 - Updated Selection!
-2026-05-26 00:44:52 - Handling Key Up!
-2026-05-26 00:44:52 - Var Selected: 
-2026-05-26 00:44:52 - Here1
-2026-05-26 00:44:52 - Here2
-2026-05-26 00:44:52 - Here3
-2026-05-26 00:44:52 - Here4
-2026-05-26 00:44:52 - Here5
-2026-05-26 00:44:52 - Here6
-2026-05-26 00:44:52 - Here7
-2026-05-26 00:44:52 - Here8
-2026-05-26 00:44:52 - Here9
-2026-05-26 00:44:52 - Here10
-2026-05-26 00:44:53 - Handling Key Up!
-2026-05-26 00:44:53 - Var Selected: 
-2026-05-26 00:44:53 - Here1
-2026-05-26 00:44:53 - Here2
-2026-05-26 00:44:53 - Here3
-2026-05-26 00:44:53 - Here4
-2026-05-26 00:44:53 - Here5
-2026-05-26 00:44:53 - Here6
-2026-05-26 00:44:53 - Here7
-2026-05-26 00:44:53 - Here8
-2026-05-26 00:44:53 - Down key pressed
-2026-05-26 00:44:53 - Current Index: -1
-2026-05-26 00:44:53 - Next Index: 0
-2026-05-26 00:44:53 - Set Selectd Panel came here!
-2026-05-26 00:44:53 - Current Panel: 0
-2026-05-26 00:44:53 - Update Selection in Progress!
-2026-05-26 00:44:53 - Updated Selection!
-2026-05-26 00:44:53 - Updated Panels
-2026-05-26 00:44:53 - -------------------------------------------------------------------
-2026-05-26 00:44:53 - Here9
-2026-05-26 00:44:53 - Here10
-2026-05-26 00:44:55 - Handling Key Up!
-2026-05-26 00:44:55 - Var Selected: Avalonia.Controls.StackPanel
-2026-05-26 00:44:55 - Here1
-2026-05-26 00:44:55 - Here2
-2026-05-26 00:44:55 - Here3
-2026-05-26 00:45:01 - Handling Key Up!
-2026-05-26 00:45:01 - Var Selected: Avalonia.Controls.StackPanel
-2026-05-26 00:45:01 - Here1
-2026-05-26 00:45:01 - Here2
-2026-05-26 00:45:01 - Here3
-2026-05-26 00:45:12 - Handling Key Up!
-2026-05-26 00:45:12 - Var Selected: Avalonia.Controls.StackPanel
-2026-05-26 00:45:12 - Here1
-2026-05-26 00:45:12 - Here2
-2026-05-26 00:45:12 - Ctrl + N clicked!
-2026-05-26 00:45:12 - Set Selectd Panel came here! As it is not null making it null
-2026-05-26 00:45:12 - Update Selection in Progress!
-2026-05-26 00:45:12 - Updated Selection!
-2026-05-26 00:45:12 - Set Selectd Panel came here! As it is not null making it null
-2026-05-26 00:45:12 - Update Selection in Progress!
-2026-05-26 00:45:12 - Updated Selection!
-2026-05-26 00:45:13 - Handling Key Up!
-2026-05-26 00:45:13 - Var Selected: 
-2026-05-26 00:45:13 - Here1
-2026-05-26 00:45:13 - Here2
-2026-05-26 00:45:13 - Here3
-2026-05-26 00:45:13 - Set Selectd Panel came here! As it is not null making it null
-2026-05-26 00:45:13 - Update Selection in Progress!
-2026-05-26 00:45:13 - Updated Selection!
-2026-05-26 00:45:18 - Handling Key Up!
-2026-05-26 00:45:18 - Var Selected: 
-2026-05-26 00:45:18 - Here1
-2026-05-26 00:45:18 - Here2
-2026-05-26 00:45:18 - Here3
-2026-05-26 00:45:18 - Here4
-2026-05-26 00:45:18 - Here5
-2026-05-26 00:45:18 - Here6
-2026-05-26 00:45:18 - Here7
-2026-05-26 00:45:18 - Here8
-2026-05-26 00:45:18 - Here9
-2026-05-26 00:45:18 - Here10
-2026-05-26 00:45:21 - Handling Key Up!
-2026-05-26 00:45:21 - Var Selected: 
-2026-05-26 00:45:21 - Here1
-2026-05-26 00:45:21 - Clear All
-2026-05-26 00:45:21 - Here2
-2026-05-26 00:45:21 - Here3
-2026-05-26 00:45:21 - Here4
-2026-05-26 00:45:21 - Here5
-2026-05-26 00:45:21 - Here6
-2026-05-26 00:45:21 - Here7
-2026-05-26 00:45:21 - Here8
-2026-05-26 00:45:21 - Here9
-2026-05-26 00:45:21 - Here10
-2026-05-26 00:45:24 - Handling Key Up!
-2026-05-26 00:45:24 - Set Selectd Panel came here! As it is not null making it null
-2026-05-26 00:45:24 - Set Selectd Panel came here! As it is not null making it null
-2026-05-26 00:45:24 - Update Selection in Progress!
-2026-05-26 00:45:24 - Updated Selection!
-2026-05-26 00:45:24 - Set Selectd Panel came here! As it is not null making it null
-2026-05-26 00:45:24 - Update Selection in Progress!
-2026-05-26 00:45:24 - Updated Selection!
-2026-05-26 00:45:27 - Handling Key Up!
-2026-05-26 00:45:27 - Set Selectd Panel came here! As it is not null making it null
-2026-05-26 00:45:27 - Handling Key Up!
-2026-05-26 00:45:27 - Set Selectd Panel came here! As it is not null making it null
-2026-05-26 00:45:27 - Handling Key Up!
-2026-05-26 00:45:27 - Set Selectd Panel came here! As it is not null making it null
-2026-05-26 00:45:29 - Handling Key Up!
-2026-05-26 00:45:29 - Set Selectd Panel came here! As it is not null making it null
-2026-05-26 00:45:30 - Handling Key Up!
-2026-05-26 00:45:30 - Set Selectd Panel came here! As it is not null making it null
-2026-05-26 00:45:31 - Handling Key Up!
-2026-05-26 00:45:31 - Set Selectd Panel came here! As it is not null making it null
-2026-05-26 00:45:31 - Handling Key Up!
-2026-05-26 00:45:31 - Set Selectd Panel came here! As it is not null making it null
-2026-05-26 00:45:31 - Handling Key Up!
-2026-05-26 00:45:31 - Set Selectd Panel came here! As it is not null making it null
-2026-05-26 00:45:31 - Handling Key Up!
-2026-05-26 00:45:31 - Set Selectd Panel came here! As it is not null making it null
-2026-05-26 00:45:31 - Handling Key Up!
-2026-05-26 00:45:31 - Set Selectd Panel came here! As it is not null making it null
-2026-05-26 00:45:31 - Handling Key Up!
-2026-05-26 00:45:31 - Set Selectd Panel came here! As it is not null making it null
-2026-05-26 00:45:32 - Handling Key Up!
-2026-05-26 00:45:32 - Set Selectd Panel came here! As it is not null making it null
-2026-05-26 00:45:32 - Reordering!
-2026-05-26 00:45:32 - Set Selectd Panel came here! As it is not null making it null
-2026-05-26 00:45:32 - Update Selection in Progress!
-2026-05-26 00:45:32 - Updated Selection!
-2026-05-26 00:45:32 - Handling Key Up!
-2026-05-26 00:45:32 - Var Selected: 
-2026-05-26 00:45:32 - Here1
-2026-05-26 00:45:32 - Here2
-2026-05-26 00:45:32 - Here3
-2026-05-26 00:45:32 - Here4
-2026-05-26 00:45:32 - Here5
-2026-05-26 00:45:32 - Here6
-2026-05-26 00:45:32 - Here7
-2026-05-26 00:45:32 - Here8
-2026-05-26 00:45:32 - Here9
-2026-05-26 00:45:32 - Here10
-2026-05-26 00:45:35 - Handling Key Up!
-2026-05-26 00:45:35 - Var Selected: 
-2026-05-26 00:45:35 - Here1
-2026-05-26 00:45:35 - Ctrl + F typed
-2026-05-26 00:45:35 - Set Selectd Panel came here! As it is not null making it null
-2026-05-26 00:45:35 - After making it null I came here!
-2026-05-26 00:45:35 - Set Selectd Panel came here! As it is not null making it null
-2026-05-26 00:45:35 - Update Selection in Progress!
-2026-05-26 00:45:35 - Updated Selection!
-2026-05-26 00:45:35 - Input Panel Hidden!
-2026-05-26 00:45:35 - Search Panel Visible!
-2026-05-26 00:45:35 - Focus on Search Input Box!
-2026-05-26 00:45:35 - Set Selectd Panel came here! As it is not null making it null
-2026-05-26 00:45:35 - Update Selection in Progress!
-2026-05-26 00:45:35 - Updated Selection!
-2026-05-26 00:45:35 - Search Open Process Complete!
-2026-05-26 00:45:35 - ------------------------------------------
-2026-05-26 00:45:35 - Selected Panel: 
-2026-05-26 00:45:35 - Searching!!
-2026-05-26 00:45:35 - Searching afte Debounce
-2026-05-26 00:45:35 - Text: 
-2026-05-26 00:45:35 - Filte Process Started
-2026-05-26 00:45:36 - Handling Key Up!
-2026-05-26 00:45:36 - Var Selected: 
-2026-05-26 00:45:36 - Here1
-2026-05-26 00:45:36 - Here2
-2026-05-26 00:45:36 - Here3
-2026-05-26 00:45:36 - Filte Process Started
-2026-05-26 00:45:36 - Set Selectd Panel came here! As it is not null making it null
-2026-05-26 00:45:36 - Update Selection in Progress!
-2026-05-26 00:45:36 - Updated Selection!
-2026-05-26 00:46:25 - Auto Save in Progress!
+2026-05-26 01:05:16 - Hello
+2026-05-26 01:05:16 - Entry Manager Object Created!
+2026-05-26 01:05:16 - Selected Panel: 
+2026-05-26 01:05:16 - Is Update Possible: True
+2026-05-26 01:05:16 - UI Manager Object Created!
+2026-05-26 01:05:16 - Auto Save Service Object Created!
+2026-05-26 01:05:16 - Search Service Object Created!
+2026-05-26 01:05:16 - keyboard Manager Object Created!
+2026-05-26 01:05:16 - Auto Loading in Progress!
+2026-05-26 01:05:16 - Loading!
+2026-05-26 01:05:16 - Loading Each
+2026-05-26 01:05:16 - Reordering!
+2026-05-26 01:05:16 - Loaded Each!
+2026-05-26 01:05:16 - Loaded!
+2026-05-26 01:05:16 - Auto loading complete!
+2026-05-26 01:05:16 - No of Panel: 0
+2026-05-26 01:05:19 - Handling Key Up!
+2026-05-26 01:05:19 - Set Selectd Panel came here! As it is not null making it null
+2026-05-26 01:05:19 - Set Selectd Panel came here! As it is not null making it null
+2026-05-26 01:05:19 - Update Selection in Progress!
+2026-05-26 01:05:19 - Updated Selection!
+2026-05-26 01:05:19 - Set Selectd Panel came here! As it is not null making it null
+2026-05-26 01:05:19 - Update Selection in Progress!
+2026-05-26 01:05:19 - Updated Selection!
+2026-05-26 01:05:20 - Handling Key Up!
+2026-05-26 01:05:20 - Set Selectd Panel came here! As it is not null making it null
+2026-05-26 01:05:20 - Set Selectd Panel came here! As it is not null making it null
+2026-05-26 01:05:20 - Update Selection in Progress!
+2026-05-26 01:05:20 - Updated Selection!
+2026-05-26 01:05:20 - Set Selectd Panel came here! As it is not null making it null
+2026-05-26 01:05:20 - Update Selection in Progress!
+2026-05-26 01:05:20 - Updated Selection!
+2026-05-26 01:05:21 - Handling Key Up!
+2026-05-26 01:05:21 - Set Selectd Panel came here! As it is not null making it null
+2026-05-26 01:05:21 - Set Selectd Panel came here! As it is not null making it null
+2026-05-26 01:05:21 - Update Selection in Progress!
+2026-05-26 01:05:21 - Updated Selection!
+2026-05-26 01:05:21 - Set Selectd Panel came here! As it is not null making it null
+2026-05-26 01:05:21 - Update Selection in Progress!
+2026-05-26 01:05:21 - Updated Selection!
+2026-05-26 01:05:22 - Handling Key Up!
+2026-05-26 01:05:22 - Set Selectd Panel came here! As it is not null making it null
+2026-05-26 01:05:22 - Set Selectd Panel came here! As it is not null making it null
+2026-05-26 01:05:22 - Update Selection in Progress!
+2026-05-26 01:05:22 - Updated Selection!
+2026-05-26 01:05:22 - Set Selectd Panel came here! As it is not null making it null
+2026-05-26 01:05:22 - Update Selection in Progress!
+2026-05-26 01:05:22 - Updated Selection!
+2026-05-26 01:05:23 - Handling Key Up!
+2026-05-26 01:05:23 - Set Selectd Panel came here! As it is not null making it null
+2026-05-26 01:05:23 - Set Selectd Panel came here! As it is not null making it null
+2026-05-26 01:05:23 - Update Selection in Progress!
+2026-05-26 01:05:23 - Updated Selection!
+2026-05-26 01:05:23 - Set Selectd Panel came here! As it is not null making it null
+2026-05-26 01:05:23 - Update Selection in Progress!
+2026-05-26 01:05:23 - Updated Selection!
+2026-05-26 01:05:27 - Set Selectd Panel came here! As it is not null making it null
+2026-05-26 01:05:27 - Update Selection in Progress!
+2026-05-26 01:05:27 - Updated Selection!
+2026-05-26 01:05:49 - Handling Key Up!
+2026-05-26 01:05:49 - Set Selectd Panel came here! As it is not null making it null
+2026-05-26 01:05:49 - Set Selectd Panel came here! As it is not null making it null
+2026-05-26 01:05:49 - Update Selection in Progress!
+2026-05-26 01:05:49 - Updated Selection!
+2026-05-26 01:05:49 - Set Selectd Panel came here! As it is not null making it null
+2026-05-26 01:05:49 - Update Selection in Progress!
+2026-05-26 01:05:49 - Updated Selection!
+2026-05-26 01:05:51 - Handling Key Up!
+2026-05-26 01:05:51 - Var Selected: 
+2026-05-26 01:05:51 - Here1
+2026-05-26 01:05:51 - Import
+2026-05-26 01:05:51 - Here2
+2026-05-26 01:05:51 - Here3
+2026-05-26 01:05:51 - Here4
+2026-05-26 01:05:51 - Here5
+2026-05-26 01:05:51 - Here6
+2026-05-26 01:05:51 - Here7
+2026-05-26 01:05:51 - Here8
+2026-05-26 01:05:51 - Here9
+2026-05-26 01:05:51 - Here10
+2026-05-26 01:06:00 - Loading Each
+2026-05-26 01:06:00 - Reordering!
+2026-05-26 01:06:00 - Loaded Each!
+2026-05-26 01:06:16 - Auto Save in Progress!

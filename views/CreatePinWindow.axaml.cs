@@ -5,6 +5,8 @@ using Avalonia.Interactivity;
 using Avalonia.Markup.Xaml;
 using Avalonia.Threading;
 using copier.Helper;
+using Avalonia.Controls.ApplicationLifetimes;
+using Avalonia;
 
 namespace copier.Views
 {
@@ -65,10 +67,18 @@ namespace copier.Views
                 CopierConfigService.Save(_configPath, config);
                 AppFileLogger.AddText("Saved the path");
 
-                new PasswordWindow(_configPath).Show();
-                AppFileLogger.AddText("Password Window Open");
+                if (Application.Current?.ApplicationLifetime is IClassicDesktopStyleApplicationLifetime desktop)
+                {
+                    var passwordWindow = new PasswordWindow(_configPath);
 
-                Close();
+                    desktop.MainWindow = passwordWindow;
+
+                    passwordWindow.Show();
+
+                    Close();
+
+                    AppFileLogger.AddText("Password Window Open");
+                }
             }
             catch (Exception ex)
             {

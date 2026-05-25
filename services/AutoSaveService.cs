@@ -33,7 +33,7 @@ namespace copier.Services
         {
             try
             {
-                AppFileLogger.AddText("Loading!");
+                // AppFileLogger.AddText("Loading!");
                 if (!File.Exists(_filePath))
                     return;
 
@@ -49,7 +49,7 @@ namespace copier.Services
                 _entryManager.Panels.Clear();
 
                 _entryManager.LoadPanels(entries, _window, stack);
-                AppFileLogger.AddText("Loaded!");
+                // AppFileLogger.AddText("Loaded!");
             }
             catch
             {

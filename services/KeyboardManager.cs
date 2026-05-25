@@ -38,7 +38,7 @@ namespace copier.Services
             {
                 return;
             }
-            AppFileLogger.AddText("Handling Key Up!");
+            // AppFileLogger.AddText("Handling Key Up!");
             var stack = _window.FindControl<StackPanel>("ItemsPanel");
             if (_entryManager.Panels.Count == 0 &&
                 !(e.KeyModifiers == KeyModifiers.Control && e.Key == Key.I))
@@ -49,9 +49,9 @@ namespace copier.Services
             }
 
             var selected = _uiManager.SelectedPanel;
-            AppFileLogger.AddText("Var Selected: " + selected);
+            // AppFileLogger.AddText("Var Selected: " + selected);
 
-            AppFileLogger.AddText("Here1");
+            // AppFileLogger.AddText("Here1");
 
             if (e.KeyModifiers == KeyModifiers.Control && e.Key == Key.OemComma)
             {
@@ -63,46 +63,46 @@ namespace copier.Services
             // CTRL + F opens search and No need of Selection
             if (e.KeyModifiers == KeyModifiers.Control && e.Key == Key.F)
             {
-                AppFileLogger.AddText("Ctrl + F typed");
+                // AppFileLogger.AddText("Ctrl + F typed");
                 if (_uiManager.SelectedPanel == null)
                 {
                     _uiManager.SetSelectedPanelNull(_uiManager.SelectedPanel);
-                    AppFileLogger.AddText("After making it null I came here!");
+                    // AppFileLogger.AddText("After making it null I came here!");
                 }
                 _uiManager.ShowSearchPanel();
-                AppFileLogger.AddText("Selected Panel: " + _uiManager.SelectedPanel);
+                // AppFileLogger.AddText("Selected Panel: " + _uiManager.SelectedPanel);
                 return;
             }
 
             if (e.KeyModifiers == KeyModifiers.Control && e.Key == Key.E)
             {
-                AppFileLogger.AddText("Export");
+                // AppFileLogger.AddText("Export");
                 Export_Click();
             }
 
             if (e.KeyModifiers == KeyModifiers.Control && e.Key == Key.I)
             {
-                AppFileLogger.AddText("Import");
+                // AppFileLogger.AddText("Import");
                 Import_Click();
             }
 
             if (e.KeyModifiers == (KeyModifiers.Control | KeyModifiers.Shift) && e.Key == Key.Delete)
             {
-                AppFileLogger.AddText("Clear All");
+                // AppFileLogger.AddText("Clear All");
                 ClearAll_Click();
             }
 
-            AppFileLogger.AddText("Here2");
+            // AppFileLogger.AddText("Here2");
 
             // CTRL + N opens input panel and no need of selection
             if (e.KeyModifiers == KeyModifiers.Control && e.Key == Key.N)
             {
-                AppFileLogger.AddText("Ctrl + N clicked!");
+                // AppFileLogger.AddText("Ctrl + N clicked!");
                 _uiManager.ShowInputPanel();
                 return;
             }
 
-            AppFileLogger.AddText("Here3");
+            // AppFileLogger.AddText("Here3");
 
             // ESC closes whichever panel is open and no need of selection
             if (e.Key == Key.Escape)
@@ -111,7 +111,7 @@ namespace copier.Services
                 return;
             }
 
-            AppFileLogger.AddText("Here4");
+            // AppFileLogger.AddText("Here4");
 
             // Selection Needed
             if (e.KeyModifiers == KeyModifiers.Control && e.Key == Key.S)
@@ -124,7 +124,7 @@ namespace copier.Services
                 return;
             }
 
-            AppFileLogger.AddText("Here5");
+            // AppFileLogger.AddText("Here5");
 
             if (e.KeyModifiers == KeyModifiers.Control && e.Key == Key.P)
             {
@@ -136,7 +136,7 @@ namespace copier.Services
                 return;
             }
 
-            AppFileLogger.AddText("Here6");
+            // AppFileLogger.AddText("Here6");
 
             if (e.KeyModifiers == KeyModifiers.Control && e.Key == Key.D)
             {
@@ -148,7 +148,7 @@ namespace copier.Services
                 return;
             }
 
-            AppFileLogger.AddText("Here7");
+            // AppFileLogger.AddText("Here7");
 
             // Prevent movement if editing
             if (selected != null)
@@ -159,23 +159,23 @@ namespace copier.Services
                 if (editingBox != null) return;
             }
 
-            AppFileLogger.AddText("Here8");
+            // AppFileLogger.AddText("Here8");
 
             // Arrow navigation
             if (e.Key == Key.Down)
             {
-                AppFileLogger.AddText("Down key pressed");
+                // AppFileLogger.AddText("Down key pressed");
                 if (_uiManager.isUpdatePossible == true)
                     MoveSelection(stack, 1);
             }
             else if (e.Key == Key.Up)
             {
-                AppFileLogger.AddText("Down Up pressed");
+                // AppFileLogger.AddText("Down Up pressed");
                 if (_uiManager.isUpdatePossible == true)
                     MoveSelection(stack, -1);
             }
 
-            AppFileLogger.AddText("Here9");
+            // AppFileLogger.AddText("Here9");
 
             // CTRL + C copies content
             if (e.KeyModifiers == KeyModifiers.Control && e.Key == Key.C)
@@ -183,12 +183,12 @@ namespace copier.Services
                 CopySelectedText(selected);
             }
 
-            AppFileLogger.AddText("Here10");
+            // AppFileLogger.AddText("Here10");
 
             // F2 edits the selected entry
             if (e.Key == Key.F2 && selected != null)
             {
-                AppFileLogger.AddText("Here11");
+                // AppFileLogger.AddText("Here11");
                 EditSelectedEntry(selected);
             }
         }
@@ -221,7 +221,7 @@ namespace copier.Services
         {
             if (stack.Children.Count == 0)
             {
-                AppFileLogger.AddText("No panels");
+                // AppFileLogger.AddText("No panels");
                 return;
             }
 
@@ -229,29 +229,29 @@ namespace copier.Services
                 ? stack.Children.IndexOf(_uiManager.SelectedPanel)
                 : (direction > 0 ? -1 : stack.Children.Count);
 
-            AppFileLogger.AddText("Current Index: " + currentIndex);
+            // AppFileLogger.AddText("Current Index: " + currentIndex);
 
             int nextIndex = direction > 0
                 ? Math.Min(currentIndex + 1, stack.Children.Count - 1)
                 : Math.Max(currentIndex - 1, 0);
 
-            AppFileLogger.AddText("Next Index: " + nextIndex);
+            // AppFileLogger.AddText("Next Index: " + nextIndex);
 
             var nextPanel = stack.Children[nextIndex] as StackPanel;
 
             if (nextPanel == null)
             {
-                AppFileLogger.AddText("Next Panel is null");
+                // AppFileLogger.AddText("Next Panel is null");
             }
 
             if (nextPanel != null && nextPanel != _uiManager.SelectedPanel)
             {
                 _uiManager.SetSelectedPanel(nextPanel);
                 currentIndex = _uiManager.SelectedPanel != null ? stack.Children.IndexOf(_uiManager.SelectedPanel) : (direction > 0 ? -1 : stack.Children.Count);
-                AppFileLogger.AddText("Current Panel: " + currentIndex);
+                // AppFileLogger.AddText("Current Panel: " + currentIndex);
                 _uiManager.UpdateSelection(stack);
-                AppFileLogger.AddText("Updated Panels");
-                AppFileLogger.AddText("-------------------------------------------------------------------");
+                // AppFileLogger.AddText("Updated Panels");
+                // AppFileLogger.AddText("-------------------------------------------------------------------");
             }
         }
 

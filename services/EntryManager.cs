@@ -187,7 +187,7 @@ namespace copier.Services
         /// </summary>
         public void LoadPanels(IEnumerable<EntryData> entries, Window window, Panel itemsPanel)
         {
-            AppFileLogger.AddText("Loading Each");
+            // AppFileLogger.AddText("Loading Each");
             Panels.Clear();
             itemsPanel.Children.Clear();
 
@@ -216,7 +216,7 @@ namespace copier.Services
 
             // Ensure pinned items are shown first
             ReorderPanels(itemsPanel);
-            AppFileLogger.AddText("Loaded Each!");
+            // AppFileLogger.AddText("Loaded Each!");
         }
 
         /// <summary>
@@ -225,7 +225,7 @@ namespace copier.Services
         /// </summary>
         public void ReorderPanels(Panel itemsPanel)
         {
-            AppFileLogger.AddText("Reordering!");
+            // AppFileLogger.AddText("Reordering!");
             if (Panels.Count == 0) return;
             if (itemsPanel == null) return;
 

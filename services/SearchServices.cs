@@ -52,7 +52,7 @@ namespace copier.Services
             if (e.Key == Key.Escape)
                 return;
 
-            AppFileLogger.AddText("Searching!!");
+            // AppFileLogger.AddText("Searching!!");
             var searchBox = _window.FindControl<TextBox>("SearchInputBox")!;
             string text = searchBox.Text ?? "";
 
@@ -75,13 +75,13 @@ namespace copier.Services
 
                     if (editingBox != null)
                     {
-                        AppFileLogger.AddText("Searching stopped!");
+                        // AppFileLogger.AddText("Searching stopped!");
                         return; // 🚫 block search during edit
                     }
                 }
 
-                AppFileLogger.AddText("Searching afte Debounce");
-                AppFileLogger.AddText("Text: " + text);
+                // AppFileLogger.AddText("Searching afte Debounce");
+                // AppFileLogger.AddText("Text: " + text);
                 Dispatcher.UIThread.Post(() => FilterEntries(text));
             };
 
@@ -93,7 +93,7 @@ namespace copier.Services
         // -----------------------------
         public void FilterEntries(string? filter, StackPanel? currentlySelected = null)
         {
-            AppFileLogger.AddText("Filte Process Started");
+            // AppFileLogger.AddText("Filte Process Started");
             var itemsPanel = _window.FindControl<StackPanel>("ItemsPanel")!;
             itemsPanel.Children.Clear();
 

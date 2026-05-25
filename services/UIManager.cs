@@ -32,8 +32,8 @@ namespace copier.Services
             _window = window;
             _entryManager = entryManager;
             _allEntryPanels = allEntryPanels;
-            AppFileLogger.AddText("Selected Panel: " + _selectedPanel);
-            AppFileLogger.AddText("Is Update Possible: " + isUpdatePossible);
+            // AppFileLogger.AddText("Selected Panel: " + _selectedPanel);
+            // AppFileLogger.AddText("Is Update Possible: " + isUpdatePossible);
         }
 
         public void SetSearchPanelOpen(bool value)
@@ -108,16 +108,16 @@ namespace copier.Services
                 return;
 
             HideInputPanel();
-            AppFileLogger.AddText("Input Panel Hidden!");
+            // AppFileLogger.AddText("Input Panel Hidden!");
 
             var searchPanel = _window.FindControl<StackPanel>("SearchPanel")!;
             searchPanel.IsVisible = true;
 
-            AppFileLogger.AddText("Search Panel Visible!");
+            // AppFileLogger.AddText("Search Panel Visible!");
 
             _window.FindControl<TextBox>("SearchInputBox")!.Focus();
 
-            AppFileLogger.AddText("Focus on Search Input Box!");
+            // AppFileLogger.AddText("Focus on Search Input Box!");
 
             _isSearchPanelOpen = true;
             _isNewPanelOpen = false;
@@ -129,8 +129,8 @@ namespace copier.Services
             {
                 UpdateSelection(itemsPanel);
             }
-            AppFileLogger.AddText("Search Open Process Complete!");
-            AppFileLogger.AddText("------------------------------------------");
+            // AppFileLogger.AddText("Search Open Process Complete!");
+            // AppFileLogger.AddText("------------------------------------------");
         }
 
         public void HideSearchPanel()
@@ -181,19 +181,19 @@ namespace copier.Services
 
         public void SetSelectedPanel(StackPanel? panel)
         {
-            AppFileLogger.AddText("Set Selectd Panel came here!");
+            // AppFileLogger.AddText("Set Selectd Panel came here!");
             _selectedPanel = panel;
         }
 
         public void SetSelectedPanelNull(StackPanel? panel)
         {
-            AppFileLogger.AddText("Set Selectd Panel came here! As it is not null making it null");
+            // AppFileLogger.AddText("Set Selectd Panel came here! As it is not null making it null");
             _selectedPanel = null;
         }
 
         public void UpdateSelection(StackPanel itemsPanel)
         {
-            AppFileLogger.AddText("Update Selection in Progress!");
+            // AppFileLogger.AddText("Update Selection in Progress!");
             var highlightBrush = new SolidColorBrush(Color.Parse("#ADD8E6"));
             var defaultBrush = new SolidColorBrush(Colors.Transparent);
 
@@ -204,7 +204,7 @@ namespace copier.Services
                     : defaultBrush;
             }
 
-            AppFileLogger.AddText("Updated Selection!");
+            // AppFileLogger.AddText("Updated Selection!");
 
             _selectedPanel?.BringIntoView();
         }

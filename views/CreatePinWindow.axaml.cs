@@ -21,7 +21,7 @@ namespace copier.Views
         {
             ShortcutHelper.CreateShortcutIfNeeded();
             InitializeComponent();
-            AppFileLogger.AddText("create Pin Initialised");
+            // AppFileLogger.AddText("create Pin Initialised");
 
             _configPath = configPath;
 
@@ -32,9 +32,9 @@ namespace copier.Views
                 _pinBox.Focus();
                 _pinBox.CaretIndex = _pinBox.Text?.Length ?? 0;
             });
-            AppFileLogger.AddText("Pin clicked: " + _pinBox.Text);
+            // AppFileLogger.AddText("Pin clicked: " + _pinBox.Text);
             _saveButton = this.FindControl<Button>("SaveButton");
-            AppFileLogger.AddText("Save Button Initialised");
+            // AppFileLogger.AddText("Save Button Initialised");
 
             _saveButton.Click += OnSaveClicked;
             _pinBox.KeyUp += PinBox_KeyUp;
@@ -52,7 +52,7 @@ namespace copier.Views
         {
             if (string.IsNullOrWhiteSpace(_pinBox.Text))
             {
-                AppFileLogger.AddText("Empty Text");
+                // AppFileLogger.AddText("Empty Text");
                 return;
             }
 
@@ -62,10 +62,10 @@ namespace copier.Views
                 {
                     Password = _pinBox.Text
                 };
-                AppFileLogger.AddText("New Copier Config Object");
+                // AppFileLogger.AddText("New Copier Config Object");
 
                 CopierConfigService.Save(_configPath, config);
-                AppFileLogger.AddText("Saved the path");
+                // AppFileLogger.AddText("Saved the path");
 
                 if (Application.Current?.ApplicationLifetime is IClassicDesktopStyleApplicationLifetime desktop)
                 {
@@ -77,12 +77,12 @@ namespace copier.Views
 
                     Close();
 
-                    AppFileLogger.AddText("Password Window Open");
+                    // AppFileLogger.AddText("Password Window Open");
                 }
             }
             catch (Exception ex)
             {
-                AppFileLogger.AddText("ERROR: " + ex.Message);
+                // AppFileLogger.AddText("ERROR: " + ex.Message);
             }
         }
 

@@ -63,11 +63,11 @@ This is built entirely by C# and Avalonia
 
 ## Images
 
-![alt](https://)
-![alt](https://)
-![alt](https://)
-![alt](https://)
-![alt](https://)
+![Change Password](https://github.com/UJKC/Copier/blob/main/images/Change%20Password%20Screen.png)
+![Entry Password](https://github.com/UJKC/Copier/blob/main/images/Entry%20Password%20Screen.png)
+![Home Screen](https://github.com/UJKC/Copier/blob/main/images/Home%20Screen.png)
+![New Screen](https://github.com/UJKC/Copier/blob/main/images/New%20Screen.png)
+![Search Screen](https://github.com/UJKC/Copier/blob/main/images/Search%20Screen.png)
 
 ---
 
